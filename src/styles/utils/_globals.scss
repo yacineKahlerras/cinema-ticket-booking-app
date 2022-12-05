@@ -1,0 +1,31 @@
+@use "themes" as *;
+
+$maxWidth1: var(--max-width-1);
+
+:root {
+  font-size: 62.5%;
+
+  --max-width-1: min(85%, 60rem);
+}
+
+@mixin desktop {
+  @media (min-width: 56em) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 47em) {
+    @content;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Outfit", sans-serif;
+  background: $background;
+
+  a {
+    text-decoration: none;
+  }
+}
