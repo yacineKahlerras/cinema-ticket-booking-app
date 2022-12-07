@@ -40,6 +40,10 @@ nav {
       }
 
       li {
+        &:hover {
+          color: $darkBlue1;
+        }
+
         a {
           display: flex;
           align-items: center;
