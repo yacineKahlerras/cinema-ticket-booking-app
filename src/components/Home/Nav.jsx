@@ -42,7 +42,10 @@ export default function Nav() {
         </button>
       </div>
 
-      <Sidemenu sidemenuActive={sidemenuActive} />
+      <Sidemenu
+        sidemenuActive={sidemenuActive}
+        setSidemenuActive={setSidemenuActive}
+      />
     </nav>
   );
 }

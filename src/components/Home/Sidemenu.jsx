@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidemenu(props) {
-  const { sidemenuActive } = props;
+  const { sidemenuActive, setSidemenuActive } = props;
   const [showRooms, setShowRooms] = useState(false);
 
   function ToggleShowRooms() {
@@ -14,7 +14,9 @@ export default function Sidemenu(props) {
       <div className="sidemenu-center">
         <ul className="sidemenu-links">
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link onClick={() => setSidemenuActive(false)} to={"/"}>
+              Home
+            </Link>
           </li>
           <li>
             <div
@@ -36,10 +38,14 @@ export default function Sidemenu(props) {
             </div>
           </li>
           <li>
-            <Link to={"/"}>Contact Us</Link>
+            <Link onClick={() => setSidemenuActive(false)} to={"/"}>
+              Contact Us
+            </Link>
           </li>
           <li>
-            <Link to={"/"}>About Us</Link>
+            <Link onClick={() => setSidemenuActive(false)} to={"/"}>
+              About Us
+            </Link>
           </li>
         </ul>
       </div>
