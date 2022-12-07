@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidemenu() {
   return (
-    <aside>
+    <aside className="hide-sidemenu">
       <div className="sidemenu-center">
         <ul className="sidemenu-links">
           <li>
