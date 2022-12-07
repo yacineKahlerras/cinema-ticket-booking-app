@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavRoomsDropdown from "./NavRoomsDropdown";
+import Sidemenu from "./Sidemenu";
 
 export default function Nav() {
   const [sidemenuActive, setSidemenuActive] = useState(false);
@@ -40,6 +41,8 @@ export default function Nav() {
           </div>
         </button>
       </div>
+
+      <Sidemenu />
     </nav>
   );
 }

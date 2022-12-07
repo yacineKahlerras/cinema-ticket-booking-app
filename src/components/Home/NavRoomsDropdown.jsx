@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import downArrow from "../../assets/caret-down-fill.svg";
 import { Link } from "react-router-dom";
 
 export default function NavRoomsDropdown() {
@@ -10,14 +9,14 @@ export default function NavRoomsDropdown() {
   }
 
   useEffect(() => {
-    window.onclick = (e) => {
+    window.addEventListener("click", (e) => {
       if (!e.target.matches(".dropbtn")) {
         var myDropdown = document.getElementById("myDropdown");
         if (myDropdown.classList.contains("show")) {
           myDropdown.classList.remove("show");
         }
       }
-    };
+    });
   }, []);
 
   return (
