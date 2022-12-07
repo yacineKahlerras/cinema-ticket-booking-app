@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import downArrow from "../../assets/caret-down-fill.svg";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [sidemenuActive, setSidemenuActive] = useState(false);
@@ -16,11 +17,17 @@ export default function Nav() {
 
         {/* nav links */}
         <ul className="nav-links">
-          <li>Home</li>
           <li>
-            Rooms <img src={downArrow} alt="arrow icon" />
+            <Link to={"/"}>Home</Link>
           </li>
-          <li>About Us</li>
+          <li>
+            <Link to={"/"}>
+              Rooms <img src={downArrow} alt="arrow icon" />
+            </Link>
+          </li>
+          <li>
+            <Link to={"/"}>About Us</Link>
+          </li>
         </ul>
 
         {/* hamburger menu btn */}
