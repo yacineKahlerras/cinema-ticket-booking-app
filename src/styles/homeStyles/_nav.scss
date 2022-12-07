@@ -9,6 +9,7 @@ nav {
   background: $componentColors;
   padding: 2rem 0rem;
   box-shadow: 0 0 5rem 2rem rgba(0, 0, 0, 0.02);
+  z-index: 10;
 
   @include desktop {
     width: min(100%, 89rem);
@@ -40,6 +41,8 @@ nav {
       }
 
       li {
+        transition: 0.5s;
+
         &:hover {
           color: $darkBlue1;
         }

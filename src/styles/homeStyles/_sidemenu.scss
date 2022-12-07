@@ -38,13 +38,32 @@ aside {
       li {
         width: 80%;
         padding: 1.5rem 0;
+        transition: 0.5s;
 
         &:not(:first-of-type) {
-          border-top: 0.1rem solid $grayColor;
+          border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
         }
 
-        &:hover {
+        a:hover,
+        button:hover {
           color: $darkBlue1;
+        }
+
+        .sidemenu-dropdown {
+          overflow: hidden;
+          transition: 0.5s;
+
+          &.show-sidemenu-rooms {
+            .dropdown-content {
+              height: 10em;
+              transition: 0.5s;
+            }
+          }
+
+          .dropdown-content {
+            height: 0;
+            transition: 1s;
+          }
         }
       }
     }

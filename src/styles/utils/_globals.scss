@@ -31,9 +31,11 @@ body {
   font-family: "Inter", sans-serif;
   background: $background;
 
-  a {
+  a,
+  button {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
   }
 
   button {

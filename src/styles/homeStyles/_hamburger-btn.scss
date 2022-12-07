@@ -12,6 +12,7 @@ hamburger
   box-shadow: none;
   padding: 0;
   position: relative;
+  z-index: 15;
 }
 .hamburger svg path {
   width: 1rem;
