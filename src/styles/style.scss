@@ -1,5 +1,9 @@
 @use "utils/" as *;
+@use "homeStyles/" as *;
 
 main {
   background: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
