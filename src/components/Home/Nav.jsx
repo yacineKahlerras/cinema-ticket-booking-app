@@ -9,6 +9,35 @@ export default function Nav() {
     setSidemenuActive(!sidemenuActive);
   }
 
+  function RoomsNavLink() {
+    const [showRooms, setShowRooms] = useState(false);
+
+    function toggleDropDown() {
+      setShowRooms(!showRooms);
+    }
+
+    return (
+      <Link className="dropdown" to={"/"}>
+        <button
+          onClick={toggleDropDown}
+          className="dropbtn"
+          onclick="myFunction()"
+        >
+          Rooms
+          <img src={downArrow} alt="down arrow icon" />
+        </button>
+        <div
+          className={`dropdown-content ${showRooms ? "show" : ""}`}
+          id="myDropdown"
+        >
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </Link>
+    );
+  }
+
   return (
     <nav>
       <div className="nav-center">
@@ -21,9 +50,7 @@ export default function Nav() {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/"}>
-              Rooms <img src={downArrow} alt="arrow icon" />
-            </Link>
+            <RoomsNavLink />
           </li>
           <li>
             <Link to={"/"}>About Us</Link>

@@ -1,9 +1,11 @@
 $background: var(--background);
 $componentColors: var(--component-colors);
 $grayColor: var(--gray-color);
+$mediumBlue: var(--medium-blue);
 
 :root {
   --background: #eff8ff;
+  --medium-blue: #f8fcff;
   --component-colors: #ffffff;
   --gray-color: #4d4d4d;
 }
