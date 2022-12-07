@@ -1,5 +1,55 @@
 @use "../utils/" as *;
 
 nav {
+  width: 100%;
   color: $grayColor;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  background: $componentColors;
+  padding: 2rem 0rem;
+  box-shadow: 0 0 5rem 2rem rgba(0, 0, 0, 0.02);
+
+  @include desktop {
+    width: min(100%, 89rem);
+    border-radius: 2em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .nav-center {
+    width: min(80%, 100rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include desktop {
+      justify-content: start;
+    }
+
+    .nav-links {
+      display: none;
+
+      @include desktop {
+        max-width: 51.7rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+        width: 100%;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+
+    .hamburger {
+      @include desktop {
+        display: none;
+      }
+    }
+  }
 }

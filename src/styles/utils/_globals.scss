@@ -8,6 +8,12 @@ $maxWidth1: var(--max-width-1);
   --max-width-1: min(85%, 60rem);
 }
 
+@mixin tablet {
+  @media (min-width: 56em) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: 56em) {
     @content;
@@ -22,7 +28,7 @@ $maxWidth1: var(--max-width-1);
 
 body {
   font-size: 1.6rem;
-  font-family: "Outfit", sans-serif;
+  font-family: "Inter", sans-serif;
   background: $background;
 
   a {
