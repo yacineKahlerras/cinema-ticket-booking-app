@@ -3,12 +3,6 @@ import Select from "react-select";
 import { roomsList } from "../../../data";
 import { FilterParamsContext } from "../Home";
 
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
-
 export default function Filter(props) {
   const { filterLabel } = props;
   const filterParams = useContext(FilterParamsContext);
