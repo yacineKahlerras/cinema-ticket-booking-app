@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import FilterSection from "./Filters/FilterSection";
-import { roomsList } from "../../data";
 
 export default function Home() {
+  const [wilaya, setWilaya] = useState("all");
+  const [cinema, setCinema] = useState("all");
+
   return (
     <div className="home-container">
       <FilterSection />

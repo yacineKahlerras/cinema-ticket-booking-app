@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { roomsList } from "../../../data";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -11,10 +12,23 @@ export default function Filter(props) {
   const { filterLabel } = props;
   const [value, setValue] = useState({ value: "chocolate" });
 
+  function FilterList() {
+    if (filterLabel === "Wilaya") {
+      const newList = roomsList.map((room) => {
+        return { value: room.wilaya, label: room.wilaya };
+      });
+      return newList;
+    }
+    const newList = roomsList.map((room) => {
+      return { value: room.id, label: room.title };
+    });
+    return newList;
+  }
+
   return (
     <div className="filter">
       <span className="filter-label">{filterLabel}</span>
-      <Select defaultValue={options[0]} onChange={setValue} options={options} />
+      <Select onChange={setValue} options={FilterList()} />
     </div>
   );
 }
