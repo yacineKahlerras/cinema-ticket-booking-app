@@ -8,13 +8,20 @@ const options = [
 ];
 
 export default function Filter(props) {
-  const [value, setValue] = useState("okay");
+  const { filterLabel } = props;
+  const [value, setValue] = useState({ value: "chocolate" });
 
   console.log(value.value);
 
   return (
-    <>
-      <Select value={value} onChange={setValue} options={options} />
-    </>
+    <div className="filter">
+      <span className="filter-label">{filterLabel}</span>
+      <Select
+        defaultValue={options[0].label}
+        value={value}
+        onChange={setValue}
+        options={options}
+      />
+    </div>
   );
 }
