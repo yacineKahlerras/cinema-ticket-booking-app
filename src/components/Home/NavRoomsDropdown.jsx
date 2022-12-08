@@ -20,7 +20,7 @@ export default function NavRoomsDropdown() {
   }, []);
 
   return (
-    <Link className="dropdown" to={"/"}>
+    <div className="dropdown">
       <button onClick={toggleDropDown} className="dropbtn">
         Rooms
         <svg
@@ -42,6 +42,6 @@ export default function NavRoomsDropdown() {
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
       </div>
-    </Link>
+    </div>
   );
 }
