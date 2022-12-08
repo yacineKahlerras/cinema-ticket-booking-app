@@ -13,17 +13,20 @@ export default function Filter(props) {
   const [value, setValue] = useState({ value: "chocolate" });
 
   function FilterList() {
+    const newList = new Set();
     if (filterLabel === "Wilaya") {
-      const newList = roomsList.map((room) => {
-        return { value: room.wilaya, label: room.wilaya };
+      roomsList.forEach((room) => {
+        newList.add({ value: room.wilaya, label: room.wilaya });
       });
-      return newList;
+      return Array.from(newList);
     }
-    const newList = roomsList.map((room) => {
-      return { value: room.id, label: room.title };
+    roomsList.forEach((room) => {
+      newList.add({ value: room.id, label: room.title });
     });
-    return newList;
+    return Array.from(newList);
   }
+
+  console.log(Array.from(FilterList()));
 
   return (
     <div className="filter">
