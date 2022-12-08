@@ -14,12 +14,7 @@ export default function Filter(props) {
   return (
     <div className="filter">
       <span className="filter-label">{filterLabel}</span>
-      <Select
-        defaultValue={value}
-        value={value}
-        onChange={setValue}
-        options={options}
-      />
+      <Select defaultValue={options[0]} onChange={setValue} options={options} />
     </div>
   );
 }
