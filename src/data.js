@@ -13,9 +13,9 @@
  *      -list of movies
  */
 
-const posterLink = "https://image.tmdb.org/t/p/w500";
+export const posterLink = "https://image.tmdb.org/t/p/w500";
 
-const roomsList = [
+export const roomsList = [
   {
     id: "h2Qgg",
     title: "ahmed bay",

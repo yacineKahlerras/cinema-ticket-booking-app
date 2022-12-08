@@ -11,13 +11,11 @@ export default function Filter(props) {
   const { filterLabel } = props;
   const [value, setValue] = useState({ value: "chocolate" });
 
-  console.log(value.value);
-
   return (
     <div className="filter">
       <span className="filter-label">{filterLabel}</span>
       <Select
-        defaultValue={options[0].label}
+        defaultValue={value}
         value={value}
         onChange={setValue}
         options={options}
