@@ -13,6 +13,8 @@
  *      -list of movies
  */
 
+const posterLink = "https://image.tmdb.org/t/p/w500";
+
 const roomsList = [
   {
     id: "h2Qgg",
@@ -21,7 +23,7 @@ const roomsList = [
     seats: 300,
     movies: [
       {
-        poster: "",
+        poster: "/vWx3Hi7DZ7VWyjWVf9gySG6Lbq4.jpg",
         title: "jack mimoun",
         date: "ven 02-12",
         time: "15h",
@@ -29,7 +31,7 @@ const roomsList = [
         langue: "eng",
       },
       {
-        poster: "",
+        poster: "/w3s6XEDNVGq5LUlghqs6VlvsvL6.jpg",
         title: "la proie diable",
         date: "dim 04-12",
         time: "20h",
@@ -54,7 +56,7 @@ const roomsList = [
         seats: 440,
         movies: [
           {
-            poster: "",
+            poster: "/1CHp8QQjGwqWaPZWjzcRidlt5Xs.jpg",
             title: "violent night",
             date: "mer 07-12",
             time: "13h30",
@@ -62,7 +64,7 @@ const roomsList = [
             langue: "eng",
           },
           {
-            poster: "",
+            poster: "/ps2oKfhY6DL3alynlSqY97gHSsg.jpg",
             title: "black panther 2",
             date: "jeu 08-12",
             time: "13h",
@@ -84,7 +86,7 @@ const roomsList = [
     seats: 698,
     movies: [
       {
-        poster: "",
+        poster: "/1CHp8QQjGwqWaPZWjzcRidlt5Xs.jpg",
         title: "violent night",
         date: "mer 07-12",
         time: "13h30",
@@ -92,7 +94,7 @@ const roomsList = [
         langue: "eng",
       },
       {
-        poster: "",
+        poster: "/v31MsWhF9WFh7Qooq6xSBbmJxoG.jpg",
         title: "le menu",
         date: "jeu 09-12",
         time: "13h30",
@@ -117,7 +119,7 @@ const roomsList = [
         seats: 286,
         movies: [
           {
-            poster: "",
+            poster: "/1tzERH50P5c2mFWtLbgixzLZS1L.jpg",
             title: "ticket to paradise",
             date: "ven 02-12",
             time: "16h",
@@ -125,7 +127,7 @@ const roomsList = [
             langue: "vf",
           },
           {
-            poster: "",
+            poster: "/ps2oKfhY6DL3alynlSqY97gHSsg.jpg",
             title: "wakanda forever",
             date: "ven 02-12",
             time: "20h30",
@@ -139,7 +141,7 @@ const roomsList = [
         seats: 100,
         movies: [
           {
-            poster: "",
+            poster: "/wMDUDwAArpfGdtTTZ25SfwngGwt.jpg",
             title: "samourai academy",
             date: "ven 02-12",
             time: "16h",
@@ -147,7 +149,7 @@ const roomsList = [
             langue: "vf",
           },
           {
-            poster: "",
+            poster: "/aPqcQwu4VGEewPhagWNncDbJ9Xp.jpg",
             title: "smile",
             date: "ven 02-12",
             time: "22h10",
@@ -161,7 +163,7 @@ const roomsList = [
         seats: 54,
         movies: [
           {
-            poster: "",
+            poster: "/ps2oKfhY6DL3alynlSqY97gHSsg.jpg",
             title: "wakanda forever",
             date: "ven 02-12",
             time: "16h",
@@ -169,7 +171,7 @@ const roomsList = [
             langue: "vf",
           },
           {
-            poster: "",
+            poster: "/v31MsWhF9WFh7Qooq6xSBbmJxoG.jpg",
             title: "le menu",
             date: "ven 02-12",
             time: "19h",
