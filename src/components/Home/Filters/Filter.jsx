@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Select from "react-select";
 import { roomsList } from "../../../data";
+import { FilterParamsContext } from "../Home";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -10,15 +11,18 @@ const options = [
 
 export default function Filter(props) {
   const { filterLabel } = props;
-  const [value, setValue] = useState({ value: "chocolate" });
+  const filterParams = useContext(FilterParamsContext);
+  const changeHandler =
+    filterLabel === "Wilaya" ? filterParams.setWilaya : filterParams.setCinema;
 
   function FilterList() {
     const newList = new Set();
     if (filterLabel === "Wilaya") {
-      roomsList.forEach((room) => {
-        newList.add({ value: room.wilaya, label: room.wilaya });
-      });
-      return Array.from(newList);
+      return [
+        { value: "alger", label: "Alger" },
+        { value: "constantine", label: "Constantine" },
+        { value: "oran", label: "Oran" },
+      ];
     }
     roomsList.forEach((room) => {
       newList.add({ value: room.id, label: room.title });
@@ -26,12 +30,10 @@ export default function Filter(props) {
     return Array.from(newList);
   }
 
-  console.log(Array.from(FilterList()));
-
   return (
     <div className="filter">
       <span className="filter-label">{filterLabel}</span>
-      <Select onChange={setValue} options={FilterList()} />
+      <Select onChange={changeHandler} options={FilterList()} />
     </div>
   );
 }
