@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function EventsMap(props) {
-  return <></>;
+  return <div className="events-map"></div>;
 }
