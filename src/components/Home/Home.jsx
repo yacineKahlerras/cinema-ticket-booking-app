@@ -6,20 +6,12 @@ import { roomsList } from "../../data";
 export const FilterParamsContext = createContext();
 
 export default function Home() {
-  const [wilaya, setWilaya] = useState("all");
-  const [cinema, setCinema] = useState("all");
+  const [wilaya, setWilaya] = useState({ value: "all", label: "All" });
+  const [cinema, setCinema] = useState({ value: "all", label: "All" });
 
   useEffect(() => {
-    setCinema("all");
+    setCinema({ value: "all", label: "All" });
   }, [wilaya]);
-
-  useEffect(() => {
-    roomsList.forEach((room) => {
-      if (room.id === cinema.value) {
-        setWilaya("all");
-      }
-    });
-  }, [cinema]);
 
   const filterParams = {
     wilaya: wilaya,

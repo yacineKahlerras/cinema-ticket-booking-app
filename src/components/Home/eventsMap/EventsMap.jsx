@@ -9,7 +9,7 @@ export default function EventsMap() {
   const elements = roomsList.map((room) => {
     // if it doesnt match the the wilaya then return nothing
     if (
-      filterParams.wilaya != "all" &&
+      filterParams.wilaya.value != "all" &&
       filterParams.wilaya.value != room.wilaya
     )
       return;

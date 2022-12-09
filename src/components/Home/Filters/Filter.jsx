@@ -15,14 +15,21 @@ export default function Filter(props) {
     const newList = new Set();
     if (filterLabel === "Wilaya") {
       return [
+        { value: "all", label: "All" },
         { value: "alger", label: "Alger" },
         { value: "constantine", label: "Constantine" },
         { value: "oran", label: "Oran" },
       ];
     }
-    roomsList.forEach((room) => {
-      newList.add({ value: room.id, label: room.title });
-    });
+
+    for (let i = 0; i < roomsList.length; i++) {
+      if (
+        filterParams.wilaya.value != "all" &&
+        filterParams.wilaya.value != roomsList[i].wilaya
+      )
+        continue;
+      newList.add({ value: roomsList[i].id, label: roomsList[i].title });
+    }
     return Array.from(newList);
   }
 
