@@ -8,6 +8,8 @@ export default function Filter(props) {
   const filterParams = useContext(FilterParamsContext);
   const changeHandler =
     filterLabel === "Wilaya" ? filterParams.setWilaya : filterParams.setCinema;
+  const selectValue =
+    filterLabel === "Wilaya" ? filterParams.wilaya : filterParams.cinema;
 
   function FilterList() {
     const newList = new Set();
@@ -27,7 +29,11 @@ export default function Filter(props) {
   return (
     <div className="filter">
       <span className="filter-label">{filterLabel}</span>
-      <Select onChange={changeHandler} options={FilterList()} />
+      <Select
+        value={selectValue}
+        onChange={changeHandler}
+        options={FilterList()}
+      />
     </div>
   );
 }
