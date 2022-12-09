@@ -8,7 +8,7 @@ export default function EventElement(props) {
   } = props;
   const { movieId, roomId, subRoomId } = props;
   const searchParams = `roomId=${roomId}&movieId=${movieId}${
-    subRoomId !== null ? `&subRoomId=${subRoomId}` : ""
+    subRoomId !== undefined ? `&subRoomId=${subRoomId}` : ""
   }`;
 
   return (
