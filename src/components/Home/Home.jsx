@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import EventsMap from "./eventsMap/EventsMap";
 import FilterSection from "./Filters/FilterSection";
 
 export const FilterParamsContext = createContext();
@@ -18,6 +19,7 @@ export default function Home() {
     <FilterParamsContext.Provider value={filterParams}>
       <div className="home-container">
         <FilterSection />
+        <EventsMap />
       </div>
     </FilterParamsContext.Provider>
   );

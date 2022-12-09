@@ -2,17 +2,19 @@ import React from "react";
 import { posterLink } from "../../../data";
 
 export default function EventElement(props) {
-  const { imgSrc, title, language, date, time } = props;
+  const {
+    movie: { poster, title, langue, date, time },
+  } = props;
 
   return (
     <div className="event-element-container">
       <div className="poster-container">
-        <img src={`${posterLink}${imgSrc}`} alt={title} />
+        <img src={`${posterLink}${poster}`} alt={title} />
       </div>
       <div className="text-info-container">
         <div>
           <h2>{title}</h2>
-          <span className="language-text">{language}</span>
+          <span className="language-text">{langue}</span>
         </div>
         <div>
           <span>{date}</span>
