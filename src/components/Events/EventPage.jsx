@@ -15,6 +15,9 @@ export default function EventPage() {
       <div className="poster-container">
         <img src="" alt="" />
       </div>
+      <div className="text-side-container">
+        <h1>title</h1>
+      </div>
     </div>
   );
 }
