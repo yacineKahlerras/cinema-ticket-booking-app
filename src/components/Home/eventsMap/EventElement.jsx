@@ -6,9 +6,10 @@ export default function EventElement(props) {
   const {
     movie: { poster, title, langue, date, time },
   } = props;
+  const { movieId, roomId } = props;
 
   return (
-    <Link to={`/EventPage/?roomId=&movieId=`}>
+    <Link to={`/EventPage/?roomId=${roomId}&movieId=${movieId}`}>
       <div className="event-element-container">
         <div className="poster-container">
           <img src={`${posterLink}${poster}`} alt={title} />
