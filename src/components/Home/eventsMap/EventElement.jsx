@@ -6,10 +6,13 @@ export default function EventElement(props) {
   const {
     movie: { poster, title, langue, date, time },
   } = props;
-  const { movieId, roomId } = props;
+  const { movieId, roomId, subRoomId } = props;
+  const searchParams = `roomId=${roomId}&movieId=${movieId}${
+    subRoomId !== null ? `&subRoomId=${subRoomId}` : ""
+  }`;
 
   return (
-    <Link to={`/EventPage/?roomId=${roomId}&movieId=${movieId}`}>
+    <Link to={`/EventPage/?${searchParams}`}>
       <div className="event-element-container">
         <div className="poster-container">
           <img src={`${posterLink}${poster}`} alt={title} />

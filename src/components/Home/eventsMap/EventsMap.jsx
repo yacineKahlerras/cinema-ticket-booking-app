@@ -21,14 +21,15 @@ export default function EventsMap() {
 
     // if it has subrooms
     if (room.subRooms) {
-      const subroomMovies = room.subRooms.map((subroom) => {
-        const movies = subroom.movies.map((movie, index) => {
+      const subroomMovies = room.subRooms.map((subroom, subRoomIndex) => {
+        const movies = subroom.movies.map((movie, movieIndex) => {
           return (
             <EventElement
               key={movie.title}
               movie={movie}
               roomId={room.id}
-              movieId={index}
+              subRoomId={subRoomIndex}
+              movieId={movieIndex}
             />
           );
         });
