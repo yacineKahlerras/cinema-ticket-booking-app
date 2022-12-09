@@ -9,8 +9,8 @@ export default function EventsMap() {
   const elements = roomsList.map((room) => {
     // if it doesnt match the the wilaya then return nothing
     if (
-      filterParams.cinema.value != "all" &&
-      filterParams.cinema.value != room.title
+      filterParams.cinema.label.toLowerCase() != "all" &&
+      filterParams.cinema.label != room.title
     )
       return;
     if (

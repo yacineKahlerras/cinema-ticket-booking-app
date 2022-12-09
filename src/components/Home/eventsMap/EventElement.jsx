@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { posterLink } from "../../../data";
 
 export default function EventElement(props) {
@@ -7,20 +8,22 @@ export default function EventElement(props) {
   } = props;
 
   return (
-    <div className="event-element-container">
-      <div className="poster-container">
-        <img src={`${posterLink}${poster}`} alt={title} />
-      </div>
-      <div className="text-info-container">
-        <div>
-          <h2>{title}</h2>
-          <span className="language-text">{langue}</span>
+    <Link to={`/EventPage/?roomId=&movieId=`}>
+      <div className="event-element-container">
+        <div className="poster-container">
+          <img src={`${posterLink}${poster}`} alt={title} />
         </div>
-        <div>
-          <span>{date}</span>
-          <span>{time}</span>
+        <div className="text-info-container">
+          <div>
+            <h2>{title}</h2>
+            <span className="language-text">{langue}</span>
+          </div>
+          <div>
+            <span>{date}</span>
+            <span>{time}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
