@@ -12,7 +12,9 @@ export default function EventPage() {
 
   return (
     <div className="event-page-container">
-      <div className="poster-container"></div>
+      <div className="poster-container">
+        <img src="" alt="" />
+      </div>
     </div>
   );
 }
