@@ -14,7 +14,10 @@ export default function SeatPicker() {
 
   return (
     <div className="seat-map-container">
-      {seatElements(gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats))}
+      {seatElements(
+        gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats),
+        setBookedSeats
+      )}
     </div>
   );
 }

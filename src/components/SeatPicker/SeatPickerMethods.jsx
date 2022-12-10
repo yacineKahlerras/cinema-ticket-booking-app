@@ -30,7 +30,7 @@ export function gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats) {
 /** creates div rows that contain seat buttons based on
  * the seats array map
  */
-export function seatElements(gridInfo) {
+export function seatElements(gridInfo, setBookedSeats) {
   const seatMap = gridInfo.map((row, rowIndex) => {
     return (
       <div key={rowIndex} className="row-seats">
@@ -40,6 +40,7 @@ export function seatElements(gridInfo) {
               key={`${rowIndex}${columnIndex}`}
               seatInfo={individualSeat}
               gridPosition={{ rowIndex, columnIndex }}
+              setBookedSeats={setBookedSeats}
             />
           );
         })}
