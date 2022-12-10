@@ -16,13 +16,17 @@ export default function SeatPicker() {
     { col: 1, row: 1 },
     { col: 3, row: 3 },
   ];
-  const rowInfoArray = Array(gridInfo.columns).fill({ booked: false });
-  const gridInfoArray = Array(gridInfo.rows).fill(rowInfoArray);
-  //   bookedSeats.forEach((bookedSeat) => {
-  //     gridInfoArray[bookedSeat.col][bookedSeat.row].booked = true;
-  //   });
+
+  const rowInfoArray = new Array(gridInfo.columns);
+  for (let i = 0; i < gridInfo.columns; i++) {
+    rowInfoArray[i] = { booked: false };
+  }
+  const gridInfoArray = new Array(gridInfo.rows);
+  for (let i = 0; i < gridInfo.rows; i++) {
+    gridInfoArray[i] = Array.from(rowInfoArray);
+  }
   gridInfoArray[0][0].booked = true;
-  console.log(gridInfoArray[0][0]);
+  console.log(gridInfoArray);
 
   return <h1></h1>;
 }
