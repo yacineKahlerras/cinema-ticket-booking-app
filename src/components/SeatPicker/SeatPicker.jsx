@@ -4,8 +4,8 @@ import { gridInfoGenerator, seatElements } from "./SeatPickerMethods";
 export default function SeatPicker() {
   const [bookedSeats, setBookedSeats] = useState([]);
   const gridInfo = {
-    columns: 4,
-    rows: 4,
+    columns: 8,
+    rows: 8,
   };
   const unavailableSeats = [
     { row: 0, col: 0 },
