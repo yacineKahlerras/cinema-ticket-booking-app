@@ -23,7 +23,7 @@ export default function SeatPicker() {
   }
   const gridInfoArray = new Array(gridInfo.rows);
   for (let i = 0; i < gridInfo.rows; i++) {
-    gridInfoArray[i] = Array.from(rowInfoArray);
+    gridInfoArray[i] = JSON.parse(JSON.stringify(rowInfoArray));
   }
   gridInfoArray[0][0].booked = true;
   console.log(gridInfoArray);
