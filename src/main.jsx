@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
 import EventPage from "./components/Events/EventPage";
 import SeatPicker from "./components/SeatPicker/SeatPicker";
+import RegisterPage from "./components/Register/RegisterPage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "SeatPicker",
         element: <SeatPicker />,
+      },
+      {
+        path: "Register",
+        element: <RegisterPage />,
       },
     ],
   },

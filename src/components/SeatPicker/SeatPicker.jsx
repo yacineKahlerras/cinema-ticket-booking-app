@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { gridInfoGenerator, seatElements } from "./SeatPickerMethods";
 
 export default function SeatPicker() {
@@ -24,7 +25,9 @@ export default function SeatPicker() {
       ) : (
         ""
       )}
-      <button>Buy Tickets</button>
+      <Link to="/Register" state={{ mama: "lalalala" }}>
+        Buy Ticket
+      </Link>
     </div>
   );
 }
