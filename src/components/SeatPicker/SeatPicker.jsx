@@ -14,10 +14,17 @@ export default function SeatPicker() {
 
   return (
     <div className="seat-map-container">
+      <h1>screen</h1>
       {seatElements(
         gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats),
         setBookedSeats
       )}
+      {bookedSeats.length > 0 ? (
+        <h2>You selected {bookedSeats.length} tickets</h2>
+      ) : (
+        ""
+      )}
+      <button>Buy Tickets</button>
     </div>
   );
 }
