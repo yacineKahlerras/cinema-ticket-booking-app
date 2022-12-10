@@ -3,17 +3,26 @@ import Seat from "./Seat";
 /** generates an array of rows that contains an object the seat's
  * state booked = true/false
  */
-export function gridInfoGenerator(gridInfo, bookedSeats) {
+export function gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats) {
   const rowInfoArray = new Array(gridInfo.columns);
   for (let i = 0; i < gridInfo.columns; i++) {
-    rowInfoArray[i] = { booked: false };
+    rowInfoArray[i] = { booked: false, available: true };
   }
   const gridInfoArray = new Array(gridInfo.rows);
   for (let i = 0; i < gridInfo.rows; i++) {
     gridInfoArray[i] = JSON.parse(JSON.stringify(rowInfoArray));
   }
+  for (let i = 0; i < unavailableSeats.length; i++) {
+    gridInfoArray[unavailableSeats[i].row][unavailableSeats[i].col] = {
+      ...gridInfoArray[unavailableSeats[i].row][unavailableSeats[i].col],
+      available: false,
+    };
+  }
   for (let i = 0; i < bookedSeats.length; i++) {
-    gridInfoArray[bookedSeats[i].row][bookedSeats[i].col].booked = true;
+    gridInfoArray[bookedSeats[i].row][bookedSeats[i].col] = {
+      ...gridInfoArray[bookedSeats[i].row][bookedSeats[i].col],
+      booked: true,
+    };
   }
   return gridInfoArray;
 }
@@ -29,7 +38,8 @@ export function seatElements(gridInfo) {
           return (
             <Seat
               key={`${rowIndex}${columnIndex}`}
-              booked={individualSeat.booked}
+              seatInfo={individualSeat}
+              gridPosition={{ rowIndex, columnIndex }}
             />
           );
         })}

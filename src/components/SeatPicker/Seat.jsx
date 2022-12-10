@@ -1,7 +1,19 @@
 import React from "react";
 
 export default function Seat(props) {
-  const { booked } = props;
+  const {
+    seatInfo: { booked, available },
+    gridPosition: { rowIndex, columnIndex },
+  } = props;
 
-  return <button style={{ color: booked ? "red" : "inherit" }}>seat</button>;
+  function bookSeat() {}
+
+  return (
+    <button
+      style={{ color: !available ? "red" : booked ? "green" : "inherit" }}
+      onClick={bookSeat}
+    >
+      seat
+    </button>
+  );
 }
