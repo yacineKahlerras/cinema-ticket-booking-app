@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
 
 export default function EventPage() {
@@ -16,6 +16,9 @@ export default function EventPage() {
   const { poster, title, date, time, price, langue } = movie;
 
   const posterImgSrc = `${posterLink}${poster}`;
+  const seatPickerSearchParams = `/SeatPicker/?roomId=${roomId}${
+    hasSubRoom ? `subRoomId=${subRoomId}` : ""
+  }&movieId=${movieId}`;
 
   return (
     <div className="event-page-container">
@@ -29,7 +32,7 @@ export default function EventPage() {
         </p>
         <p>Language : {langue}</p>
         <p>price : {price}$</p>
-        <button>Book Ticket</button>
+        <Link to={seatPickerSearchParams}>Book Ticket</Link>
       </div>
     </div>
   );

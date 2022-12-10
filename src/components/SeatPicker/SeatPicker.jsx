@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
 
@@ -7,6 +7,30 @@ export default function SeatPicker() {
   const roomId = searchParams.get("roomId");
   const subRoomId = searchParams.get("subRoomId");
   const movieId = searchParams.get("movieId");
+  const [seats, setSeats] = useState();
+  const gridInfo = {
+    columns: 4,
+    rows: 4,
+  };
+  const bookedSeats = [
+    { col: 1, row: 1 },
+    { col: 3, row: 3 },
+  ];
+  const rowInfoArray = Array(gridInfo.columns).fill({ booked: false });
+  const gridInfoArray = Array(gridInfo.rows).fill(rowInfoArray);
+  //   bookedSeats.forEach((bookedSeat) => {
+  //     gridInfoArray[bookedSeat.col][bookedSeat.row].booked = true;
+  //   });
+  gridInfoArray[0][0].booked = true;
+  console.log(gridInfoArray[0][0]);
 
-  return <></>;
+  return <h1></h1>;
 }
+
+/**
+ * create an object {col, row, booked}
+ * make an array with the number of columns
+ * add that same array to another with the number of columns
+ * with a list of already booked seats change the 'booked' value
+ * based on that list make row divs and add them with a number of columns on to objects
+ */

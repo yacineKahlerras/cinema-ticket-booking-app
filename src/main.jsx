@@ -4,6 +4,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import EventPage from "./components/Events/EventPage";
+import SeatPicker from "./components/SeatPicker/SeatPicker";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "EventPage",
         element: <EventPage />,
+      },
+      {
+        path: "SeatPicker",
+        element: <SeatPicker />,
       },
     ],
   },
