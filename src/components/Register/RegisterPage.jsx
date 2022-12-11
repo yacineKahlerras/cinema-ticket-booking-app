@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { roomsList, posterLink } from "../../data";
+import { roomsList } from "../../data";
 
 export default function RegisterPage(props) {
   const { bookedSeats } = props;

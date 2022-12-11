@@ -12,7 +12,7 @@ import SeatPicker from "./components/SeatPicker/SeatPicker";
 import RegisterPage from "./components/Register/RegisterPage";
 import PaymentPage from "./components/Payment/PaymentPage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
