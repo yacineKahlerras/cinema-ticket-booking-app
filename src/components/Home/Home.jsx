@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import EventsMap from "./eventsMap/EventsMap";
 import FilterSection from "./Filters/FilterSection";
-import { roomsList } from "../../data";
 
 export const FilterParamsContext = createContext();
 
