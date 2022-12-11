@@ -34,7 +34,7 @@ export default function SeatPicker() {
           ) : (
             ""
           )}
-          <button onClick={GoToBuyPage}>Buy Ticket</button>
+          <button onClick={GoToBuyPage}>Continue</button>
         </div>
       ) : (
         <RegisterPage bookedSeats={bookedSeats} />
