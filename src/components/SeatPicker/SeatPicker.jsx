@@ -15,7 +15,6 @@ export default function SeatPicker() {
   ];
 
   function GoToBuyPage() {
-    console.log("haaaaa");
     if (bookedSeats.length < 1) return;
     setGoBuyPage(true);
   }

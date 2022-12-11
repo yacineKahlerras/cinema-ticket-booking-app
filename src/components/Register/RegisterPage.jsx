@@ -53,7 +53,9 @@ export default function RegisterPage(props) {
       </div>
 
       {/* continue button */}
-      <button>continue</button>
+      <Link to="/Payment" state={"haaaaaaa"}>
+        Continue
+      </Link>
     </div>
   );
 }
