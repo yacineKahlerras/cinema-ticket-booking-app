@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { posterLink } from "../../../data";
+import { DateDecontructor } from "./EventMothods";
 
 export default function EventElement(props) {
   const {
@@ -11,6 +12,8 @@ export default function EventElement(props) {
     subRoomId !== undefined ? `&subRoomId=${subRoomId}` : ""
   }`;
 
+  const dateDecontructed = DateDecontructor(date);
+
   return (
     <Link to={`/EventPage/?${searchParams}`}>
       <div className="event-element-container">
@@ -18,12 +21,13 @@ export default function EventElement(props) {
           <img src={`${posterLink}${poster}`} alt={title} />
         </div>
         <div className="text-info-container">
-          <div>
-            <span>{date}</span>
-            <span>{time}</span>
-            <span className="language-text">{langue}</span>
+          <div className="top-text-info">
+            <span>
+              the {dateDecontructed.day}/{dateDecontructed.month} at {time}{" "}
+              {langue}
+            </span>
           </div>
-          <div>
+          <div className="bottom-text-info">
             <h2>{title}</h2>
           </div>
         </div>

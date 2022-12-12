@@ -20,6 +20,14 @@
     .text-info-container {
       h2 {
         text-transform: capitalize;
+        color: $violet2;
+      }
+
+      .top-text-info {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        font-weight: 600;
       }
     }
   }
