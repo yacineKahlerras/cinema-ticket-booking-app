@@ -5,6 +5,7 @@ $grayColor: var(--gray-color);
 $white: var(--white);
 $red: var(--red);
 $redLight: var(--red-light);
+$yellow1: var(--yellow-1);
 
 :root {
   --background: rgb(255, 255, 255);
@@ -16,4 +17,5 @@ $redLight: var(--red-light);
   --white: white;
   --red: rgb(248, 68, 100);
   --red-light: rgb(249 80 112);
+  --yellow-1: #f3993e;
 }
