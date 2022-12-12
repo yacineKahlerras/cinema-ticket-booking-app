@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavRoomsDropdown from "./NavRoomsDropdown";
 import Sidemenu from "./Sidemenu";
+import logo from "../../assets/logo.png";
 
 export default function Nav() {
   const [sidemenuActive, setSidemenuActive] = useState(false);
@@ -14,7 +15,9 @@ export default function Nav() {
     <nav>
       <div className="nav-center">
         {/* logo */}
-        <div className="logo"></div>
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
 
         {/* nav links */}
         <ul className="nav-links">
@@ -26,6 +29,9 @@ export default function Nav() {
           </li>
           <li>
             <Link to={"/"}>About Us</Link>
+          </li>
+          <li>
+            <button className="sign-up-btn">sign up</button>
           </li>
         </ul>
 

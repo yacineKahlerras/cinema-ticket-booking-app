@@ -24,7 +24,7 @@ aside {
   .sidemenu-center {
     width: min(90%, 30rem);
     height: fit-content;
-    background: $componentColors;
+    background: $violet1;
     text-align: center;
     padding: 3rem 0;
     border-radius: 1.5em;
@@ -46,7 +46,7 @@ aside {
 
         a:hover,
         button:hover {
-          color: $darkBlue1;
+          color: $red;
         }
 
         .sidemenu-dropdown {

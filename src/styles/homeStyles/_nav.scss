@@ -2,21 +2,14 @@
 
 nav {
   width: 100%;
-  color: $grayColor;
-  font-weight: 600;
+  color: $white;
+  font-weight: 400;
   display: grid;
   place-items: center;
-  background: $componentColors;
+  background: $violet1;
   padding: 2rem 0rem;
   box-shadow: 0 0 5rem 2rem rgba(0, 0, 0, 0.02);
   margin-bottom: 5rem;
-
-  @include desktop {
-    width: min(100%, 89rem);
-    border-radius: 2em;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
 
   .nav-center {
     width: min(80%, 100rem);
@@ -25,7 +18,11 @@ nav {
     align-items: center;
 
     @include desktop {
-      justify-content: start;
+      justify-content: space-around;
+    }
+
+    .logo {
+      max-width: 10rem;
     }
 
     .nav-links {
@@ -33,19 +30,15 @@ nav {
 
       @include desktop {
         max-width: 51.7rem;
-        margin: 0 auto;
         display: flex;
         justify-content: space-around;
+        align-items: center;
         gap: 2rem;
         width: 100%;
       }
 
       li {
-        transition: 0.5s;
-
-        &:hover {
-          color: $darkBlue1;
-        }
+        transition: 0.2s;
 
         a {
           display: flex;
@@ -53,6 +46,22 @@ nav {
           gap: 1rem;
           text-decoration: none;
           color: inherit;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+
+      .sign-up-btn {
+        background: $red;
+        color: $white;
+        padding: 0.3em 1.2em;
+        border-radius: 0.3em;
+        text-transform: capitalize;
+
+        &:hover {
+          background: $redLight;
         }
       }
     }

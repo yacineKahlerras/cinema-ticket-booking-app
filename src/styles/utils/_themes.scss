@@ -1,13 +1,19 @@
 $background: var(--background);
-$componentColors: var(--component-colors);
+$violet1: var(--violet-1);
+$violet2: var(--violet-2);
 $grayColor: var(--gray-color);
-$mediumBlue: var(--medium-blue);
-$darkBlue1: var(--dark-blue-1);
+$white: var(--white);
+$red: var(--red);
+$redLight: var(--red-light);
 
 :root {
-  --background: #e7f5ff;
+  --background: rgb(255, 255, 255);
   --medium-blue: #f8fcff;
   --dark-blue-1: #3184c3;
-  --component-colors: #ffffff;
-  --gray-color: #4d4d4d;
+  --violet-1: rgb(51, 53, 69);
+  --violet-2: rgb(34, 37, 57);
+  --gray-color: rgb(51, 51, 51);
+  --white: white;
+  --red: rgb(248, 68, 100);
+  --red-light: rgb(249 80 112);
 }
