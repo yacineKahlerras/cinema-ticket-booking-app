@@ -19,12 +19,12 @@ export default function EventElement(props) {
         </div>
         <div className="text-info-container">
           <div>
-            <h2>{title}</h2>
+            <span>{date}</span>
+            <span>{time}</span>
             <span className="language-text">{langue}</span>
           </div>
           <div>
-            <span>{date}</span>
-            <span>{time}</span>
+            <h2>{title}</h2>
           </div>
         </div>
       </div>

@@ -9,6 +9,11 @@
   color: $grayColor;
   font-weight: 400;
   text-transform: capitalize;
+  margin-bottom: 5.2rem;
+
+  @include tablet {
+    flex-direction: row;
+  }
 
   .filter {
     width: 100%;

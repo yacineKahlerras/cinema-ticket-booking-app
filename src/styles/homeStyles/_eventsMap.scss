@@ -1,0 +1,26 @@
+@use "../utils/" as *;
+
+.events-map {
+  width: 100%;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 25.8rem));
+  justify-content: center;
+  gap: 3rem 2rem;
+
+  .event-element-container {
+    color: $grayColor;
+
+    .poster-container {
+      img {
+        border-radius: 3.4rem;
+      }
+    }
+
+    .text-info-container {
+      h2 {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

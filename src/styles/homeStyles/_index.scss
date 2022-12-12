@@ -3,9 +3,10 @@
 @forward "roomsDropdown";
 @forward "sidemenu";
 @forward "./filters/filters";
+@forward "./eventsMap";
 
 .home-container {
-  width: 100%;
+  width: min(100%, 100rem);
   display: flex;
   flex-direction: column;
   align-items: center;
