@@ -52,5 +52,11 @@ export default function EventsMap() {
     return [...roomMovies];
   });
 
-  return <div className="events-map">{elements}</div>;
+  console.log(elements);
+
+  return (
+    <div className="events-map">
+      {elements[0] ? elements : <h1>Sorry no events available for now</h1>}
+    </div>
+  );
 }

@@ -22,6 +22,7 @@ export default function Filter(props) {
       ];
     }
 
+    newList.add({ value: "all", label: "All" });
     for (let i = 0; i < roomsList.length; i++) {
       if (
         filterParams.wilaya.value != "all" &&
