@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidemenu(props) {
@@ -9,8 +9,20 @@ export default function Sidemenu(props) {
     setShowRooms(!showRooms);
   }
 
+  useEffect(() => {
+    document
+      .querySelector(".sidemenu-container")
+      .addEventListener("click", (e) => {
+        if (e.target.classList.contains("sidemenu-container")) {
+          setSidemenuActive(false);
+        }
+      });
+  }, []);
+
   return (
-    <aside className={`${!sidemenuActive ? "hide-sidemenu" : ""}`}>
+    <aside
+      className={`sidemenu-container ${!sidemenuActive ? "hide-sidemenu" : ""}`}
+    >
       <div className="sidemenu-center">
         <ul className="sidemenu-links">
           <li>

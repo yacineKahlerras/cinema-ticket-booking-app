@@ -12,7 +12,7 @@ export default function Nav() {
   }
 
   return (
-    <nav>
+    <nav className={`${!sidemenuActive ? "hidden-sidemenu" : ""}`}>
       <div className="nav-center">
         {/* logo */}
         <div className="logo">

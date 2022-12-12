@@ -13,7 +13,7 @@ aside {
   transition: 1s;
 
   &.hide-sidemenu {
-    z-index: -1;
+    z-index: -10;
     opacity: 0;
 
     .sidemenu-center {
@@ -41,7 +41,7 @@ aside {
         transition: 0.5s;
 
         &:not(:first-of-type) {
-          border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+          border-top: 0.1rem solid $violet2;
         }
 
         a:hover,
