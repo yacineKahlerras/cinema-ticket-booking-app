@@ -6,6 +6,8 @@ import {
   LanguageDecontructor,
 } from "../Home/eventsMap/EventMothods";
 
+import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+
 export default function EventPage() {
   const [searchParams] = useSearchParams();
   const roomId = searchParams.get("roomId");
@@ -28,9 +30,12 @@ export default function EventPage() {
 
   return (
     <div className="event-page-container">
+      {/* poster */}
       <div className="poster-container">
         <img src={posterImgSrc} alt="poster" />
       </div>
+
+      {/* movie info */}
       <div className="text-side-container">
         <h1>{title}</h1>
         <div className="info-element">
@@ -53,10 +58,13 @@ export default function EventPage() {
           <p className="info-element-value">{price}$</p>
         </div>
 
+        {/* book ticket button */}
         <Link className="book-ticket-btn" to={seatPickerSearchParams}>
           book ticket
         </Link>
       </div>
+
+      {/* movie synopsis */}
       <div className="synopsis">
         <h2>Synopsis</h2>
         <p>
@@ -66,6 +74,26 @@ export default function EventPage() {
           they go to keep each other safe, the battles they fight to stay alive
           and the tragedies they endure.
         </p>
+      </div>
+
+      {/* cinema location map */}
+      <div className="synopsis room-location-container">
+        <h2>Location</h2>
+        <MapContainer
+          center={[51.505, -0.09]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[51.505, -0.09]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer>
       </div>
     </div>
   );
