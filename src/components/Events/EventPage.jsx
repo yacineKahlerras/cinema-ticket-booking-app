@@ -34,17 +34,17 @@ export default function EventPage() {
       <div className="text-side-container">
         <h1>{title}</h1>
         <div className="info-element">
-          <span className="ingo-element-label">Date : </span>
+          <span className="info-element-label">Date : </span>
           <p className="info-element-value">
             {date} a {time}
           </p>
         </div>
         <div className="info-element">
-          <span className="ingo-element-label">Language : </span>
+          <span className="info-element-label">Language : </span>
           <p className="info-element-value">{deconstructedLanguage}</p>
         </div>
         <div className="info-element">
-          <span className="ingo-element-label">Price : </span>
+          <span className="info-element-label">Price : </span>
           <p className="info-element-value">{price}$</p>
         </div>
         <Link className="book-ticket-btn" to={seatPickerSearchParams}>

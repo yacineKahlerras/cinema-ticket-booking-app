@@ -24,7 +24,11 @@
       display: flex;
       gap: 1rem;
       text-transform: capitalize;
-      font-weight: 500;
+      font-weight: 400;
+
+      .info-element-label {
+        font-weight: 500;
+      }
     }
 
     .book-ticket-btn {
