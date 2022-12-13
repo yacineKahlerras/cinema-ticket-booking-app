@@ -5,10 +5,6 @@ import {
   DateDecontructor,
   LanguageDecontructor,
 } from "../Home/eventsMap/EventMothods";
-
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
-import "leaflet/dist/leaflet.css";
 import LeafeletMap from "./LeafeletMap";
 
 export default function EventPage() {
@@ -68,18 +64,18 @@ export default function EventPage() {
         <Link className="book-ticket-btn" to={seatPickerSearchParams}>
           book ticket
         </Link>
-      </div>
 
-      {/* movie synopsis */}
-      <div className="synopsis">
-        <h2>Synopsis</h2>
-        <p>
-          Set more than a decade after the events of the first film, "Avatar The
-          Way of Water" begins to tell the story of the Sully family (Jake,
-          Neytiri and their kids), the trouble that follows them, the lengths
-          they go to keep each other safe, the battles they fight to stay alive
-          and the tragedies they endure.
-        </p>
+        {/* movie synopsis */}
+        <div className="synopsis">
+          <h2>Synopsis</h2>
+          <p>
+            Set more than a decade after the events of the first film, "Avatar
+            The Way of Water" begins to tell the story of the Sully family
+            (Jake, Neytiri and their kids), the trouble that follows them, the
+            lengths they go to keep each other safe, the battles they fight to
+            stay alive and the tragedies they endure.
+          </p>
+        </div>
       </div>
 
       {/* cinema location map */}
