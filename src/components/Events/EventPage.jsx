@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
 import {
@@ -29,6 +29,11 @@ export default function EventPage() {
   }&movieId=${movieId}`;
   const decontructedDate = DateDecontructor(date);
   const deconstructedLanguage = LanguageDecontructor(langue);
+
+  // scrolls to top of page on start
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="event-page-container">
