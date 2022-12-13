@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { roomsList } from "../../../data";
 import { FilterParamsContext } from "../Home";
 import EventElement from "./EventElement";
+import NoEventError from "./NoEventsError";
 
 export default function EventsMap() {
   const filterParams = useContext(FilterParamsContext);
+  let hasMovies = false;
 
   const elements = roomsList.map((room) => {
     // if it doesnt match the the wilaya then return nothing
@@ -33,6 +35,7 @@ export default function EventsMap() {
             />
           );
         });
+        if (subroom.movies.length > 0) hasMovies = true;
         return [...movies];
       });
       return [...subroomMovies];
@@ -49,14 +52,11 @@ export default function EventsMap() {
         />
       );
     });
+    if (room.movies.length > 0) hasMovies = true;
     return [...roomMovies];
   });
 
-  console.log(elements);
-
   return (
-    <div className="events-map">
-      {elements[0] ? elements : <h1>Sorry no events available for now</h1>}
-    </div>
+    <div className="events-map">{hasMovies ? elements : <NoEventError />}</div>
   );
 }

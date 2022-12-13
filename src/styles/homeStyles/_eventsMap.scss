@@ -7,6 +7,7 @@
   grid-template-columns: repeat(auto-fit, minmax(20rem, 25.8rem));
   justify-content: center;
   gap: 3rem 2rem;
+  position: relative;
 
   .event-element-link {
     .event-element-container {
@@ -76,5 +77,16 @@
         }
       }
     }
+  }
+
+  .no-events-container {
+    width: min(90%, 50rem);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
