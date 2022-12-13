@@ -7,7 +7,6 @@ export default function App() {
     <main>
       <Nav />
       <Outlet />
-      <div id="map"></div>
     </main>
   );
 }

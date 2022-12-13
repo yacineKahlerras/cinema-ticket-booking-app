@@ -6,7 +6,10 @@ import {
   LanguageDecontructor,
 } from "../Home/eventsMap/EventMothods";
 
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
+import "leaflet/dist/leaflet.css";
+import LeafeletMap from "./LeafeletMap";
 
 export default function EventPage() {
   const [searchParams] = useSearchParams();
@@ -27,6 +30,9 @@ export default function EventPage() {
   }&movieId=${movieId}`;
   const decontructedDate = DateDecontructor(date);
   const deconstructedLanguage = LanguageDecontructor(langue);
+
+  // Berlin coordinates
+  const position = [52.51, 13.38];
 
   return (
     <div className="event-page-container">
@@ -79,21 +85,7 @@ export default function EventPage() {
       {/* cinema location map */}
       <div className="synopsis room-location-container">
         <h2>Location</h2>
-        <MapContainer
-          center={[51.505, -0.09]}
-          zoom={13}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[51.505, -0.09]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer>
+        <LeafeletMap />
       </div>
     </div>
   );
