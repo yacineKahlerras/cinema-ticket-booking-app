@@ -47,6 +47,10 @@
       .info-element-label {
         font-weight: 500;
       }
+      .info-element-value {
+        font-weight: 700;
+        color: $violet1;
+      }
     }
 
     .book-ticket-btn {
@@ -75,5 +79,14 @@
   .room-location-container {
     width: 100%;
     grid-column: 1 / span 2;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    .leaflet-container {
+      border-radius: 1rem;
+      overflow: hidden;
+    }
   }
 }
