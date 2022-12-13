@@ -2,9 +2,23 @@
  * { weekday: weekday, day: day, month: month }
  */
 export function DateDecontructor(originalText) {
-  const weekday = originalText.slice(0, 3);
+  let weekday = originalText.slice(0, 3);
   const day = originalText.slice(4, 6);
   const month = originalText.slice(7, 9);
+
+  const daysOfWeek = [
+    { label: "dim", value: "dimanche" },
+    { label: "lun", value: "lundi" },
+    { label: "mar", value: "mardi" },
+    { label: "mer", value: "mercredi" },
+    { label: "jeu", value: "jeudi" },
+    { label: "ven", value: "vendredi" },
+    { label: "sam", value: "samedi" },
+  ];
+
+  for (let i = 0; i < daysOfWeek.length; i++) {
+    if (weekday == daysOfWeek[i].label) weekday = daysOfWeek[i].value;
+  }
 
   return { weekday: weekday, day: day, month: month };
 }

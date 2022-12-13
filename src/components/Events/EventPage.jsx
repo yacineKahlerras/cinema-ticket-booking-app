@@ -1,6 +1,10 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
+import {
+  DateDecontructor,
+  LanguageDecontructor,
+} from "../Home/eventsMap/EventMothods";
 
 export default function EventPage() {
   const [searchParams] = useSearchParams();
@@ -19,20 +23,33 @@ export default function EventPage() {
   const seatPickerSearchParams = `/SeatPicker/?roomId=${roomId}${
     hasSubRoom ? `subRoomId=${subRoomId}` : ""
   }&movieId=${movieId}`;
+  const decontructedDate = DateDecontructor(date);
+  const deconstructedLanguage = LanguageDecontructor(langue);
 
   return (
     <div className="event-page-container">
       <div className="poster-container">
-        <img src={posterImgSrc} alt="" />
+        <img src={posterImgSrc} alt="poster" />
       </div>
       <div className="text-side-container">
         <h1>{title}</h1>
-        <p>
-          {date} a {time}
-        </p>
-        <p>Language : {langue}</p>
-        <p>price : {price}$</p>
-        <Link to={seatPickerSearchParams}>Book Ticket</Link>
+        <div className="info-element">
+          <span className="ingo-element-label">Date : </span>
+          <p className="info-element-value">
+            {date} a {time}
+          </p>
+        </div>
+        <div className="info-element">
+          <span className="ingo-element-label">Language : </span>
+          <p className="info-element-value">{deconstructedLanguage}</p>
+        </div>
+        <div className="info-element">
+          <span className="ingo-element-label">Price : </span>
+          <p className="info-element-value">{price}$</p>
+        </div>
+        <Link className="book-ticket-btn" to={seatPickerSearchParams}>
+          book ticket
+        </Link>
       </div>
     </div>
   );
