@@ -19,7 +19,7 @@ export default function LeafeletMap(props) {
       <MapContainer
         center={position}
         Icon={Icon}
-        zoom={3}
+        zoom={4}
         scrollWheelZoom={true}
       >
         <TileLayer
