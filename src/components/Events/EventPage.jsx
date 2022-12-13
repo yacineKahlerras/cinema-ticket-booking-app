@@ -12,11 +12,13 @@ import "leaflet/dist/leaflet.css";
 import LeafeletMap from "./LeafeletMap";
 
 export default function EventPage() {
+  // link search params
   const [searchParams] = useSearchParams();
   const roomId = searchParams.get("roomId");
   const subRoomId = searchParams.get("subRoomId");
   const movieId = searchParams.get("movieId");
 
+  // room and movie infos
   const room = roomsList.filter((room) => room.id == roomId)[0];
   const hasSubRoom = subRoomId !== null;
   const movie = hasSubRoom
@@ -24,15 +26,13 @@ export default function EventPage() {
     : room.movies[parseInt(movieId)];
   const { poster, title, date, time, price, langue } = movie;
 
+  // movie info data handeling
   const posterImgSrc = `${posterLink}${poster}`;
   const seatPickerSearchParams = `/SeatPicker/?roomId=${roomId}${
     hasSubRoom ? `subRoomId=${subRoomId}` : ""
   }&movieId=${movieId}`;
   const decontructedDate = DateDecontructor(date);
   const deconstructedLanguage = LanguageDecontructor(langue);
-
-  // Berlin coordinates
-  const position = [52.51, 13.38];
 
   return (
     <div className="event-page-container">
