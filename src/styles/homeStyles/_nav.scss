@@ -10,13 +10,12 @@ nav {
   padding: 2rem 0rem;
   box-shadow: 0 0 5rem 2rem rgba(0, 0, 0, 0.02);
   margin-bottom: 5rem;
-  z-index: 1;
 
-  &.hidden-sidemenu {
-    z-index: 0;
-    transition-delay: 1s;
-    transition-property: z-index;
-  }
+  // &.hidden-sidemenu {
+  //   z-index: 0;
+  //   transition-delay: 1s;
+  //   transition-property: z-index;
+  // }
 
   .nav-center {
     width: min(80%, 100rem);

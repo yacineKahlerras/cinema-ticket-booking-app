@@ -11,6 +11,7 @@ aside {
   justify-content: center;
   align-items: center;
   transition: 1s;
+  z-index: 10;
 
   &.hide-sidemenu {
     z-index: -10;
