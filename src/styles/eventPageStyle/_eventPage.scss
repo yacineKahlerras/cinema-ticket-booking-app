@@ -6,6 +6,7 @@
   .poster-container {
     border-radius: 1rem;
     overflow: hidden;
+    margin-bottom: 2rem;
   }
 
   .text-side-container {
@@ -42,6 +43,15 @@
       &:hover {
         background: $redLight;
       }
+    }
+  }
+
+  .synopsis {
+    padding-left: 1rem;
+
+    h2 {
+      color: $violet1;
+      margin-bottom: 1rem;
     }
   }
 }

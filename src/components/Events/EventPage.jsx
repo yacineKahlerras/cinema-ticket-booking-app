@@ -34,9 +34,14 @@ export default function EventPage() {
       <div className="text-side-container">
         <h1>{title}</h1>
         <div className="info-element">
+          <span className="info-element-label">Cinema : </span>
+          <p className="info-element-value">{room.title}</p>
+        </div>
+        <div className="info-element">
           <span className="info-element-label">Date : </span>
           <p className="info-element-value">
-            {date} a {time}
+            {decontructedDate.weekday} le {decontructedDate.day}-
+            {decontructedDate.month} a {time}
           </p>
         </div>
         <div className="info-element">
@@ -47,9 +52,20 @@ export default function EventPage() {
           <span className="info-element-label">Price : </span>
           <p className="info-element-value">{price}$</p>
         </div>
+
         <Link className="book-ticket-btn" to={seatPickerSearchParams}>
           book ticket
         </Link>
+      </div>
+      <div className="synopsis">
+        <h2>Synopsis</h2>
+        <p>
+          Set more than a decade after the events of the first film, "Avatar The
+          Way of Water" begins to tell the story of the Sully family (Jake,
+          Neytiri and their kids), the trouble that follows them, the lengths
+          they go to keep each other safe, the battles they fight to stay alive
+          and the tragedies they endure.
+        </p>
       </div>
     </div>
   );
