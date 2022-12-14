@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import RegisterPage from "../Register/RegisterPage";
 import SeatInfoBar from "./SeatInfoBar";
 import { gridInfoGenerator, seatElements } from "./SeatPickerMethods";
+import TicketNumberInfo from "./TicketNumberInfo";
 
 export default function SeatPicker() {
   const [bookedSeats, setBookedSeats] = useState([]);
@@ -37,15 +39,14 @@ export default function SeatPicker() {
           )}
 
           <SeatInfoBar />
+          <TicketNumberInfo bookedSeats={bookedSeats} />
 
-          {bookedSeats.length > 0 ? (
-            <h2>You selected {bookedSeats.length} tickets</h2>
-          ) : (
-            ""
-          )}
           <button className="continue-btn" onClick={GoToBuyPage}>
             Continue
           </button>
+          <Link to={`/Register`} state={bookedSeats}>
+            Continue
+          </Link>
         </div>
       ) : (
         <RegisterPage bookedSeats={bookedSeats} />

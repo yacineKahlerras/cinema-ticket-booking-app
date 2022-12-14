@@ -118,4 +118,38 @@ $seatHeight: var(--seat-height);
       }
     }
   }
+
+  //   ticket number info
+  .ticket-number-info-container {
+    width: min(80%, 30rem);
+    text-align: center;
+    background: $violet2;
+    color: $white;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 1rem 0;
+
+    --decoration-size: 3rem;
+    --decoration-position: -2.4rem;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: var(--decoration-size);
+      height: var(--decoration-size);
+      background: $white;
+      border-radius: 50%;
+    }
+
+    &::after {
+      right: var(--decoration-position);
+    }
+    &::before {
+      left: var(--decoration-position);
+    }
+  }
 }
