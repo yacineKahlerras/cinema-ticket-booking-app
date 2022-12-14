@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RegisterPage from "../Register/RegisterPage";
+import SeatInfoBar from "./SeatInfoBar";
 import { gridInfoGenerator, seatElements } from "./SeatPickerMethods";
 
 export default function SeatPicker() {
@@ -50,21 +51,5 @@ export default function SeatPicker() {
         <RegisterPage bookedSeats={bookedSeats} />
       )}
     </>
-  );
-}
-
-function SeatInfoBar() {
-  return (
-    <div className="seat-info-bar-container">
-      <div className="info-bar">
-        <span className="info-bar-state taken">taken</span>
-      </div>
-      <div className="info-bar">
-        <span className="info-bar-state selected">selected</span>
-      </div>
-      <div className="info-bar">
-        <span className="info-bar-state available">available</span>
-      </div>
-    </div>
   );
 }
