@@ -34,6 +34,9 @@ export default function SeatPicker() {
             gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats),
             setBookedSeats
           )}
+
+          <SeatInfoBar />
+
           {bookedSeats.length > 0 ? (
             <h2>You selected {bookedSeats.length} tickets</h2>
           ) : (
@@ -47,5 +50,21 @@ export default function SeatPicker() {
         <RegisterPage bookedSeats={bookedSeats} />
       )}
     </>
+  );
+}
+
+function SeatInfoBar() {
+  return (
+    <div className="seat-info-bar-container">
+      <div className="info-bar">
+        <span className="info-bar-state taken">taken</span>
+      </div>
+      <div className="info-bar">
+        <span className="info-bar-state selected">selected</span>
+      </div>
+      <div className="info-bar">
+        <span className="info-bar-state available">available</span>
+      </div>
+    </div>
   );
 }

@@ -72,7 +72,7 @@ $seatHeight: var(--seat-height);
     text-align: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
 
     h1 {
       width: 30rem;
@@ -81,6 +81,41 @@ $seatHeight: var(--seat-height);
       border-bottom: 0.5rem solid $violet2;
       border-bottom-left-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
+    }
+  }
+
+  //   info bar
+  .seat-info-bar-container {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+
+    .info-bar-state {
+      position: relative;
+      padding-left: 3rem;
+      text-transform: capitalize;
+
+      &::after {
+        --size: 2rem;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        background-color: $violet1;
+      }
+
+      &.taken::after {
+        background-color: $grayColor2;
+      }
+      &.selected::after {
+        background-color: $red;
+      }
     }
   }
 }
