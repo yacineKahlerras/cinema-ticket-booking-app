@@ -41,11 +41,15 @@ $seatHeight: var(--seat-height);
       border-radius: 0.3em;
 
       &.unavailable-seat {
-        background-color: $red;
+        background-color: $grayColor2;
+
+        &:hover {
+          cursor: auto;
+        }
       }
 
       &.booked-seat {
-        background-color: blue;
+        background-color: $red;
       }
 
       &::after {
