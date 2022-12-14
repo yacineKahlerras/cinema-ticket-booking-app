@@ -8,9 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./components/Home/Home";
 import EventPage from "./components/Events/EventPage";
-import SeatPicker from "./components/SeatPicker/SeatPicker";
-import RegisterPage from "./components/Register/RegisterPage";
-import PaymentPage from "./components/Payment/PaymentPage";
+import TicketBooking from "./components/TicketBookingPage/TicketBooking";
 
 const router = createHashRouter([
   {
@@ -26,16 +24,8 @@ const router = createHashRouter([
         element: <EventPage />,
       },
       {
-        path: "SeatPicker",
-        element: <SeatPicker />,
-      },
-      {
-        path: "Register",
-        element: <RegisterPage />,
-      },
-      {
-        path: "Payment",
-        element: <PaymentPage />,
+        path: "TicketBooking",
+        element: <TicketBooking />,
       },
     ],
   },

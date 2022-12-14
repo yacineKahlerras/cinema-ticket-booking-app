@@ -24,7 +24,7 @@ export default function EventPage() {
 
   // movie info data handeling
   const posterImgSrc = `${posterLink}${poster}`;
-  const seatPickerSearchParams = `/SeatPicker/?roomId=${roomId}${
+  const seatPickerSearchParams = `/TicketBooking/?roomId=${roomId}${
     hasSubRoom ? `subRoomId=${subRoomId}` : ""
   }&movieId=${movieId}`;
   const decontructedDate = DateDecontructor(date);
