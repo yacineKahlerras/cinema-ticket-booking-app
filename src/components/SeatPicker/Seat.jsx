@@ -26,10 +26,10 @@ export default function Seat(props) {
 
   return (
     <button
-      style={{ color: !available ? "red" : booked ? "blue" : "inherit" }}
       onClick={bookSeat}
-    >
-      seat
-    </button>
+      className={`individual-seat ${
+        !available ? "unavailable-seat" : booked ? "booked-seat" : ""
+      }`}
+    ></button>
   );
 }

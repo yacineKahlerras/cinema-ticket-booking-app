@@ -1,0 +1,64 @@
+@use "../utils/" as *;
+
+:root {
+  --seat-width: 3rem;
+  --seat-height: 2rem;
+}
+
+$seatWidth: var(--seat-width);
+$seatHeight: var(--seat-height);
+
+.seat-map-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //   continue button
+  .continue-btn {
+    background: $red;
+    padding: 0.3em 1.2em;
+    color: $white;
+    border-radius: 0.3em;
+
+    &:hover {
+      background: $redLight;
+    }
+  }
+
+  //   row seats
+  .row-seats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .individual-seat {
+      width: $seatWidth;
+      height: $seatHeight;
+      background: $violet1;
+      color: $white;
+      position: relative;
+      border-radius: 0.3em;
+
+      &.unavailable-seat {
+        background-color: $red;
+      }
+
+      &.booked-seat {
+        background-color: blue;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        width: calc(var(--seat-width) * 0.66);
+        height: calc(var(--seat-height) / 2);
+        background: inherit;
+        transform: translateX(-50%);
+        border-radius: 0.2em;
+      }
+    }
+  }
+}

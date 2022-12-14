@@ -1,6 +1,7 @@
 @use "utils/" as *;
 @use "homeStyles/" as *;
 @use "eventPageStyle/" as *;
+@use "seatPickerStyles/" as *;
 
 main {
   background: $background;

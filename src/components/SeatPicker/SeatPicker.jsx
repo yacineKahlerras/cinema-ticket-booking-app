@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import RegisterPage from "../Register/RegisterPage";
 import { gridInfoGenerator, seatElements } from "./SeatPickerMethods";
 
@@ -7,7 +6,7 @@ export default function SeatPicker() {
   const [bookedSeats, setBookedSeats] = useState([]);
   const [goBuyPage, setGoBuyPage] = useState(false);
   const gridInfo = {
-    columns: 8,
+    columns: 10,
     rows: 8,
   };
   const unavailableSeats = [
@@ -34,7 +33,9 @@ export default function SeatPicker() {
           ) : (
             ""
           )}
-          <button onClick={GoToBuyPage}>Continue</button>
+          <button className="continue-btn" onClick={GoToBuyPage}>
+            Continue
+          </button>
         </div>
       ) : (
         <RegisterPage bookedSeats={bookedSeats} />
