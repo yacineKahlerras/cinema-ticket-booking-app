@@ -12,6 +12,9 @@ export default function SeatPicker() {
   const unavailableSeats = [
     { row: 0, col: 0 },
     { row: 2, col: 3 },
+    { row: 2, col: 4 },
+    { row: 5, col: 0 },
+    { row: 5, col: 6 },
   ];
 
   function GoToBuyPage() {
@@ -23,7 +26,10 @@ export default function SeatPicker() {
     <>
       {!goBuyPage ? (
         <div className="seat-map-container">
-          <h1>screen</h1>
+          <div className="screen-container">
+            <h1>screen</h1>
+          </div>
+
           {seatElements(
             gridInfoGenerator(gridInfo, unavailableSeats, bookedSeats),
             setBookedSeats

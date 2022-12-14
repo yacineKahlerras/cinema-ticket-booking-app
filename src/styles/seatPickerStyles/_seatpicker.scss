@@ -65,4 +65,22 @@ $seatHeight: var(--seat-height);
       }
     }
   }
+
+  //   screen element
+  .screen-container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+    h1 {
+      width: 30rem;
+      font-size: 1.4rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.5rem solid $violet2;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
 }
