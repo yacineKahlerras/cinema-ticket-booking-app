@@ -37,6 +37,10 @@
           text-transform: uppercase;
         }
 
+        p {
+          text-transform: capitalize;
+        }
+
         .stars-container {
           width: 100%;
           display: flex;

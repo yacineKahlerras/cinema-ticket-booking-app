@@ -1,10 +1,12 @@
 import React from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { useLocation } from "react-router-dom";
+import { DateDecontructor } from "../Home/eventsMap/EventMothods";
 
 export default function PaymentDonePage(props) {
   const location = useLocation();
-  const { title, date, roomTitle } = location.state;
+  const { title, date, roomTitle, eventTime } = location.state;
+  const tempDate = DateDecontructor(date);
 
   return (
     <div className="payment-completed-container">
@@ -66,7 +68,10 @@ export default function PaymentDonePage(props) {
               </svg>
             </div>
             <h3>Cinema {roomTitle}</h3>
-            <p>Saturday August 2022 a 14h</p>
+            <p>
+              {tempDate.weekday} le {tempDate.day}-{tempDate.month} a{" "}
+              {eventTime}
+            </p>
           </div>
         </div>
 
