@@ -40,6 +40,7 @@ export default function PaymentPage(props) {
         <div>
           <label>card number</label>
           <input type="text" />
+          <small></small>
         </div>
         <div>
           <label>expiry date</label>

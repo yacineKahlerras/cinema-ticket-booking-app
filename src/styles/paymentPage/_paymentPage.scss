@@ -48,10 +48,11 @@
       input {
         outline: none;
         border: 0.2rem solid $grayColor3;
-        border-radius: 0.5rem;
+        border-radius: 1.2em;
         padding: 0.5em 0.5em;
         font-size: 1.6rem;
         font-weight: 500;
+        transition: 0.5s;
 
         &:focus,
         &:active {
