@@ -3,6 +3,7 @@
 @use "eventPageStyle/" as *;
 @use "seatPickerStyles/" as *;
 @use "registerPageStyles/" as *;
+@use "./paymentPage/" as *;
 
 main {
   background: $background;
