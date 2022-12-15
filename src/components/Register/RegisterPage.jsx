@@ -21,24 +21,28 @@ export default function RegisterPage(props) {
       {/* payment info */}
       <div className="payment-info">
         <div>
-          <span>unit cost</span>
-          <span>{price}Da</span>
+          <span className="payment-info-label">unit cost</span>
+          <span className="payment-info-value">{price}Da</span>
         </div>
         <div>
-          <span>ticket count</span>
-          <span>{bookedSeats.length}</span>
+          <span className="payment-info-label">ticket count</span>
+          <span className="payment-info-value">{bookedSeats.length}</span>
         </div>
         <div>
-          <span>subtotal</span>
-          <span>{bookedSeats.length * price}Da</span>
+          <span className="payment-info-label">subtotal</span>
+          <span className="payment-info-value">
+            {bookedSeats.length * price}Da
+          </span>
         </div>
         <div>
-          <span>additional fees</span>
-          <span>0$</span>
+          <span className="payment-info-label">additional fees</span>
+          <span className="payment-info-value">0$</span>
         </div>
         <div>
-          <span>Total ammount</span>
-          <span>{bookedSeats.length * price}Da</span>
+          <span className="payment-info-label">Total ammount</span>
+          <span className="payment-info-value">
+            {bookedSeats.length * price}Da
+          </span>
         </div>
       </div>
 

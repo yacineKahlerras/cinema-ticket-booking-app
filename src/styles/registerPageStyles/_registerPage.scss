@@ -1,0 +1,48 @@
+@use "../utils/" as *;
+
+.payment-form-container {
+  width: min(80%, 40rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //   payment info
+  .payment-info {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+
+      .payment-info-label {
+        color: $grayColor2;
+        text-transform: capitalize;
+      }
+      .payment-info-value {
+        color: $violet2;
+        text-transform: capitalize;
+        font-weight: 600;
+      }
+
+      &:last-of-type {
+        border-top: 0.2rem dashed $grayColor3;
+        padding-top: 1.5rem;
+      }
+    }
+  }
+
+  //   payment method selector
+  .payment-method-container {
+    width: 100%;
+
+    h1 {
+      color: $violet1;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 1.8rem;
+    }
+  }
+}
