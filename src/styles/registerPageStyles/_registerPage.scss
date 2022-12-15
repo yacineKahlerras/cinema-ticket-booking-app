@@ -45,4 +45,13 @@
       margin-bottom: 1.8rem;
     }
   }
+
+  //   continue button
+  button {
+    color: $white;
+    background: $red;
+    font-weight: 400;
+    padding: 0.5em 1.5em;
+    border-radius: 0.3em;
+  }
 }

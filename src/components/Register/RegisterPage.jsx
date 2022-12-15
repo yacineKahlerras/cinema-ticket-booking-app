@@ -1,6 +1,7 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
+import FilterGeneric from "../Home/Filters/FilterGeneric";
 
 export default function RegisterPage(props) {
   const { bookedSeats, goNextPage, goPreviousPage } = props;
@@ -15,6 +16,12 @@ export default function RegisterPage(props) {
     ? room.subRooms[subRoomId].movies[movieId]
     : room.movies[parseInt(movieId)];
   const { poster, title, date, time, price, langue } = movie;
+
+  // payment method options
+  const paymentOptions = [
+    { value: "paypal", label: "Paypal" },
+    { value: "societeGenerale", label: "Societé Generale" },
+  ];
 
   return (
     <div className="payment-form-container">
@@ -49,11 +56,12 @@ export default function RegisterPage(props) {
       {/* payment method */}
       <div className="payment-method-container">
         <h1>Payment Method</h1>
-        <ul>
-          <li>Baridi Mob</li>
-          <li>Paypal</li>
-          <li>Socité generale</li>
-        </ul>
+        <FilterGeneric
+          filterLabel=""
+          options={paymentOptions}
+          changeHandler={() => {}}
+          selectValue=""
+        />
       </div>
 
       {/* continue button */}
