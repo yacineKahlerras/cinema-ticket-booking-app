@@ -38,8 +38,6 @@ export default function RegisterPage(props) {
     goNextPage();
   }
 
-  console.log(paymentMethod.value);
-
   return (
     <div className="payment-form-container">
       {/* payment info */}

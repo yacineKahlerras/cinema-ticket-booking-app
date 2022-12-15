@@ -38,7 +38,14 @@ export default function TicketBooking() {
         );
 
       case "payment":
-        return <PaymentPage />;
+        return (
+          <PaymentPage
+            bookedSeats={bookedSeats}
+            goNextPage={() => GotToPage("register")}
+            goPreviousPage={() => GotToPage("register")}
+            paymentMethod={paymentMethod}
+          />
+        );
 
       default:
         return (

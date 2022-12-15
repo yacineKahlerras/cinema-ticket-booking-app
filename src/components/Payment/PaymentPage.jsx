@@ -1,10 +1,17 @@
 import React from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { roomsList, posterLink } from "../../data";
 
 export default function PaymentPage(props) {
-  const location = useLocation();
-  console.log(location);
+  const { bookedSeats, goNextPage, goPreviousPage, paymentMethod } = props;
 
-  return <>yeeeeeee</>;
+  return (
+    <div className="payment-page-container">
+      {/* continue button */}
+      <div className="booking-navigation-buttons">
+        <button className="back-btn" onClick={goPreviousPage}>
+          Back
+        </button>
+        <button onClick={goPreviousPage}>Continue</button>
+      </div>
+    </div>
+  );
 }
