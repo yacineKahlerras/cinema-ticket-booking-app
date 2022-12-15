@@ -2,7 +2,7 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 
-export default function PaymentPage(props) {
+export default function PaymentDonePage(props) {
   const { bookedSeats, goNextPage, goPreviousPage, paymentMethod } = props;
 
   // getting search params
@@ -43,6 +43,7 @@ export default function PaymentPage(props) {
             type="password"
             placeholder="ex : 4870 1012 6523 948"
             defaultValue="4870 1012 6523 948"
+            onChange={""}
           />
           <small></small>
         </div>
@@ -53,6 +54,7 @@ export default function PaymentPage(props) {
             maxLength={5}
             placeholder="ex : 08-23"
             defaultValue="08-23"
+            onChange={""}
           />
         </div>
         <div>
@@ -63,6 +65,7 @@ export default function PaymentPage(props) {
             max="3"
             placeholder="ex : 368"
             defaultValue="368"
+            onChange={""}
           />
         </div>
       </form>
