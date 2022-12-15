@@ -20,6 +20,7 @@ export default function TicketBooking() {
   // getting movie info
   const room = roomsList.filter((room) => room.id == roomId)[0];
   const hasSubRoom = subRoomId !== null;
+  console.log(hasSubRoom);
   const movie = hasSubRoom
     ? room.subRooms[subRoomId].movies[movieId]
     : room.movies[parseInt(movieId)];
