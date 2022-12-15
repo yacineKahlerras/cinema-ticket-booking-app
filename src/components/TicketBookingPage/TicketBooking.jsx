@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PaymentDonePage from "../PaymenDonePage/PaymentDonePage";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
