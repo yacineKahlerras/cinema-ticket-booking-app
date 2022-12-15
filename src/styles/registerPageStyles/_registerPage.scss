@@ -54,14 +54,33 @@
       }
     }
   }
+}
 
-  //   continue button
+//   steps navigation buttons button
+.booking-navigation-buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 2rem;
+
   button {
     color: $white;
     background: $red;
     font-weight: 400;
     padding: 0.5em 1.5em;
     border-radius: 0.3em;
-    place-self: start;
+
+    &:hover {
+      background: $redLight;
+    }
+
+    &.back-btn {
+      background: $violet2;
+
+      &:hover {
+        background: $violet1;
+      }
+    }
   }
 }

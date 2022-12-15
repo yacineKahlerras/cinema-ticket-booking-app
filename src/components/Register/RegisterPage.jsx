@@ -65,7 +65,12 @@ export default function RegisterPage(props) {
       </div>
 
       {/* continue button */}
-      <button onClick={goNextPage}>Continue</button>
+      <div className="booking-navigation-buttons">
+        <button className="back-btn" onClick={goPreviousPage}>
+          Back
+        </button>
+        <button onClick={goNextPage}>Continue</button>
+      </div>
     </div>
   );
 }
