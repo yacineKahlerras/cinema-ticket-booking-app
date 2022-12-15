@@ -72,7 +72,7 @@ export default function PaymentPage(props) {
         <button className="back-btn" onClick={goPreviousPage}>
           Back
         </button>
-        <button onClick={goPreviousPage}>Continue</button>
+        <button onClick={goNextPage}>Continue</button>
       </div>
     </div>
   );

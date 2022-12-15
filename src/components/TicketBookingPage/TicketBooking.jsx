@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PaymentDonePage from "../PaymenDonePage/PaymentDonePage";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
@@ -41,11 +42,14 @@ export default function TicketBooking() {
         return (
           <PaymentPage
             bookedSeats={bookedSeats}
-            goNextPage={() => GotToPage("register")}
+            goNextPage={() => GotToPage("paymentCompleted")}
             goPreviousPage={() => GotToPage("register")}
             paymentMethod={paymentMethod}
           />
         );
+
+      case "paymentCompleted":
+        return <PaymentDonePage />;
 
       default:
         return (
