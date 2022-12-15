@@ -44,6 +44,15 @@
       font-size: 1.8rem;
       margin-bottom: 1.8rem;
     }
+
+    .filter-container {
+      margin-bottom: 3rem;
+
+      .filter {
+        gap: 0;
+        justify-content: start;
+      }
+    }
   }
 
   //   continue button
@@ -53,5 +62,6 @@
     font-weight: 400;
     padding: 0.5em 1.5em;
     border-radius: 0.3em;
+    place-self: start;
   }
 }
