@@ -17,7 +17,7 @@ export default function PaymentPage(props) {
   const movie = hasSubRoom
     ? room.subRooms[subRoomId].movies[movieId]
     : room.movies[parseInt(movieId)];
-  const { poster, price } = movie;
+  const { price, title, date, time } = movie;
 
   return (
     <div className="payment-page-container">
@@ -75,7 +75,7 @@ export default function PaymentPage(props) {
         <Link
           className="booking-btn"
           to="/PaymentCompleted"
-          state={{ poster: poster }}
+          state={{ title: title, date: date, roomTitle: room.title }}
         >
           Complete
         </Link>
