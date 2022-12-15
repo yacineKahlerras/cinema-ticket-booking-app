@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 import FilterGeneric from "../Home/Filters/FilterGeneric";
@@ -11,11 +11,14 @@ export default function RegisterPage(props) {
     setPaymentMethod,
     paymentMethod,
   } = props;
+
+  // getting search params
   const [searchParams] = useSearchParams();
   const roomId = searchParams.get("roomId");
   const subRoomId = searchParams.get("subRoomId");
   const movieId = searchParams.get("movieId");
 
+  // getting movie info
   const room = roomsList.filter((room) => room.id == roomId)[0];
   const hasSubRoom = subRoomId !== null;
   const movie = hasSubRoom
@@ -28,6 +31,14 @@ export default function RegisterPage(props) {
     { value: "paypal", label: "Paypal" },
     { value: "societeGenerale", label: "Societé Generale" },
   ];
+
+  // go to next page
+  function ContinueToNextPage() {
+    if (paymentMethod.value === undefined) return;
+    goNextPage();
+  }
+
+  console.log(paymentMethod.value);
 
   return (
     <div className="payment-form-container">
@@ -75,7 +86,7 @@ export default function RegisterPage(props) {
         <button className="back-btn" onClick={goPreviousPage}>
           Back
         </button>
-        <button onClick={goNextPage}>Continue</button>
+        <button onClick={ContinueToNextPage}>Continue</button>
       </div>
     </div>
   );

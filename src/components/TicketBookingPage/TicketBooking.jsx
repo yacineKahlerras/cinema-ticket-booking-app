@@ -5,7 +5,6 @@ import SeatPicker from "../SeatPicker/SeatPicker";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
-  const [goBuyPage, setGoBuyPage] = useState(false);
   const [bookingStep, setBookingStep] = useState("seatPicker");
   const [paymentMethod, setPaymentMethod] = useState("");
 
