@@ -97,7 +97,6 @@
         border-top-right-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
         position: relative;
-        overflow: hidden;
 
         &::after {
           --dots-size: 1rem;
