@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 
 export default function RegisterPage(props) {
-  const { bookedSeats } = props;
+  const { bookedSeats, goNextPage, goPreviousPage } = props;
   const [searchParams] = useSearchParams();
   const roomId = searchParams.get("roomId");
   const subRoomId = searchParams.get("subRoomId");
@@ -53,9 +53,7 @@ export default function RegisterPage(props) {
       </div>
 
       {/* continue button */}
-      <Link to="/Payment" state={"haaaaaaa"}>
-        Continue
-      </Link>
+      <button onClick={goNextPage}>Continue</button>
     </div>
   );
 }

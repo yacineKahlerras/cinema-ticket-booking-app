@@ -8,7 +8,7 @@ export default function SeatPicker(props) {
     gridInfo,
     unavailableSeats,
     bookedSeats,
-    GoToBuyPage,
+    goNextPage,
     setBookedSeats,
   } = props;
 
@@ -26,7 +26,7 @@ export default function SeatPicker(props) {
       <SeatInfoBar />
       <TicketNumberInfo bookedSeats={bookedSeats} />
 
-      <button className="continue-btn" onClick={GoToBuyPage}>
+      <button className="continue-btn" onClick={goNextPage}>
         Continue
       </button>
     </div>
