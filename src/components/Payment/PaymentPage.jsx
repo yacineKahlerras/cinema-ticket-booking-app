@@ -1,9 +1,9 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 
 export default function PaymentPage(props) {
-  const { bookedSeats, goNextPage, goPreviousPage, paymentMethod } = props;
+  const { bookedSeats, goPreviousPage, paymentMethod } = props;
 
   // getting search params
   const [searchParams] = useSearchParams();
@@ -17,7 +17,7 @@ export default function PaymentPage(props) {
   const movie = hasSubRoom
     ? room.subRooms[subRoomId].movies[movieId]
     : room.movies[parseInt(movieId)];
-  const { poster, title, date, time, price, langue } = movie;
+  const { poster, price } = movie;
 
   return (
     <div className="payment-page-container">
@@ -69,10 +69,16 @@ export default function PaymentPage(props) {
 
       {/* continue button */}
       <div className="booking-navigation-buttons">
-        <button className="back-btn" onClick={goPreviousPage}>
+        <button className="booking-btn back-btn" onClick={goPreviousPage}>
           Back
         </button>
-        <button onClick={goNextPage}>Continue</button>
+        <Link
+          className="booking-btn"
+          to="/PaymentCompleted"
+          state={{ poster: poster }}
+        >
+          Complete
+        </Link>
       </div>
     </div>
   );

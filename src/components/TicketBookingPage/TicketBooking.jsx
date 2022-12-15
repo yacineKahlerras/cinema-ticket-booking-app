@@ -59,14 +59,10 @@ export default function TicketBooking() {
         return (
           <PaymentPage
             bookedSeats={bookedSeats}
-            goNextPage={() => GotToPage("paymentCompleted")}
             goPreviousPage={() => GotToPage("register")}
             paymentMethod={paymentMethod}
           />
         );
-
-      case "paymentCompleted":
-        return <PaymentDonePage />;
 
       default:
         return (

@@ -9,6 +9,7 @@ import {
 import Home from "./components/Home/Home";
 import EventPage from "./components/Events/EventPage";
 import TicketBooking from "./components/TicketBookingPage/TicketBooking";
+import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
 
 const router = createHashRouter([
   {
@@ -26,6 +27,10 @@ const router = createHashRouter([
       {
         path: "TicketBooking",
         element: <TicketBooking />,
+      },
+      {
+        path: "PaymentCompleted",
+        element: <PaymentDonePage />,
       },
     ],
   },

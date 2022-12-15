@@ -4,6 +4,7 @@
 @use "seatPickerStyles/" as *;
 @use "registerPageStyles/" as *;
 @use "./paymentPage/" as *;
+@use "./paymentDonePage/" as *;
 
 main {
   background: $background;
