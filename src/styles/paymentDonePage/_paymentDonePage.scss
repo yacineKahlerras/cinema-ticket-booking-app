@@ -10,6 +10,7 @@
 
     h1 {
       margin-bottom: 1rem;
+      color: $violet2;
     }
 
     p {
@@ -35,6 +36,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: transparent;
 
     .ticket-container {
       display: grid;

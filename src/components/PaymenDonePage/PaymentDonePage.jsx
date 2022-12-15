@@ -34,12 +34,12 @@ export default function PaymentDonePage() {
     const element = ticketRef.current;
     const canvas = await html2canvas(element);
 
-    const data = canvas.toDataURL("image/jpg");
+    const data = canvas.toDataURL("image/png");
     const link = document.createElement("a");
 
     if (typeof link.download === "string") {
       link.href = data;
-      link.download = "image.jpg";
+      link.download = "image.png";
 
       document.body.appendChild(link);
       link.click();
