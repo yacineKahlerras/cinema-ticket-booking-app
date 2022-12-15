@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 import FilterGeneric from "../Home/Filters/FilterGeneric";
 
 export default function RegisterPage(props) {
-  const { bookedSeats, goNextPage, goPreviousPage } = props;
+  const {
+    bookedSeats,
+    goNextPage,
+    goPreviousPage,
+    setPaymentMethod,
+    paymentMethod,
+  } = props;
   const [searchParams] = useSearchParams();
   const roomId = searchParams.get("roomId");
   const subRoomId = searchParams.get("subRoomId");
@@ -59,8 +65,8 @@ export default function RegisterPage(props) {
         <FilterGeneric
           filterLabel=""
           options={paymentOptions}
-          changeHandler={() => {}}
-          selectValue=""
+          changeHandler={setPaymentMethod}
+          selectValue={paymentMethod}
         />
       </div>
 

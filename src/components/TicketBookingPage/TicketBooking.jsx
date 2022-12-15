@@ -7,6 +7,8 @@ export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
   const [goBuyPage, setGoBuyPage] = useState(false);
   const [bookingStep, setBookingStep] = useState("seatPicker");
+  const [paymentMethod, setPaymentMethod] = useState("");
+
   const gridInfo = {
     columns: 10,
     rows: 8,
@@ -31,6 +33,8 @@ export default function TicketBooking() {
             bookedSeats={bookedSeats}
             goNextPage={() => GotToPage("payment")}
             goPreviousPage={() => GotToPage("seatPicker")}
+            paymentMethod={paymentMethod}
+            setPaymentMethod={setPaymentMethod}
           />
         );
 
