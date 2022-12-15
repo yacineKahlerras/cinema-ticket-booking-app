@@ -29,25 +29,25 @@ export default function PaymentPage(props) {
             {bookedSeats.length * price}Da
           </span>
         </div>
+        <div>
+          <span className="payment-info-label">card name :</span>
+          <span className="payment-info-value">paypal</span>
+        </div>
       </div>
 
       {/* card info forms */}
       <form>
         <div>
-          <label>card name</label>
-          <span className="card-name">paypal</span>
-        </div>
-        <div>
           <label>card number</label>
-          <input type="number" />
+          <input type="text" />
         </div>
         <div>
           <label>expiry date</label>
-          <input type="number" maxLength={5} />
+          <input type="text" maxLength={5} />
         </div>
         <div>
           <label>ccv/cvv</label>
-          <input type="number" maxLength={3} max="3" />
+          <input type="text" maxLength={3} max="3" />
         </div>
       </form>
 
