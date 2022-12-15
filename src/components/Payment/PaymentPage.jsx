@@ -80,6 +80,7 @@ export default function PaymentPage(props) {
             date: date,
             roomTitle: room.title,
             eventTime: time,
+            bookedSeats: bookedSeats,
           }}
         >
           Complete

@@ -1,7 +1,12 @@
 @use "../utils/" as *;
 
 .payment-completed-container {
-  width: min(80%, 50rem);
+  width: 80%;
+
+  .ticket-purchassing-information {
+    width: 100%;
+    text-align: center;
+  }
 
   .ticket-container {
     display: grid;
@@ -32,13 +37,10 @@
         }
 
         h2,
-        h3 {
+        h3,
+        p {
           max-width: 25.3rem;
           text-transform: uppercase;
-        }
-
-        p {
-          text-transform: capitalize;
         }
 
         .stars-container {
