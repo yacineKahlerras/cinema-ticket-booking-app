@@ -28,6 +28,8 @@ export default function PaymentDonePage() {
     );
   }
 
+  function HandleDownloadTickets() {}
+
   return (
     <div className="payment-completed-container">
       <div className="ticket-purchassing-information">
@@ -35,7 +37,8 @@ export default function PaymentDonePage() {
           Thanks for Purchassing the ticket{bookedSeats.length > 1 ? "s" : ""}
         </h1>
         <p>
-          you can download the tickets here : <button>Download</button>
+          you can download the tickets here :{" "}
+          <button onClick={HandleDownloadTickets}>Download</button>
         </p>
       </div>
 
