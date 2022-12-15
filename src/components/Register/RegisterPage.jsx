@@ -10,21 +10,8 @@ export default function RegisterPage(props) {
     goPreviousPage,
     setPaymentMethod,
     paymentMethod,
+    price,
   } = props;
-
-  // getting search params
-  const [searchParams] = useSearchParams();
-  const roomId = searchParams.get("roomId");
-  const subRoomId = searchParams.get("subRoomId");
-  const movieId = searchParams.get("movieId");
-
-  // getting movie info
-  const room = roomsList.filter((room) => room.id == roomId)[0];
-  const hasSubRoom = subRoomId !== null;
-  const movie = hasSubRoom
-    ? room.subRooms[subRoomId].movies[movieId]
-    : room.movies[parseInt(movieId)];
-  const { poster, title, date, time, price, langue } = movie;
 
   // payment method options
   const paymentOptions = [
