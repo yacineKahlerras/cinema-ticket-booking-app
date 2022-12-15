@@ -24,9 +24,9 @@ export default function PaymentPage(props) {
       {/* card payment info */}
       <div className="payment-info">
         <div>
-          <span className="payment-info-label">amount :</span>
+          <span className="payment-info-label">amount to pay :</span>
           <span className="payment-info-value">
-            {bookedSeats.length * price}$
+            {bookedSeats.length * price}Da
           </span>
         </div>
       </div>

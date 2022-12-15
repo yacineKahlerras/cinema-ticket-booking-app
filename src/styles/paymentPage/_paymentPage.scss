@@ -1,1 +1,27 @@
 @use "../utils/" as *;
+
+.payment-page-container {
+  width: min(90%, 40rem);
+
+  .payment-info {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 0.2rem dashed $grayColor3;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      text-transform: capitalize;
+
+      .payment-info-label {
+        color: $grayColor2;
+        font-weight: 500;
+      }
+
+      .payment-info-value {
+        color: $violet2;
+        font-weight: 600;
+      }
+    }
+  }
+}
