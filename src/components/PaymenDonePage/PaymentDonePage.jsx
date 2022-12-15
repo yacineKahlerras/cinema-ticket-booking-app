@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { DateDecontructor } from "../Home/eventsMap/EventMothods";
 import Ticket from "./Ticket";
@@ -7,10 +7,11 @@ export default function PaymentDonePage() {
   const location = useLocation();
   const { title, date, roomTitle, eventTime, bookedSeats } = location.state;
   const tempDate = DateDecontructor(date);
+  const ticketRef = useRef();
 
   function Tickets() {
     return (
-      <div className="tickets-group-container">
+      <div ref={ticketRef} className="tickets-group-container">
         {bookedSeats.map((seat, index) => {
           return (
             <Ticket
