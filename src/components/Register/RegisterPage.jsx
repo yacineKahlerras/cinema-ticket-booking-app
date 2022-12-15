@@ -58,7 +58,7 @@ export default function RegisterPage(props) {
         </div>
         <div>
           <span className="payment-info-label">additional fees</span>
-          <span className="payment-info-value">0$</span>
+          <span className="payment-info-value">0Da</span>
         </div>
         <div>
           <span className="payment-info-label">Total ammount</span>
@@ -75,7 +75,7 @@ export default function RegisterPage(props) {
           filterLabel=""
           options={paymentOptions}
           changeHandler={setPaymentMethod}
-          selectValue={paymentMethod}
+          paymentMethod={paymentMethod}
         />
       </div>
 

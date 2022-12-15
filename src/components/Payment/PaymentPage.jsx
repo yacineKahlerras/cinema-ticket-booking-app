@@ -31,7 +31,7 @@ export default function PaymentPage(props) {
         </div>
         <div>
           <span className="payment-info-label">card name :</span>
-          <span className="payment-info-value">paypal</span>
+          <span className="payment-info-value">{paymentMethod.label}</span>
         </div>
       </div>
 
@@ -39,16 +39,16 @@ export default function PaymentPage(props) {
       <form>
         <div>
           <label>card number</label>
-          <input type="text" />
+          <input type="text" placeholder="ex : 4870 1012 6523 948" />
           <small></small>
         </div>
         <div>
           <label>expiry date</label>
-          <input type="text" maxLength={5} />
+          <input type="text" maxLength={5} placeholder="ex : 08-23" />
         </div>
         <div>
           <label>ccv/cvv</label>
-          <input type="text" maxLength={3} max="3" />
+          <input type="text" maxLength={3} max="3" placeholder="ex : 368" />
         </div>
       </form>
 

@@ -58,6 +58,11 @@
         &:active {
           border-color: $violet1;
         }
+
+        &::placeholder {
+          color: $grayColor2;
+          opacity: 0.7;
+        }
       }
     }
   }
