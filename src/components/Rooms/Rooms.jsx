@@ -41,10 +41,3 @@ export default function Rooms() {
     </div>
   );
 }
-
-/**
- * we get list of rooms that we have if we dont have a room id
- * when i click on one of the rooms it gets me to thesame page but with a room id
- * i go to a link containing cinema info and the list of movies that it has
- * each movie is a link to an event page with search params
- */
