@@ -1,17 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import {
-  RouterProvider,
-  createHashRouter,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
 import EventPage from "./components/Events/EventPage";
 import TicketBooking from "./components/TicketBookingPage/TicketBooking";
 import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
 import Rooms from "./components/Rooms/Rooms";
-import Room from "./components/Rooms/Room";
+import Room, { RoomLoader } from "./components/Rooms/Room";
 
 const router = createHashRouter([
   {
@@ -41,6 +37,7 @@ const router = createHashRouter([
       {
         path: "Room/:roomId",
         element: <Room />,
+        loader: RoomLoader,
       },
     ],
   },
