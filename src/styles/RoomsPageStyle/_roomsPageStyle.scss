@@ -11,15 +11,19 @@
   .rooms-map {
     width: 100%;
     display: grid;
-    gap: 2rem;
+    gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 30rem));
     justify-content: center;
     align-items: center;
 
     .individiual-room-container {
-      box-shadow: 0rem 0rem 10rem 1rem rgb(0 0 0 / 15%);
+      box-shadow: 18px 20px 68px -3px rgba(0, 0, 0, 0.15);
+      -webkit-box-shadow: 18px 20px 68px -3px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 18px 20px 68px -3px rgba(0, 0, 0, 0.15);
       padding: 3rem 2rem;
       border-radius: 2rem;
+      color: $white;
+      background: $violet2;
 
       .room-location-container {
         width: 100%;
@@ -27,6 +31,11 @@
         align-items: center;
         gap: 1rem;
         margin-bottom: 1.5rem;
+        color: $yellow1;
+
+        svg {
+          fill: $yellow1;
+        }
       }
 
       .room-text-info-container {
