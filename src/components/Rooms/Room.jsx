@@ -18,8 +18,6 @@ export default function Room() {
     cinema: roomName,
   };
 
-  console.log(filterParams);
-
   return (
     <div className="room-container">
       <header>
