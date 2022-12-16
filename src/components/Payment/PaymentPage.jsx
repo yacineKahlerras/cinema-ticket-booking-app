@@ -24,13 +24,13 @@ export default function PaymentPage(props) {
       {/* card payment info */}
       <div className="payment-info">
         <div>
-          <span className="payment-info-label">amount to pay :</span>
+          <span className="payment-info-label">montant à payer :</span>
           <span className="payment-info-value">
             {bookedSeats.length * price}Da
           </span>
         </div>
         <div>
-          <span className="payment-info-label">card name :</span>
+          <span className="payment-info-label">nom de carte :</span>
           <span className="payment-info-value">{paymentMethod.label}</span>
         </div>
       </div>
@@ -38,7 +38,7 @@ export default function PaymentPage(props) {
       {/* card info forms */}
       <form>
         <div>
-          <label>card number</label>
+          <label>numero de carte</label>
           <input
             type="password"
             placeholder="ex : 4870 1012 6523 948"
@@ -47,7 +47,7 @@ export default function PaymentPage(props) {
           <small></small>
         </div>
         <div>
-          <label>expiry date</label>
+          <label>date d'expiration</label>
           <input
             type="password"
             maxLength={5}
@@ -70,7 +70,7 @@ export default function PaymentPage(props) {
       {/* continue button */}
       <div className="booking-navigation-buttons">
         <button className="booking-btn back-btn" onClick={goPreviousPage}>
-          Back
+          Retour
         </button>
         <Link
           className="booking-btn"
@@ -83,7 +83,7 @@ export default function PaymentPage(props) {
             bookedSeats: bookedSeats,
           }}
         >
-          Complete
+          Confirmer
         </Link>
       </div>
     </div>

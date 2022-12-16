@@ -52,12 +52,10 @@ export default function PaymentDonePage() {
   return (
     <div className="payment-completed-container">
       <div className="ticket-purchassing-information">
-        <h1>
-          Thanks for Purchassing the ticket{bookedSeats.length > 1 ? "s" : ""}
-        </h1>
+        <h1>Merci d'avoir fait vos achats chez nous</h1>
         <p>
-          you can download the tickets here :{" "}
-          <button onClick={HandleDownloadTickets}>Download</button>
+          vous pouvez télécharger les billets ici :{" "}
+          <button onClick={HandleDownloadTickets}>Telecharger</button>
         </p>
       </div>
 
