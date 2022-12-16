@@ -1,13 +1,23 @@
 import React from "react";
 import { roomsList } from "../../data";
+import geoLogo from "../../assets/geo-alt-fill.svg";
 
 export default function Rooms() {
   const roomElements = roomsList.map((room) => {
     return (
       <div className="individiual-room-container">
-        {/* room poster */}
-        <div className="room-poster-container">
-          <img src="" alt="room poster" />
+        {/* room location */}
+        <div className="room-location-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-geo-alt-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+          </svg>
           <p className="wilaya-info">{room.wilaya}</p>
         </div>
 
