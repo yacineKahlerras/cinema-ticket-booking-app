@@ -21,9 +21,11 @@ export default function Room() {
   return (
     <div className="room-container">
       <header>
-        <h1>{roomName}</h1>
+        <h1>cinema {roomName}</h1>
         <LeafeletMap />
       </header>
+
+      <h2>Movies : </h2>
       <RoomEventsMap filterParams={filterParams} />
     </div>
   );
