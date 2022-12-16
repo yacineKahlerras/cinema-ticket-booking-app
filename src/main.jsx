@@ -11,6 +11,7 @@ import EventPage from "./components/Events/EventPage";
 import TicketBooking from "./components/TicketBookingPage/TicketBooking";
 import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
 import Rooms from "./components/Rooms/Rooms";
+import Room from "./components/Rooms/Room";
 
 const router = createHashRouter([
   {
@@ -36,6 +37,10 @@ const router = createHashRouter([
       {
         path: "Rooms",
         element: <Rooms />,
+      },
+      {
+        path: "Room/:roomId",
+        element: <Room />,
       },
     ],
   },

@@ -1,11 +1,16 @@
 import React from "react";
 import { roomsList } from "../../data";
 import geoLogo from "../../assets/geo-alt-fill.svg";
+import { Link } from "react-router-dom";
 
 export default function Rooms() {
   const roomElements = roomsList.map((room, index) => {
     return (
-      <div key={index} className="individiual-room-container">
+      <Link
+        to={`/Room/${room.id}`}
+        key={index}
+        className="individiual-room-container"
+      >
         {/* room location */}
         <div className="room-location-container">
           <svg
@@ -25,7 +30,7 @@ export default function Rooms() {
         <div className="room-text-info-container">
           <h2>cinema {room.title}</h2>
         </div>
-      </div>
+      </Link>
     );
   });
 
