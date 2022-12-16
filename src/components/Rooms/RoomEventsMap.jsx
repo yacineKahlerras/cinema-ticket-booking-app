@@ -9,15 +9,7 @@ export default function RoomEventsMap(props) {
 
   const elements = roomsList.map((room) => {
     // if it doesnt match the the wilaya then return nothing
-    if (
-      filterParams.cinema.toLowerCase() != "all" &&
-      filterParams.cinema != room.title
-    )
-      return;
-    if (
-      filterParams.wilaya.value != "all" &&
-      filterParams.wilaya.value != room.wilaya
-    )
+    if (filterParams.cinema != room.title || filterParams.wilaya != room.wilaya)
       return;
 
     // if it has subrooms
