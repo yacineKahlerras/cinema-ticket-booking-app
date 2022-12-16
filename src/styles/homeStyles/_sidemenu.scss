@@ -42,7 +42,7 @@ aside {
         transition: 0.5s;
 
         &:not(:first-of-type) {
-          border-top: 0.1rem solid $violet2;
+          border-top: 0.1rem solid rgba(0, 0, 0, 0.15);
         }
 
         a:hover,

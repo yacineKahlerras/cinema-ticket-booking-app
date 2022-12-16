@@ -79,6 +79,7 @@
   .room-location-container {
     width: 100%;
     grid-column: 1 / span 2;
+    z-index: 1;
 
     h2 {
       font-size: 3rem;

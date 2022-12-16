@@ -2,6 +2,7 @@
 
 .room-container {
   width: min(80%, 100rem);
+  z-index: 1;
 
   header {
     margin-bottom: 3rem;
