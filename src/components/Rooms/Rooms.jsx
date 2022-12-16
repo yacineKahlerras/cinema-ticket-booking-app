@@ -5,9 +5,15 @@ export default function Rooms() {
   const roomElements = roomsList.map((room) => {
     return (
       <div className="individiual-room-container">
-        <div className="room-poster-container"></div>
+        {/* room poster */}
+        <div className="room-poster-container">
+          <img src="" alt="room poster" />
+          <p className="wilaya-info">{room.wilaya}</p>
+        </div>
+
+        {/* text info */}
         <div className="room-text-info-container">
-          <h1>{room.title}</h1>
+          <h2>cinema {room.title}</h2>
         </div>
       </div>
     );
