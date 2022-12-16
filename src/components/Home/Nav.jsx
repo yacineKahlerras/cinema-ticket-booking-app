@@ -25,7 +25,7 @@ export default function Nav() {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <NavRoomsDropdown />
+            <Link to={"/Rooms"}>Rooms</Link>
           </li>
           <li>
             <Link to={"/"}>About Us</Link>
