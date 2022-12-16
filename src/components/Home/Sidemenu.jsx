@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function Sidemenu(props) {
   const { sidemenuActive, setSidemenuActive } = props;
-  const [showRooms, setShowRooms] = useState(false);
-
-  function ToggleShowRooms() {
-    setShowRooms(!showRooms);
-  }
 
   useEffect(() => {
     document
