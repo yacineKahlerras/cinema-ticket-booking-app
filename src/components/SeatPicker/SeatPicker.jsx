@@ -15,7 +15,7 @@ export default function SeatPicker(props) {
   return (
     <div className="seat-map-container">
       <div className="screen-container">
-        <h1>screen</h1>
+        <h1>ecran</h1>
       </div>
 
       {seatElements(
@@ -27,7 +27,7 @@ export default function SeatPicker(props) {
       <TicketNumberInfo bookedSeats={bookedSeats} />
 
       <button className="continue-btn" onClick={goNextPage}>
-        Continue
+        Continuer
       </button>
     </div>
   );

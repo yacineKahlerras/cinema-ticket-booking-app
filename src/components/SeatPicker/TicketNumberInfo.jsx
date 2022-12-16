@@ -5,10 +5,10 @@ export default function TicketNumberInfo(props) {
   const count = bookedSeats.length;
   let textInfo =
     count < 1
-      ? "no seats selected yet"
+      ? "pas encore de sièges sélectionnés"
       : count == 1
-      ? "1 x seat selected"
-      : `${count} x seats selected`;
+      ? "1 x siège sélectionnés"
+      : `${count} x sièges sélectionnés`;
 
   return (
     <div className="ticket-number-info-container">

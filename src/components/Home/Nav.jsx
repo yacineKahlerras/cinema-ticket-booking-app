@@ -22,16 +22,16 @@ export default function Nav() {
         {/* nav links */}
         <ul className="nav-links">
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"}>Accueil</Link>
           </li>
           <li>
-            <Link to={"/Rooms"}>Rooms</Link>
+            <Link to={"/Rooms"}>Cinemas</Link>
           </li>
           <li>
-            <Link to={"/About-Us"}>About Us</Link>
+            <Link to={"/About-Us"}>A Propos</Link>
           </li>
           <li>
-            <button className="sign-up-btn">sign up</button>
+            <button className="sign-up-btn">S'inscrire</button>
           </li>
         </ul>
 

@@ -29,13 +29,13 @@ export function DateDecontructor(originalText) {
 export function LanguageDecontructor(langue) {
   switch (langue) {
     case "eng":
-      return "english";
+      return "anglais";
     case "vf":
-      return "french";
+      return "francais";
     case "vostfr":
-      return "english with french subs";
+      return "anglais sous-titré";
 
     default:
-      return "english";
+      return "anglais";
   }
 }

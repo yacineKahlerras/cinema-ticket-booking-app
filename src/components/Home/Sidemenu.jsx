@@ -22,17 +22,17 @@ export default function Sidemenu(props) {
         <ul className="sidemenu-links">
           <li>
             <Link onClick={() => setSidemenuActive(false)} to={"/"}>
-              Home
+              Acceuil
             </Link>
           </li>
           <li>
             <Link onClick={() => setSidemenuActive(false)} to={"/Rooms"}>
-              Rooms
+              Cinemas
             </Link>
           </li>
           <li>
             <Link onClick={() => setSidemenuActive(false)} to={"/About-Us"}>
-              About Us
+              A Propos
             </Link>
           </li>
         </ul>

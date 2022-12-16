@@ -5,11 +5,11 @@ import FilterSection from "./Filters/FilterSection";
 export const FilterParamsContext = createContext();
 
 export default function Home() {
-  const [wilaya, setWilaya] = useState({ value: "all", label: "All" });
-  const [cinema, setCinema] = useState({ value: "all", label: "All" });
+  const [wilaya, setWilaya] = useState({ value: "all", label: "Tous" });
+  const [cinema, setCinema] = useState({ value: "all", label: "Tous" });
 
   useEffect(() => {
-    setCinema({ value: "all", label: "All" });
+    setCinema({ value: "all", label: "Tous" });
   }, [wilaya]);
 
   const filterParams = {

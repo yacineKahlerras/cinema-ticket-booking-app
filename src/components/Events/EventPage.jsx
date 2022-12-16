@@ -57,17 +57,17 @@ export default function EventPage() {
           </p>
         </div>
         <div className="info-element">
-          <span className="info-element-label">Language : </span>
+          <span className="info-element-label">Langue : </span>
           <p className="info-element-value">{deconstructedLanguage}</p>
         </div>
         <div className="info-element">
-          <span className="info-element-label">Price : </span>
+          <span className="info-element-label">Prix : </span>
           <p className="info-element-value">{price}$</p>
         </div>
 
         {/* book ticket button */}
         <Link className="book-ticket-btn" to={seatPickerSearchParams}>
-          book ticket
+          reserver ticket
         </Link>
 
         {/* movie synopsis */}
@@ -85,7 +85,7 @@ export default function EventPage() {
 
       {/* cinema location map */}
       <div className="synopsis room-location-container">
-        <h2>Location</h2>
+        <h2>Endroit</h2>
         <LeafeletMap />
       </div>
     </div>
