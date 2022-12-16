@@ -31,7 +31,7 @@ export default function Rooms() {
 
   return (
     <div className="rooms-container">
-      <h1>Rooms List : </h1>
+      <h1>Our Locations : </h1>
 
       <div className="rooms-map">{roomElements}</div>
     </div>

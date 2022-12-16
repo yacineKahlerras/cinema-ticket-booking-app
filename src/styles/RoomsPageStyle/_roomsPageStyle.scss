@@ -24,14 +24,23 @@
       border-radius: 2rem;
       color: $white;
       background: $violet2;
+      text-align: center;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        scale: 1.01;
+      }
 
       .room-location-container {
         width: 100%;
         display: flex;
         align-items: center;
+        justify-content: start;
         gap: 1rem;
         margin-bottom: 1.5rem;
         color: $yellow1;
+        text-transform: capitalize;
 
         svg {
           fill: $yellow1;
