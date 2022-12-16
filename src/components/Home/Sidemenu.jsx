@@ -31,7 +31,7 @@ export default function Sidemenu(props) {
             </Link>
           </li>
           <li>
-            <Link onClick={() => setSidemenuActive(false)} to={"/"}>
+            <Link onClick={() => setSidemenuActive(false)} to={"/About-Us"}>
               About Us
             </Link>
           </li>

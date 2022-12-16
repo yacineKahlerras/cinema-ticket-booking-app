@@ -8,6 +8,7 @@ import TicketBooking from "./components/TicketBookingPage/TicketBooking";
 import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
 import Rooms from "./components/Rooms/Rooms";
 import Room, { RoomLoader } from "./components/Rooms/Room";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 const router = createHashRouter([
   {
@@ -38,6 +39,10 @@ const router = createHashRouter([
         path: "Room/:roomId",
         element: <Room />,
         loader: RoomLoader,
+      },
+      {
+        path: "About-Us",
+        element: <AboutUs />,
       },
     ],
   },

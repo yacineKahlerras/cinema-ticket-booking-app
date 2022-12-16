@@ -28,7 +28,7 @@ export default function Nav() {
             <Link to={"/Rooms"}>Rooms</Link>
           </li>
           <li>
-            <Link to={"/"}>About Us</Link>
+            <Link to={"/About-Us"}>About Us</Link>
           </li>
           <li>
             <button className="sign-up-btn">sign up</button>
