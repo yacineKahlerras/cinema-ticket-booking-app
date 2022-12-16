@@ -3,9 +3,9 @@ import { roomsList } from "../../data";
 import geoLogo from "../../assets/geo-alt-fill.svg";
 
 export default function Rooms() {
-  const roomElements = roomsList.map((room) => {
+  const roomElements = roomsList.map((room, index) => {
     return (
-      <div className="individiual-room-container">
+      <div key={index} className="individiual-room-container">
         {/* room location */}
         <div className="room-location-container">
           <svg

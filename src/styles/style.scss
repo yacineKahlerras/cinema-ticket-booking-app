@@ -5,6 +5,7 @@
 @use "registerPageStyles/" as *;
 @use "./paymentPage/" as *;
 @use "./paymentDonePage/" as *;
+@use "./RoomsPageStyle/" as *;
 
 main {
   background: $background;

@@ -1,0 +1,39 @@
+@use "../utils/" as *;
+
+.rooms-container {
+  width: min(80%, 100rem);
+
+  h1 {
+    color: $violet2;
+    margin-bottom: 3rem;
+  }
+
+  .rooms-map {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 30rem));
+    justify-content: center;
+    align-items: center;
+
+    .individiual-room-container {
+      box-shadow: 0rem 0rem 10rem 1rem rgb(0 0 0 / 15%);
+      padding: 3rem 2rem;
+      border-radius: 2rem;
+
+      .room-location-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .room-text-info-container {
+        h2 {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
