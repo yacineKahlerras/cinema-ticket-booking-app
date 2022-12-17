@@ -25,7 +25,7 @@ export default function Room() {
         <LeafeletMap />
       </header>
 
-      <h2>Films : </h2>
+      <h2>Films </h2>
       <RoomEventsMap filterParams={filterParams} />
     </div>
   );

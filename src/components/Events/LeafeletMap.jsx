@@ -1,8 +1,8 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
-import geoIcon from "../../assets/geo-alt-fill.svg";
 import "leaflet/dist/leaflet.css";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import { Icon } from "leaflet";
 
 export default function LeafeletMap(props) {
   // Berlin coordinates
@@ -10,18 +10,22 @@ export default function LeafeletMap(props) {
 
   return (
     <div className="map" id="map">
-      <MapContainer
-        center={position}
-        Icon={geoIcon}
-        zoom={16}
-        scrollWheelZoom={true}
-      >
+      <MapContainer center={position} zoom={16} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
-          <Popup>???</Popup>
+        <Marker
+          position={position}
+          icon={
+            new Icon({
+              iconUrl: markerIconPng,
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+            })
+          }
+        >
+          <Popup>Cinema</Popup>
         </Marker>
       </MapContainer>
     </div>
