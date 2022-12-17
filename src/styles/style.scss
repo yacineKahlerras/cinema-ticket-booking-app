@@ -9,6 +9,8 @@
 @use "./aboutUs/" as *;
 
 main {
+  width: 100%;
+  min-width: fit-content;
   background: $background;
   display: flex;
   flex-direction: column;

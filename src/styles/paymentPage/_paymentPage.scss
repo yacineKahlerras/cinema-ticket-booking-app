@@ -36,8 +36,12 @@
 
     & > div {
       display: grid;
-      grid-template-columns: 14.1rem auto;
       align-items: center;
+      gap: 1rem;
+
+      @include tablet {
+        grid-template-columns: 14.1rem auto;
+      }
 
       label {
         color: $grayColor2;
