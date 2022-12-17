@@ -25,7 +25,7 @@ export default function EventElement(props) {
         <div className="text-info-container">
           <div className="top-text-info">
             <span>
-              le {dateDecontructed.day}/{dateDecontructed.month} a {time}
+              le {dateDecontructed.day}/{dateDecontructed.month} à {time}
             </span>
           </div>
           <div className="bottom-text-info">

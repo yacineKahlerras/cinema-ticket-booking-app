@@ -53,7 +53,7 @@ export default function EventPage() {
           <span className="info-element-label">Date : </span>
           <p className="info-element-value">
             {decontructedDate.weekday} le {decontructedDate.day}-
-            {decontructedDate.month} a {time}
+            {decontructedDate.month} à {time}
           </p>
         </div>
         <div className="info-element">
@@ -62,7 +62,7 @@ export default function EventPage() {
         </div>
         <div className="info-element">
           <span className="info-element-label">Prix : </span>
-          <p className="info-element-value">{price}$</p>
+          <p className="info-element-value">{price}Da</p>
         </div>
 
         {/* book ticket button */}
