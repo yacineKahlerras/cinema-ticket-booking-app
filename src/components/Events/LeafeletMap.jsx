@@ -1,6 +1,7 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
+import geoIcon from "../../assets/geo-alt-fill.svg";
 import "leaflet/dist/leaflet.css";
 
 export default function LeafeletMap(props) {
@@ -11,7 +12,7 @@ export default function LeafeletMap(props) {
     <div className="map" id="map">
       <MapContainer
         center={position}
-        Icon={Icon}
+        Icon={geoIcon}
         zoom={16}
         scrollWheelZoom={true}
       >
