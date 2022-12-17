@@ -9,6 +9,7 @@ export default function PaymentDonePage() {
   const { title, date, roomTitle, eventTime, bookedSeats } = location.state;
   const tempDate = DateDecontructor(date);
   const ticketRef = useRef();
+  const downloadBtn = useRef();
 
   function Tickets() {
     return (
@@ -31,6 +32,7 @@ export default function PaymentDonePage() {
   }
 
   async function HandleDownloadTickets() {
+    downloadBtn.current.textContent = "Patientez..";
     const element = ticketRef.current;
     const canvas = await html2canvas(element);
 
@@ -47,6 +49,8 @@ export default function PaymentDonePage() {
     } else {
       window.open(data);
     }
+
+    downloadBtn.current.textContent = "Telecharger";
   }
 
   return (
@@ -55,7 +59,13 @@ export default function PaymentDonePage() {
         <h1>Merci d'avoir fait vos achats chez nous</h1>
         <p>
           vous pouvez télécharger les billets ici :{" "}
-          <button onClick={HandleDownloadTickets}>Telecharger</button>
+          <button
+            className="download-btn"
+            ref={downloadBtn}
+            onClick={HandleDownloadTickets}
+          >
+            Telecharger
+          </button>
         </p>
       </div>
 
