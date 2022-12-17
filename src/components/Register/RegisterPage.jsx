@@ -17,6 +17,7 @@ export default function RegisterPage(props) {
   const paymentOptions = [
     { value: "paypal", label: "Paypal" },
     { value: "societeGenerale", label: "Societé Generale" },
+    { value: "edahabia", label: "Eddahabia" },
   ];
 
   // go to next page
