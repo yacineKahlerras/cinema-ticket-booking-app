@@ -8,9 +8,6 @@ aside {
   min-width: 100vw;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: end;
-  align-items: center;
   transition: 1s;
   z-index: 10;
 
@@ -30,6 +27,9 @@ aside {
     text-align: center;
     padding: 14.4rem 0;
     transition: 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     ul {
       display: flex;
@@ -48,23 +48,6 @@ aside {
         a:hover,
         button:hover {
           color: $red;
-        }
-
-        .sidemenu-dropdown {
-          overflow: hidden;
-          transition: 0.5s;
-
-          &.show-sidemenu-rooms {
-            .dropdown-content {
-              height: 10em;
-              transition: 0.5s;
-            }
-          }
-
-          .dropdown-content {
-            height: 0;
-            transition: 1s;
-          }
         }
       }
     }
