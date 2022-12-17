@@ -18,16 +18,17 @@
       width: 100%;
       text-align: center;
       font-weight: 500;
+      margin-bottom: 2rem;
+    }
 
-      .download-btn {
-        color: $white;
-        background: $red;
-        padding: 0.5em 1.5em;
-        border-radius: 0.3em;
+    .download-btn {
+      color: $white;
+      background: $red;
+      padding: 0.5em 1.5em;
+      border-radius: 0.3em;
 
-        &:hover {
-          background: $redLight;
-        }
+      &:hover {
+        background: $redLight;
       }
     }
   }

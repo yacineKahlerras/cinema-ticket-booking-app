@@ -13,7 +13,11 @@ export default function PaymentDonePage() {
 
   function Tickets() {
     return (
-      <div ref={ticketRef} className="tickets-group-container">
+      <div
+        ref={ticketRef}
+        style={{ display: "none" }}
+        className="tickets-group-container"
+      >
         {bookedSeats.map((_, index) => {
           return (
             <Ticket
@@ -32,6 +36,7 @@ export default function PaymentDonePage() {
   }
 
   async function HandleDownloadTickets() {
+    ticketRef.current.style.display = "flex";
     downloadBtn.current.textContent = "Patientez..";
     const element = ticketRef.current;
     const canvas = await html2canvas(element);
@@ -51,22 +56,21 @@ export default function PaymentDonePage() {
     }
 
     downloadBtn.current.textContent = "Telecharger";
+    ticketRef.current.style.display = "none";
   }
 
   return (
     <div className="payment-completed-container">
       <div className="ticket-purchassing-information">
         <h1>Merci d'avoir fait vos achats chez nous</h1>
-        <p>
-          vous pouvez télécharger les billets ici :{" "}
-          <button
-            className="download-btn"
-            ref={downloadBtn}
-            onClick={HandleDownloadTickets}
-          >
-            Telecharger
-          </button>
-        </p>
+        <p>vous pouvez télécharger les billets ici : </p>
+        <button
+          className="download-btn"
+          ref={downloadBtn}
+          onClick={HandleDownloadTickets}
+        >
+          Telecharger
+        </button>
       </div>
 
       {Tickets()}
