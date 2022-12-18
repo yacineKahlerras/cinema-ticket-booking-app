@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavRoomsDropdown from "./NavRoomsDropdown";
 import Sidemenu from "./Sidemenu";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo300.png";
 
 export default function Nav() {
   const [sidemenuActive, setSidemenuActive] = useState(false);
@@ -15,9 +15,15 @@ export default function Nav() {
     <nav className={`${!sidemenuActive ? "hidden-sidemenu" : ""}`}>
       <div className="nav-center">
         {/* logo */}
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
+        <Link to={"/"} className="logo-container">
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="logo-text-container">
+            <span className="logo-top-text">cinecom</span>
+            <span className="logo-bottom-text">ticketing</span>
+          </div>
+        </Link>
 
         {/* nav links */}
         <ul className="nav-links">
