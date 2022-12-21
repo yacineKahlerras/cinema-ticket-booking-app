@@ -4,7 +4,7 @@ import { SignIn } from "../../firebase/googleAuth";
 
 export default function ProfileSection() {
   const { user } = useContext(UserContext);
-  console.log(user.displayName);
+  const hasUser = user.displayName != null;
 
   const SignInBtn = (
     <button onClick={SignIn} className="sign-up-btn">
@@ -12,5 +12,12 @@ export default function ProfileSection() {
     </button>
   );
 
-  return SignInBtn;
+  const profileElement = (
+    <div className="profile-element-container">
+      <img src={user.photoURL} alt={user.displayName} />
+      <span className="profile-name">{user.displayName}</span>
+    </div>
+  );
+
+  return hasUser ? profileElement : SignInBtn;
 }
