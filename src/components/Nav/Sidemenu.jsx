@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import SidemenuProfileSection from "./SidemenuProfileSection";
 
 export default function Sidemenu(props) {
   const { sidemenuActive, setSidemenuActive } = props;
@@ -35,6 +36,7 @@ export default function Sidemenu(props) {
               A Propos
             </Link>
           </li>
+          <SidemenuProfileSection />
         </ul>
       </div>
     </aside>
