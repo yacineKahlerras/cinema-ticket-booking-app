@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NavRoomsDropdown from "./NavRoomsDropdown";
 import Sidemenu from "./Sidemenu";
 import logo from "../../assets/logo300.png";
 import { SignIn } from "../../firebase/googleAuth";
+import ProfileSection from "./ProfileSection";
 
 export default function Nav() {
   const [sidemenuActive, setSidemenuActive] = useState(false);
@@ -38,9 +38,7 @@ export default function Nav() {
             <Link to={"/About-Us"}>A Propos</Link>
           </li>
           <li>
-            <button onClick={SignIn} className="sign-up-btn">
-              S'inscrire
-            </button>
+            <ProfileSection />
           </li>
         </ul>
 

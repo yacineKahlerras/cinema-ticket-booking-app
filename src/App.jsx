@@ -1,9 +1,11 @@
-import Nav from "./components/Home/Nav";
+import Nav from "./components/Nav/Nav";
 import { Outlet } from "react-router-dom";
 import "./styles/style.scss";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
+
+export const UserContext = createContext();
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -18,9 +20,11 @@ export default function App() {
   }, []);
 
   return (
-    <main>
-      <Nav />
-      <Outlet />
-    </main>
+    <UserContext.Provider value={{ user, setUser }}>
+      <main>
+        <Nav />
+        <Outlet />
+      </main>
+    </UserContext.Provider>
   );
 }
