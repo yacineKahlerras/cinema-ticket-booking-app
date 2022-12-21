@@ -19,7 +19,7 @@ export default function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser.email);
+      console.log(currentUser ? currentUser.email : "Logged out.");
     });
     return () => {
       unsubscribe();
@@ -36,7 +36,8 @@ export default function App() {
   }
 
   function PrintUser() {
-    console.log(user.displayName);
+    const name = user ? user.displayName : "logged out.";
+    console.log(name);
   }
 
   return (
