@@ -17,10 +17,3 @@ export function SignIn() {
 export function LogOut() {
   signOut(auth);
 }
-
-export const unsubscribe = (setUser) => {
-  return onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-    console.log("User", currentUser);
-  });
-};
