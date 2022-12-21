@@ -36,7 +36,7 @@ export default function Sidemenu(props) {
               A Propos
             </Link>
           </li>
-          <SidemenuProfileSection />
+          <SidemenuProfileSection setSidemenuActive={setSidemenuActive} />
         </ul>
       </div>
     </aside>

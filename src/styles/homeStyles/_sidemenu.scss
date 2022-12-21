@@ -50,6 +50,19 @@ aside {
         button:hover {
           color: $red;
         }
+
+        .sign-up-btn {
+          background: $red;
+          color: $white;
+          padding: 0.3em 1.2em;
+          border-radius: 0.3em;
+          text-transform: capitalize;
+
+          &:hover {
+            background: $redLight;
+            color: $white;
+          }
+        }
       }
     }
   }

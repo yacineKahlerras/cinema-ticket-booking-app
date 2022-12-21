@@ -4,23 +4,42 @@ import { UserContext } from "../../App";
 import { SignIn } from "../../firebase/googleAuth";
 import { LogOut } from "../../firebase/googleAuth";
 
-export default function SidemenuProfileSection() {
+export default function SidemenuProfileSection(props) {
+  const { setSidemenuActive } = props;
   const { user } = useContext(UserContext);
   const hasUser = user != null && user.displayName != null;
 
   const SignInBtn = (
-    <button onClick={SignIn} className="sign-up-btn">
-      S'inscrire
-    </button>
+    <li>
+      <button
+        onClick={() => {
+          SignIn();
+          setSidemenuActive(false);
+        }}
+        className="sign-up-btn"
+      >
+        S'inscrire
+      </button>
+    </li>
   );
 
   const profileElement = (
     <>
       <li>
-        <Link to="/">Dashboard</Link>
+        <Link onClick={() => setSidemenuActive(false)} to="/">
+          Dashboard
+        </Link>
       </li>
-      <li className="profile-element-container">
-        <button onClick={LogOut}>Log Out</button>
+      <li>
+        <button
+          className="sign-up-btn"
+          onClick={() => {
+            LogOut();
+            setSidemenuActive(false);
+          }}
+        >
+          Log Out
+        </button>
       </li>
     </>
   );

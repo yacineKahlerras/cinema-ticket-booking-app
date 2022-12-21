@@ -16,7 +16,6 @@ export function SignIn() {
 
 export function LogOut() {
   signOut(auth);
-  console.log(user);
 }
 
 export const unsubscribe = (setUser) => {
