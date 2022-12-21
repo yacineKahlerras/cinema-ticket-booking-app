@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   getAuth,
   signInWithRedirect,
-  getRedirectResult,
   GoogleAuthProvider,
   onAuthStateChanged,
   signOut,
