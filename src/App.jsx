@@ -2,54 +2,49 @@ import Nav from "./components/Home/Nav";
 import { Outlet } from "react-router-dom";
 import "./styles/style.scss";
 import { useEffect, useRef, useState } from "react";
-import { db } from "./firebase/firebase-config";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  getAuth,
+  signInWithRedirect,
+  getRedirectResult,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { app } from "./firebase/firebase-config";
 
 export default function App() {
-  const [users, setUsers] = useState([]);
-  const usersCollectionRef = collection(db, "users");
-  const nameInput = useRef();
-  const ageInput = useRef();
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth(app);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    async function getUsers() {
-      const data = await getDocs(usersCollectionRef);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    }
-
-    getUsers();
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log(currentUser.email);
+    });
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
-  const userElements = users.map((user, index) => {
-    return (
-      <h6 key={index}>
-        name : {user.name} ; age : {user.age}
-      </h6>
-    );
-  });
+  function SignIn() {
+    signInWithRedirect(auth, provider);
+  }
 
-  async function addNewUser() {
-    const inputName = nameInput.current.value;
-    const inputAge = ageInput.current.value;
-    await addDoc(usersCollectionRef, {
-      name: inputName,
-      age: Number(inputAge),
-    });
-    console.log("user added.");
+  function LogOut() {
+    signOut(auth);
+    console.log(user);
+  }
+
+  function PrintUser() {
+    console.log(user.displayName);
   }
 
   return (
     <main>
-      <Nav />
-      <Outlet />
-      {/* {userElements}
-      <form>
-        <input ref={nameInput} type="text" />
-        <input ref={ageInput} type="number" />
-        <button type="button" onClick={addNewUser}>
-          create
-        </button>
-      </form> */}
+      <button onClick={SignIn}>Sign In</button>
+      <button onClick={LogOut}>Log Out</button>
+      <button onClick={PrintUser}>Print Current User</button>
     </main>
   );
 }
