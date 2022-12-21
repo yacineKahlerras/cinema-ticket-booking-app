@@ -15,7 +15,6 @@ export default function ProfileSection() {
   const profileElement = (
     <div className="profile-element-container">
       <img src={user.photoURL} alt={user.displayName} />
-      <span className="profile-name">{user.displayName}</span>
     </div>
   );
 
