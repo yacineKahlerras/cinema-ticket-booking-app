@@ -1,31 +1,11 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { UserContext } from "../../App";
-import { SignIn } from "../../firebase/googleAuth";
+import { SignIn, LogOut } from "../../firebase/googleAuth";
 
 export default function ProfileSection() {
   const { user } = useContext(UserContext);
   const hasUser = user != null && user.displayName != null;
-  const profileBtn = useRef();
   const [profileMenuActive, setProfileMenuActive] = useState(false);
-
-  function hideProfileMenu(e) {
-    const classList = e.target.classList;
-    console.log(profileMenuActive);
-
-    if (
-      profileMenuActive &&
-      !classList.contains("profile-element-container") &&
-      !classList.contains("profile-menu-links") &&
-      !classList.contains("profile-menu")
-    ) {
-      setProfileMenuActive(false);
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("click", hideProfileMenu);
-    return () => window.removeEventListener("click", hideProfileMenu);
-  }, []);
 
   const SignInBtn = (
     <button onClick={SignIn} className="sign-up-btn">
@@ -42,7 +22,13 @@ export default function ProfileSection() {
       <li className="profile-menu-links" onClick={toggleProfileMenu}>
         Dashboard
       </li>
-      <li className="profile-menu-links" onClick={toggleProfileMenu}>
+      <li
+        className="profile-menu-links"
+        onClick={() => {
+          toggleProfileMenu();
+          LogOut();
+        }}
+      >
         Log Out
       </li>
     </ul>
@@ -50,11 +36,7 @@ export default function ProfileSection() {
 
   const profileElement =
     hasUser == true ? (
-      <button
-        onClick={toggleProfileMenu}
-        ref={profileBtn}
-        className="profile-element-container"
-      >
+      <button onClick={toggleProfileMenu} className="profile-element-container">
         <img src={user.photoURL} alt={user.displayName} />
 
         {/* profile dropdown options */}
