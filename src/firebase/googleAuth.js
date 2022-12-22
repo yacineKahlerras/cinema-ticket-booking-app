@@ -2,7 +2,6 @@ import {
   getAuth,
   signInWithRedirect,
   GoogleAuthProvider,
-  onAuthStateChanged,
   signOut,
 } from "firebase/auth";
 import { app } from "./firebase-config";
