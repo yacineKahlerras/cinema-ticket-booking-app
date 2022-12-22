@@ -84,19 +84,6 @@ nav {
           background: $redLight;
         }
       }
-
-      .profile-element-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3rem;
-        font-size: 1.2rem;
-
-        img {
-          max-width: 3.5rem;
-          border-radius: 50%;
-        }
-      }
     }
 
     .hamburger {
