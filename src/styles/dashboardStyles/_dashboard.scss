@@ -16,7 +16,11 @@
 
     // ticket
     .reserved-ticket {
-      width: 100%;
+      width: min(100%, 40.9rem);
+
+      @include tablet {
+        width: 100%;
+      }
 
       .reserved-ticket-center {
         display: grid;
