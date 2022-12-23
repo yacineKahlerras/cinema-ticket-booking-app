@@ -1,7 +1,7 @@
 @use "../utils/" as *;
 
 .dashboard-container {
-  width: min(90%, 120rem);
+  width: min(90%, 90rem);
 
   h1 {
     color: $violet2;
@@ -16,7 +16,7 @@
 
     // ticket
     .reserved-ticket {
-      width: min(100%, 90rem);
+      width: 100%;
 
       .reserved-ticket-center {
         display: grid;
