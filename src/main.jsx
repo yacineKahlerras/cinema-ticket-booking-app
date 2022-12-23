@@ -9,6 +9,7 @@ import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
 import Rooms from "./components/Rooms/Rooms";
 import Room, { RoomLoader } from "./components/Rooms/Room";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const router = createHashRouter([
   {
@@ -43,6 +44,10 @@ const router = createHashRouter([
       {
         path: "About-Us",
         element: <AboutUs />,
+      },
+      {
+        path: "Dashboard",
+        element: <Dashboard />,
       },
     ],
   },

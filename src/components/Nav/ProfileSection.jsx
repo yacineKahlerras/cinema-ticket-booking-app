@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import { SignIn, LogOut } from "../../firebase/googleAuth";
 
@@ -20,7 +21,7 @@ export default function ProfileSection() {
   const profileMenuDropdown = (
     <ul className={`profile-menu ${profileMenuActive ? "show-menu" : ""}`}>
       <li className="profile-menu-links" onClick={toggleProfileMenu}>
-        Dashboard
+        <Link to="/Dashboard">Dashboard</Link>
       </li>
       <li
         className="profile-menu-links"
