@@ -1,0 +1,42 @@
+@use "../utils/" as *;
+
+.dashboard-container {
+  width: min(90%, 100rem);
+
+  h1 {
+    color: $violet2;
+    margin-bottom: 3rem;
+  }
+
+  .reserved-tickets-map {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // ticket
+    .reserved-ticket {
+      .reserved-ticket-center {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+
+        .poster-container {
+          width: 7.1rem;
+          height: 7.1rem;
+          overflow: hidden;
+          border-radius: 50%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+          }
+        }
+
+        .reserved-ticket-text-info {
+        }
+      }
+    }
+  }
+}

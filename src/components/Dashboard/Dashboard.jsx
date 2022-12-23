@@ -4,7 +4,7 @@ import posterImg from "../../assets/posters/dd5yGBLbqB507gHJSosNY0IYHRQ.jpg";
 export default function Dashboard(props) {
   return (
     <div className="dashboard-container">
-      <h1>Mes Tickes</h1>
+      <h1>Mes Tickets</h1>
       <div className="reserved-tickets-map">
         <div className="reserved-ticket">
           <div className="reserved-ticket-center">
@@ -18,6 +18,7 @@ export default function Dashboard(props) {
               <p>3 x tickets</p>
               <p>2400Da</p>
             </div>
+            <button>Telecharger</button>
           </div>
         </div>
       </div>
