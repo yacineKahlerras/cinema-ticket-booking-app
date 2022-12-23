@@ -12,13 +12,13 @@ export default function Dashboard(props) {
               <img src={posterImg} alt="ticket movie title" />
             </div>
             <div className="reserved-ticket-text-info">
-              <h2>Gardians of The Galaxy Vol.2</h2>
-              <h3>Cinema Ahmed Bey</h3>
-              <p>le 14-12 à 12h</p>
-              <p>3 x tickets</p>
-              <p>2400Da</p>
+              <h2 className="ticket-title">Gardians of The Galaxy Vol.2</h2>
+              <h3 className="ticket-cinema">Cinema Ahmed Bey</h3>
+              <p className="ticket-date">le 14-12 à 12h</p>
+              <p className="ticket-count">3 x tickets</p>
+              <p className="ticket-price">2400Da</p>
             </div>
-            <button>Telecharger</button>
+            <button className="download-btn">Telecharger</button>
           </div>
         </div>
       </div>

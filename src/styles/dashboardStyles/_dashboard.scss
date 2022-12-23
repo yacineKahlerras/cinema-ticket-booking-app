@@ -18,7 +18,11 @@
     .reserved-ticket {
       .reserved-ticket-center {
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: 7.1rem auto;
+        gap: 1rem;
+        box-shadow: 3px 4px 19px -1px rgba(0, 0, 0, 0.2);
+        padding: 3rem 2rem;
+        border-radius: 1rem;
 
         .poster-container {
           width: 7.1rem;
@@ -35,6 +39,37 @@
         }
 
         .reserved-ticket-text-info {
+          color: $violet1;
+
+          .ticket-title {
+            font-size: 1.6rem;
+            color: $violet2;
+            margin-bottom: 1rem;
+          }
+
+          .ticket-cinema {
+            font-size: 1.5rem;
+          }
+
+          p {
+            font-size: 1.4rem;
+            font-weight: 500;
+          }
+        }
+
+        .download-btn {
+          grid-column: 2;
+          background: $red;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          color: $white;
+          font-weight: 500;
+          max-width: 15rem;
+          font-size: 1.6rem;
+
+          &:hover {
+            background: $redLight;
+          }
         }
       }
     }
