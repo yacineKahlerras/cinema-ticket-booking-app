@@ -1,7 +1,7 @@
 @use "../utils/" as *;
 
 .dashboard-container {
-  width: min(90%, 100rem);
+  width: min(90%, 120rem);
 
   h1 {
     color: $violet2;
@@ -16,6 +16,8 @@
 
     // ticket
     .reserved-ticket {
+      width: min(100%, 90rem);
+
       .reserved-ticket-center {
         display: grid;
         grid-template-columns: 7.1rem auto;
@@ -23,10 +25,19 @@
         box-shadow: 3px 4px 19px -1px rgba(0, 0, 0, 0.2);
         padding: 3rem 2rem;
         border-radius: 1rem;
+        --img-size: 7.1rem;
+
+        @include tablet {
+          grid-template-columns: var(--img-size) 1fr 13rem;
+          gap: 3rem;
+          align-items: center;
+          padding: 3rem 4rem;
+          --img-size: 10rem;
+        }
 
         .poster-container {
-          width: 7.1rem;
-          height: 7.1rem;
+          width: var(--img-size);
+          height: var(--img-size);
           overflow: hidden;
           border-radius: 50%;
 
@@ -45,15 +56,29 @@
             font-size: 1.6rem;
             color: $violet2;
             margin-bottom: 1rem;
+
+            @include tablet {
+              font-size: 2rem;
+              margin-bottom: 0rem;
+            }
           }
 
           .ticket-cinema {
             font-size: 1.5rem;
+
+            @include tablet {
+              font-size: 1.8rem;
+              margin-bottom: 0.5rem;
+            }
           }
 
           p {
             font-size: 1.4rem;
             font-weight: 500;
+
+            @include tablet {
+              font-size: 1.6rem;
+            }
           }
         }
 
@@ -66,6 +91,10 @@
           font-weight: 500;
           max-width: 15rem;
           font-size: 1.6rem;
+
+          @include tablet {
+            grid-column: auto;
+          }
 
           &:hover {
             background: $redLight;
