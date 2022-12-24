@@ -21,7 +21,7 @@ export default function ProfileSection() {
   const profileMenuDropdown = (
     <ul className={`profile-menu ${profileMenuActive ? "show-menu" : ""}`}>
       <li className="profile-menu-links" onClick={toggleProfileMenu}>
-        <Link to="/Dashboard">Dashboard</Link>
+        <Link to="/Dashboard">Mes Tickets</Link>
       </li>
       <li
         className="profile-menu-links"

@@ -27,7 +27,7 @@ export default function SidemenuProfileSection(props) {
     <>
       <li>
         <Link onClick={() => setSidemenuActive(false)} to="/Dashboard">
-          Dashboard
+          Met Tickets
         </Link>
       </li>
       <li>
