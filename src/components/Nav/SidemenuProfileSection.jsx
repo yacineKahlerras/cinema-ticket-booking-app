@@ -26,7 +26,7 @@ export default function SidemenuProfileSection(props) {
   const profileElement = (
     <>
       <li>
-        <Link onClick={() => setSidemenuActive(false)} to="/">
+        <Link onClick={() => setSidemenuActive(false)} to="/Dashboard">
           Dashboard
         </Link>
       </li>
