@@ -4,7 +4,7 @@ import "./styles/style.scss";
 import { createContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
-import { CreateCinemaDocs } from "./firebase/databaseSetup";
+import { CreateCinemaDocs, CreateMovieDoc } from "./firebase/databaseSetup";
 
 export const UserContext = createContext();
 
@@ -12,6 +12,8 @@ export default function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
+    CreateMovieDoc();
+
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });

@@ -17,3 +17,54 @@ export async function CreateCinemaDocs() {
   };
   await setDoc(doc(db, "cinemas", "cinemasList"), docData);
 }
+
+export async function CreateMovieDoc() {
+  const moviesList = [];
+
+  for (let roomIndex = 0; roomIndex < roomsList.length; roomIndex++) {
+    const room = roomsList[roomIndex];
+    let movieItem = {};
+    let skipThisItem = false;
+
+    if (room.subRooms != undefined) {
+      for (
+        let subRoomIndex = 0;
+        subRoomIndex < room.subRooms.length;
+        subRoomIndex++
+      ) {
+        const subRoom = room.subRooms[subRoomIndex];
+        for (
+          let subRoomMovieIndex = 0;
+          subRoomMovieIndex < subRoom.movies.length;
+          subRoomMovieIndex++
+        ) {
+          const movie = subRoom.movies[subRoomMovieIndex];
+          movieItem = {
+            id: movie.poster,
+            title: movie.title,
+          };
+        }
+      }
+    } else {
+      for (let movieIndex = 0; movieIndex < room.movies.length; movieIndex++) {
+        const movie = room.movies[movieIndex];
+        movieItem = {
+          id: movie.poster,
+          title: movie.title,
+        };
+      }
+    }
+
+    for (let movieIndex = 0; movieIndex < moviesList.length; movieIndex++) {
+      if (moviesList[movieIndex].title == movieItem.title) skipThisItem = true;
+    }
+    moviesList.push(movieItem);
+  }
+
+  const docData = {
+    list: moviesList,
+  };
+
+  //   await setDoc(doc(db, "movies", "moviesList"), docData);
+  console.log(moviesList);
+}
