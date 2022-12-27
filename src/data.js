@@ -183,3 +183,33 @@ export const roomsList = [
     ],
   },
 ];
+
+const fireStoreDBTemplate = {
+  movie1: {
+    id: "5f2g1s4",
+    title: "Avengers",
+    price: 800,
+    scheduel: {
+      "28-01": {
+        cinema1: {
+          time: "14h",
+          language: "vostfr",
+        },
+        cinema2: {
+          time: "9h",
+          language: "eng",
+        },
+      },
+      "10-01": {
+        cinema3: {
+          time: "12h",
+          language: "vostar",
+        },
+        cinema2: {
+          time: "9h",
+          language: "eng",
+        },
+      },
+    },
+  },
+};
