@@ -14,12 +14,12 @@ export default function App() {
   useEffect(() => {
     CreateMovieDoc();
 
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => {
-      unsubscribe();
-    };
+    // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    //   setUser(currentUser);
+    // });
+    // return () => {
+    //   unsubscribe();
+    // };
   }, []);
 
   return (

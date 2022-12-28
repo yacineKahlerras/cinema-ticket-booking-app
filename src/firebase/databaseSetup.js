@@ -43,6 +43,15 @@ export async function CreateMovieDoc() {
             id: movie.poster,
             title: movie.title,
           };
+          for (
+            let movieIndex = 0;
+            movieIndex < moviesList.length;
+            movieIndex++
+          ) {
+            if (moviesList[movieIndex].title == movieItem.title)
+              skipThisItem = true;
+          }
+          if (!skipThisItem) moviesList.push(movieItem);
         }
       }
     } else {
@@ -52,13 +61,13 @@ export async function CreateMovieDoc() {
           id: movie.poster,
           title: movie.title,
         };
+        for (let movieIndex = 0; movieIndex < moviesList.length; movieIndex++) {
+          if (moviesList[movieIndex].title == movieItem.title)
+            skipThisItem = true;
+        }
+        if (!skipThisItem) moviesList.push(movieItem);
       }
     }
-
-    for (let movieIndex = 0; movieIndex < moviesList.length; movieIndex++) {
-      if (moviesList[movieIndex].title == movieItem.title) skipThisItem = true;
-    }
-    moviesList.push(movieItem);
   }
 
   const docData = {
