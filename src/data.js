@@ -214,7 +214,7 @@ const fireStoreDBTemplate = {
   },
 };
 
-const moviesSchedule = {
+const docWithMovieId = {
   schedule: [
     {
       cinemaId: "KgVhN",

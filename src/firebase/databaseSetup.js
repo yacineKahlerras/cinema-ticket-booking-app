@@ -2,6 +2,11 @@ import { doc, GeoPoint, setDoc } from "firebase/firestore";
 import { db } from "./firebase-config";
 import { roomsList } from "../data";
 
+const gridInfo = {
+  columns: 10,
+  rows: 8,
+};
+
 /**creates a doc that contains an array of objects
  * that contain a cinemaName and id and wilaya and geolocation
  */
@@ -79,8 +84,24 @@ export async function CreateMovieDoc() {
   return moviesList;
 }
 
+/**gets list of cinema ids
+ * gets list of movies
+ * for each movie
+ * loop through every cinema
+ * create an object with
+ * cinema id
+ * and an array of dates with 3 languages and 3 random dates
+ * and in that object an array containing
+ * 5 seats that are take meaning 5 objects
+ * like this { col: 3, row: 5}
+ */
 export async function createMoviesSchedule() {
   const movieList = CreateMovieDoc();
+  const cinemasList = cinemasIds();
+  const movie0Id = movieList[0].id;
+  const movieSchedule = [];
+
+  for (let cinemaId = 0; cinemaId < cinemasList.length; cinemaId++) {}
 }
 
 /**checks if the array already contains the movie title and return
@@ -100,4 +121,11 @@ function checkIfContains(moviesList, movieItem, skipThisItem) {
 function extractId(posterLink) {
   const match = posterLink.match(/(\w+)/);
   return match[0];
+}
+
+/**returns array of cineam ids from roomsList */
+function cinemasIds() {
+  return roomsList.map((r) => {
+    return r.id;
+  });
 }
