@@ -4,7 +4,11 @@ import "./styles/style.scss";
 import { createContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
-import { CreateCinemaDocs, CreateMovieDoc } from "./firebase/databaseSetup";
+import {
+  CreateCinemaDocs,
+  CreateMovieDoc,
+  createMoviesSchedule,
+} from "./firebase/databaseSetup";
 
 export const UserContext = createContext();
 
