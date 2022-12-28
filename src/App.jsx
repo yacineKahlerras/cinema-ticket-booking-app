@@ -16,7 +16,6 @@ export default function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    createMoviesSchedule();
     // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
     //   setUser(currentUser);
     // });

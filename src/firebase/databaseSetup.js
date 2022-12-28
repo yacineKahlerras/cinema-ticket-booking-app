@@ -16,6 +16,7 @@ export async function CreateCinemaDocs() {
     return {
       id: room.id,
       name: room.title,
+      wilaya: room.wilaya,
       location: generalLocation,
     };
   });
@@ -23,7 +24,8 @@ export async function CreateCinemaDocs() {
   const docData = {
     list: cinemasList,
   };
-  await setDoc(doc(db, "cinemas", "cinemasList"), docData);
+  // await setDoc(doc(db, "cinemas", "cinemasList"), docData);
+  console.log(docData);
 }
 
 /**creates a doc that contains an array of objects
@@ -84,17 +86,7 @@ export async function CreateMovieDoc() {
   return moviesList;
 }
 
-/**gets list of cinema ids
- * gets list of movies
- * for each movie
- * loop through every cinema
- * create an object with
- * cinema id
- * and an array of dates with 3 languages and 3 random dates
- * and in that object an array containing
- * 5 seats that are take meaning 5 objects
- * like this { col: 3, row: 5}
- */
+/**creates a schedule for each movie */
 export async function createMoviesSchedule() {
   const movieList = await CreateMovieDoc();
   const cinemasIdList = cinemasIds();
@@ -129,10 +121,10 @@ export async function createMoviesSchedule() {
 
     // setting the document movie data
     const docData = { schedule: movieSchedule };
-    await setDoc(
-      doc(db, "movies/moviesList/moviesSchedule", movieTitle),
-      docData
-    );
+    // await setDoc(
+    //   doc(db, "movies/moviesList/moviesSchedule", movieTitle),
+    //   docData
+    // );
     console.log(docData);
   }
 }
