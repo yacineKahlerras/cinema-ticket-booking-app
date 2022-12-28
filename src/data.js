@@ -213,3 +213,54 @@ const fireStoreDBTemplate = {
     },
   },
 };
+
+const moviesSchedule = {
+  schedule: [
+    {
+      cinemaId: "KgVhN",
+      dates: [
+        {
+          date: "December 5 2023, 15h",
+          language: "fr",
+          takenSeats: [
+            { col: 3, row: 5 },
+            { col: 0, row: 2 },
+            { col: 4, row: 0 },
+          ],
+        },
+        {
+          date: "January 2 2023, 15h",
+          language: "vostfr",
+          takenSeats: [
+            { col: 3, row: 5 },
+            { col: 0, row: 2 },
+            { col: 4, row: 0 },
+          ],
+        },
+      ],
+    },
+    {
+      cinemaName: "cinegold",
+      dates: [
+        {
+          date: "December 3 2023, 18h",
+          language: "vostfr",
+          takenSeats: [
+            { col: 4, row: 0 },
+            { col: 3, row: 5 },
+            { col: 0, row: 2 },
+          ],
+        },
+        {
+          date: "December 3 2023, 18h",
+          language: "fr",
+          takenSeats: [
+            { col: 4, row: 0 },
+            { col: 3, row: 5 },
+            { col: 0, row: 2 },
+          ],
+        },
+      ],
+    },
+  ],
+};

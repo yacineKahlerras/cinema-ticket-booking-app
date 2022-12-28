@@ -12,8 +12,6 @@ export default function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    CreateMovieDoc();
-
     // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
     //   setUser(currentUser);
     // });
