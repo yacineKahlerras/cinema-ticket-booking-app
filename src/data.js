@@ -1,18 +1,3 @@
-/** -list of movies who has:
- *      -poster
- *      -title
- *      -date
- *      -time
- *      -price
- */
-
-/** -list of rooms who has:
- *      -roomId
- *      -wilaya
- *      -seats
- *      -list of movies
- */
-
 export const posterLink = "https://image.tmdb.org/t/p/w500";
 
 export const roomsList = [
@@ -261,6 +246,43 @@ const docWithMovieId = {
           ],
         },
       ],
+    },
+  ],
+};
+
+export const moviesListObject = {
+  list: [
+    {
+      title: "jack mimoun",
+      id: "vWx3Hi7DZ7VWyjWVf9gySG6Lbq4",
+    },
+    {
+      id: "w3s6XEDNVGq5LUlghqs6VlvsvL6",
+      title: "la proie diable",
+    },
+    {
+      title: "violent night",
+      id: "1CHp8QQjGwqWaPZWjzcRidlt5Xs",
+    },
+    {
+      title: "black panther 2",
+      id: "ps2oKfhY6DL3alynlSqY97gHSsg",
+    },
+    {
+      title: "ticket to paradise",
+      id: "1tzERH50P5c2mFWtLbgixzLZS1L",
+    },
+    {
+      id: "ps2oKfhY6DL3alynlSqY97gHSsg",
+      title: "wakanda forever",
+    },
+    {
+      title: "samourai academy",
+      id: "wMDUDwAArpfGdtTTZ25SfwngGwt",
+    },
+    {
+      id: "aPqcQwu4VGEewPhagWNncDbJ9Xp",
+      title: "smile",
     },
   ],
 };
