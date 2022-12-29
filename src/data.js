@@ -1,4 +1,5 @@
 export const posterLink = "https://image.tmdb.org/t/p/w500";
+export const api_key = "982f680fcfc113f532f791142a6598c1";
 
 export const roomsList = [
   {
@@ -253,36 +254,39 @@ const docWithMovieId = {
 export const moviesListObject = {
   list: [
     {
+      id: "893369",
       title: "jack mimoun",
-      id: "vWx3Hi7DZ7VWyjWVf9gySG6Lbq4",
+      price: 800,
     },
     {
-      id: "w3s6XEDNVGq5LUlghqs6VlvsvL6",
+      id: "676547",
       title: "la proie diable",
+      price: 800,
     },
     {
+      id: "899112",
       title: "violent night",
-      id: "1CHp8QQjGwqWaPZWjzcRidlt5Xs",
+      price: 800,
     },
     {
+      id: "505642",
       title: "black panther 2",
-      id: "ps2oKfhY6DL3alynlSqY97gHSsg",
+      price: 800,
     },
     {
+      id: "800939",
       title: "ticket to paradise",
-      id: "1tzERH50P5c2mFWtLbgixzLZS1L",
+      price: 800,
     },
     {
-      id: "ps2oKfhY6DL3alynlSqY97gHSsg",
-      title: "wakanda forever",
-    },
-    {
+      id: "366672",
       title: "samourai academy",
-      id: "wMDUDwAArpfGdtTTZ25SfwngGwt",
+      price: 800,
     },
     {
-      id: "aPqcQwu4VGEewPhagWNncDbJ9Xp",
+      id: "882598",
       title: "smile",
+      price: 800,
     },
   ],
 };

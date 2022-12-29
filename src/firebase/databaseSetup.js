@@ -1,6 +1,6 @@
 import { doc, GeoPoint, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "./firebase-config";
-import { roomsList } from "../data";
+import { moviesListObject, roomsList } from "../data";
 
 const gridInfo = {
   columns: 10,
@@ -84,7 +84,7 @@ export async function CreateMovieDoc() {
     list: moviesList,
   };
 
-  // await setDoc(doc(db, "movies", "moviesList"), docData);
+  // await setDoc(doc(db, "movies", "moviesList"), moviesListObject);
   return moviesList;
 }
 

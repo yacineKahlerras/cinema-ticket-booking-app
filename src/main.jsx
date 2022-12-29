@@ -21,7 +21,7 @@ const router = createHashRouter([
         element: <Home />,
       },
       {
-        path: "EventPage",
+        path: "EventPage/:eventTitle",
         element: <EventPage />,
       },
       {

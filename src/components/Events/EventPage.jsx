@@ -10,7 +10,7 @@ import LeafeletMap from "./LeafeletMap";
 export default function EventPage(props) {
   // link search params
   let location = useLocation();
-  const id = location.state.id;
+  let movieData = location.state;
 
   // room and movie infos
 
@@ -23,12 +23,12 @@ export default function EventPage(props) {
     <div className="event-page-container">
       {/* poster */}
       <div className="poster-container">
-        <img src={""} alt="poster" />
+        <img src={`${posterLink}${movieData.poster_path}`} alt="poster" />
       </div>
 
       {/* movie info */}
       <div className="text-side-container">
-        <h1>{"title"}</h1>
+        <h1>{movieData.title}</h1>
         <div className="info-element">
           <span className="info-element-label">Prix : </span>
           <p className="info-element-value">800Da</p>
@@ -42,13 +42,7 @@ export default function EventPage(props) {
         {/* movie synopsis */}
         <div className="synopsis">
           <h2>Synopsis</h2>
-          <p>
-            Set more than a decade after the events of the first film, "Avatar
-            The Way of Water" begins to tell the story of the Sully family
-            (Jake, Neytiri and their kids), the trouble that follows them, the
-            lengths they go to keep each other safe, the battles they fight to
-            stay alive and the tragedies they endure.
-          </p>
+          <p>{movieData.overview}</p>
         </div>
       </div>
     </div>
