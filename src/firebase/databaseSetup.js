@@ -58,6 +58,7 @@ export async function CreateMovieDoc() {
           movieItem = {
             id: extractId(movie.poster),
             title: movie.title,
+            price: 800,
           };
           skipThisItem = checkIfContains(moviesList, movieItem, skipThisItem);
           if (!skipThisItem) moviesList.push(movieItem);
@@ -71,6 +72,7 @@ export async function CreateMovieDoc() {
         movieItem = {
           id: extractId(movie.poster),
           title: movie.title,
+          price: 800,
         };
         skipThisItem = checkIfContains(moviesList, movieItem, skipThisItem);
         if (!skipThisItem) moviesList.push(movieItem);

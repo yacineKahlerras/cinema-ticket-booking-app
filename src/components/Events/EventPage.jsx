@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
 import {
   DateDecontructor,
@@ -7,28 +7,12 @@ import {
 } from "../Home/eventsMap/EventMothods";
 import LeafeletMap from "./LeafeletMap";
 
-export default function EventPage() {
+export default function EventPage(props) {
   // link search params
-  const [searchParams] = useSearchParams();
-  const roomId = searchParams.get("roomId");
-  const subRoomId = searchParams.get("subRoomId");
-  const movieId = searchParams.get("movieId");
+  let location = useLocation();
+  const id = location.state.id;
 
   // room and movie infos
-  const room = roomsList.filter((room) => room.id == roomId)[0];
-  const hasSubRoom = subRoomId !== null;
-  const movie = hasSubRoom
-    ? room.subRooms[subRoomId].movies[movieId]
-    : room.movies[parseInt(movieId)];
-  const { poster, title, date, time, price, langue } = movie;
-
-  // movie info data handeling
-  const posterImgSrc = `${posterLink}${poster}`;
-  const seatPickerSearchParams = `/TicketBooking/?roomId=${roomId}${
-    hasSubRoom ? `&subRoomId=${subRoomId}` : ""
-  }&movieId=${movieId}`;
-  const decontructedDate = DateDecontructor(date);
-  const deconstructedLanguage = LanguageDecontructor(langue);
 
   // scrolls to top of page on start
   useEffect(() => {
@@ -39,34 +23,19 @@ export default function EventPage() {
     <div className="event-page-container">
       {/* poster */}
       <div className="poster-container">
-        <img src={posterImgSrc} alt="poster" />
+        <img src={""} alt="poster" />
       </div>
 
       {/* movie info */}
       <div className="text-side-container">
-        <h1>{title}</h1>
-        <div className="info-element">
-          <span className="info-element-label">Cinema : </span>
-          <p className="info-element-value">{room.title}</p>
-        </div>
-        <div className="info-element">
-          <span className="info-element-label">Date : </span>
-          <p className="info-element-value">
-            {decontructedDate.weekday} le {decontructedDate.day}-
-            {decontructedDate.month} à {time}
-          </p>
-        </div>
-        <div className="info-element">
-          <span className="info-element-label">Langue : </span>
-          <p className="info-element-value">{deconstructedLanguage}</p>
-        </div>
+        <h1>{"title"}</h1>
         <div className="info-element">
           <span className="info-element-label">Prix : </span>
-          <p className="info-element-value">{price}Da</p>
+          <p className="info-element-value">800Da</p>
         </div>
 
         {/* book ticket button */}
-        <Link className="book-ticket-btn" to={seatPickerSearchParams}>
+        <Link className="book-ticket-btn" to={"/"}>
           reserver ticket
         </Link>
 
@@ -81,12 +50,6 @@ export default function EventPage() {
             stay alive and the tragedies they endure.
           </p>
         </div>
-      </div>
-
-      {/* cinema location map */}
-      <div className="synopsis room-location-container">
-        <h2>Endroit</h2>
-        <LeafeletMap />
       </div>
     </div>
   );

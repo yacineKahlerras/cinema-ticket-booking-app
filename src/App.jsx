@@ -6,6 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
 import { getMoviesList } from "./firebase/dataFetcher";
 import { moviesListObject } from "./data";
+import { CreateMovieDoc } from "./firebase/databaseSetup";
 
 export const UserContext = createContext();
 export const MoviesListContext = createContext();

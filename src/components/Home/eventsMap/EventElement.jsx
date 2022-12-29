@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { posterLink } from "../../../data";
 
 export default function EventElement(props) {
-  const { id, title } = props;
+  const {
+    movie: { id, title },
+  } = props;
 
   return (
-    <Link className="event-element-link" to={`/EventPage/?${""}`}>
+    <Link className="event-element-link" to={`/EventPage/?${""}`} state={id}>
       <div className="event-element-container">
         <div className="poster-container">
           <img src={`${posterLink}/${id}.jpg`} alt={title} />
