@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { getMovieSchedule } from "../../firebase/dataFetcher";
 
 export function SchedulePageLoader({ params }) {
   return params.eventTitle;
@@ -8,8 +9,11 @@ export function SchedulePageLoader({ params }) {
 export default function MovieSchedule() {
   const linkParams = useLoaderData();
   const id = linkParams.match(/(\w+)/g)[0];
+  const [schedule, setSchedule] = useState();
 
-  useEffect(() => {});
+  useEffect(() => {
+    // getMovieSchedule(id);
+  }, []);
 
   return <div className="schedule-container"></div>;
 }
