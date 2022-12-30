@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
-import {
-  DateDecontructor,
-  LanguageDecontructor,
-} from "../Home/eventsMap/EventMothods";
-import LeafeletMap from "./LeafeletMap";
+import RatingStars from "./RatingStars";
+import Genres from "./Genres";
 
 export default function EventPage(props) {
   // link search params
@@ -29,6 +26,9 @@ export default function EventPage(props) {
       {/* movie info */}
       <div className="text-side-container">
         <h1>{movieData.title}</h1>
+        <RatingStars originalRating={movieData.vote_average} />
+
+        {/* info */}
         <div className="info-element">
           <span className="info-element-label">Prix : </span>
           <p className="info-element-value">800Da</p>
@@ -38,6 +38,9 @@ export default function EventPage(props) {
         <Link className="book-ticket-btn" to={"/"}>
           reserver ticket
         </Link>
+
+        {/* genres */}
+        <Genres genres={movieData.genres} />
 
         {/* movie synopsis */}
         <div className="synopsis">

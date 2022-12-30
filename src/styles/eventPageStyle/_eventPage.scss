@@ -12,6 +12,7 @@
     width: min(90%, 100rem);
     display: grid;
     align-items: start;
+    justify-items: end;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -20,10 +21,6 @@
     border-radius: 1rem;
     overflow: hidden;
     margin-bottom: 2rem;
-
-    @include desktop {
-      place-self: end;
-    }
   }
 
   .text-side-container {
@@ -38,18 +35,58 @@
       color: $violet2;
     }
 
+    .rating-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      color: $yellow1;
+      margin-bottom: 1.5rem;
+
+      .rating {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      .stars-container {
+        display: flex;
+
+        .star {
+          max-width: 4rem;
+        }
+      }
+    }
+
     .info-element {
       display: flex;
       gap: 1rem;
       text-transform: capitalize;
       font-weight: 400;
+      color: $violet1;
 
       .info-element-label {
         font-weight: 500;
       }
       .info-element-value {
         font-weight: 700;
-        color: $violet1;
+      }
+    }
+
+    .genres-container {
+      margin-bottom: 2rem;
+      color: $violet2;
+
+      .genre-elements-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .genre-element {
+          background: $violet1;
+          color: $white;
+          padding: 0.3em 0.8em;
+          border-radius: 0.8em;
+          font-weight: 500;
+        }
       }
     }
 
