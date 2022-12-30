@@ -39,7 +39,7 @@
       display: flex;
       gap: 1rem;
       align-items: center;
-      color: $yellow1;
+      color: $redLight;
       margin-bottom: 1.5rem;
 
       .rating {
@@ -75,17 +75,22 @@
       margin-bottom: 2rem;
       color: $violet2;
 
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
       .genre-elements-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 1rem;
+        font-size: 1.4rem;
+        font-weight: 400;
 
         .genre-element {
-          background: $violet1;
+          background: $violet2;
           color: $white;
           padding: 0.3em 0.8em;
           border-radius: 0.8em;
-          font-weight: 500;
         }
       }
     }
@@ -96,7 +101,7 @@
       padding: 0.3em 1.2em;
       border-radius: 0.2em;
       text-transform: capitalize;
-      margin: 2rem 0;
+      margin: 0.8rem 0;
 
       &:hover {
         background: $redLight;
