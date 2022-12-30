@@ -1,14 +1,19 @@
 import React, { useEffect } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { posterLink } from "../../data";
 import RatingStars from "./RatingStars";
 import Genres from "./Genres";
 import Casts from "./Casts";
 
+export function EventPageLoader({ params }) {
+  return params.eventTitle;
+}
+
 export default function EventPage(props) {
   // link search params
   let location = useLocation();
   let movieData = location.state;
+  const params = useLoaderData();
 
   // scrolls to top of page on start
   useEffect(() => {
@@ -34,7 +39,7 @@ export default function EventPage(props) {
         </div>
 
         {/* book ticket button */}
-        <Link className="book-ticket-btn" to={"/"}>
+        <Link className="book-ticket-btn" to={`/MovieSchedule/${params}`}>
           reserver ticket
         </Link>
 

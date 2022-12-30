@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
-import EventPage from "./components/Events/EventPage";
+import EventPage, { EventPageLoader } from "./components/Events/EventPage";
 import TicketBooking from "./components/TicketBookingPage/TicketBooking";
 import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
 import Rooms from "./components/Rooms/Rooms";
 import Room, { RoomLoader } from "./components/Rooms/Room";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Dashboard from "./components/Dashboard/Dashboard";
+import MovieSchedule, {
+  SchedulePageLoader,
+} from "./components/MovieSchedule/MovieSchedule";
 
 const router = createHashRouter([
   {
@@ -20,10 +23,7 @@ const router = createHashRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: "EventPage/:eventTitle",
-        element: <EventPage />,
-      },
+
       {
         path: "TicketBooking",
         element: <TicketBooking />,
@@ -48,6 +48,16 @@ const router = createHashRouter([
       {
         path: "Dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "EventPage/:eventTitle",
+        loader: EventPageLoader,
+        element: <EventPage />,
+      },
+      {
+        path: "MovieSchedule/:eventTitle",
+        loader: SchedulePageLoader,
+        element: <MovieSchedule />,
       },
     ],
   },

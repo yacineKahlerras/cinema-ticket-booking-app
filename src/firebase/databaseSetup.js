@@ -90,11 +90,12 @@ export async function CreateMovieDoc() {
 
 /**creates a schedule for each movie */
 export async function createMoviesSchedule() {
-  const movieList = await CreateMovieDoc();
+  const movieList = moviesListObject.list;
   const cinemasIdList = cinemasIds();
   const languages = ["eng", "vostfr", "fr"];
 
   for (let movieIdx = 0; movieIdx < movieList.length; movieIdx++) {
+    const movieId = movieList[movieIdx].id;
     const movieTitle = movieList[movieIdx].title;
     const movieSchedule = [];
     for (let cinemaIdx = 0; cinemaIdx < cinemasIdList.length; cinemaIdx++) {
@@ -122,11 +123,8 @@ export async function createMoviesSchedule() {
     }
 
     // setting the document movie data
-    const docData = { schedule: movieSchedule };
-    // await setDoc(
-    //   doc(db, "movies/moviesList/moviesSchedule", movieTitle),
-    //   docData
-    // );
+    const docData = { title: movieTitle, schedule: movieSchedule };
+    // await setDoc(doc(db, "movies/moviesList/moviesSchedule", movieId), docData);
     console.log(docData);
   }
 }
