@@ -8,7 +8,7 @@ export default function EventElement(props) {
     movie: { id, title },
   } = props;
   const [movieData, setMovieData] = useState();
-  const eventPageTitle = `${title.replace(/\s+/g, "-").toLowerCase()}`;
+  const eventPageTitle = `${id}-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   // gets movie detail from TMDB and updates the state
   useEffect(() => {

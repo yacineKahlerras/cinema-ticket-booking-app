@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { roomsList, posterLink } from "../../data";
+import { posterLink } from "../../data";
 import RatingStars from "./RatingStars";
 import Genres from "./Genres";
 import Casts from "./Casts";
@@ -9,8 +9,6 @@ export default function EventPage(props) {
   // link search params
   let location = useLocation();
   let movieData = location.state;
-
-  // room and movie infos
 
   // scrolls to top of page on start
   useEffect(() => {
