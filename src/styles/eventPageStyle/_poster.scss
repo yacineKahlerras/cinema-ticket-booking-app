@@ -1,0 +1,8 @@
+@use "../utils/" as *;
+
+.poster-container {
+  max-width: 35rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}

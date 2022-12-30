@@ -3,6 +3,7 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
 import RatingStars from "./RatingStars";
 import Genres from "./Genres";
+import Casts from "./Casts";
 
 export default function EventPage(props) {
   // link search params
@@ -41,6 +42,9 @@ export default function EventPage(props) {
 
         {/* genres */}
         <Genres genres={movieData.genres} />
+
+        {/* casts */}
+        <Casts id={movieData.id} />
 
         {/* movie synopsis */}
         <div className="synopsis">

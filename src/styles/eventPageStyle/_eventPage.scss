@@ -16,13 +16,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .poster-container {
-    max-width: 35rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    margin-bottom: 2rem;
-  }
-
   .text-side-container {
     padding-left: 1rem;
     display: flex;
@@ -33,27 +26,6 @@
     h1 {
       text-transform: capitalize;
       color: $violet2;
-    }
-
-    .rating-container {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      color: $redLight;
-      margin-bottom: 1.5rem;
-
-      .rating {
-        font-size: 2rem;
-        font-weight: 500;
-      }
-
-      .stars-container {
-        display: flex;
-
-        .star {
-          max-width: 4rem;
-        }
-      }
     }
 
     .info-element {
@@ -68,30 +40,6 @@
       }
       .info-element-value {
         font-weight: 700;
-      }
-    }
-
-    .genres-container {
-      margin-bottom: 2rem;
-      color: $violet2;
-
-      h3 {
-        margin-bottom: 0.5rem;
-      }
-
-      .genre-elements-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        font-size: 1.4rem;
-        font-weight: 400;
-
-        .genre-element {
-          background: $violet2;
-          color: $white;
-          padding: 0.3em 0.8em;
-          border-radius: 0.8em;
-        }
       }
     }
 
@@ -115,21 +63,6 @@
     h2 {
       color: $violet1;
       margin-bottom: 1rem;
-    }
-  }
-
-  .room-location-container {
-    width: 100%;
-    grid-column: 1 / span 2;
-    z-index: 1;
-
-    h2 {
-      font-size: 3rem;
-    }
-
-    .leaflet-container {
-      border-radius: 1rem;
-      overflow: hidden;
     }
   }
 }
