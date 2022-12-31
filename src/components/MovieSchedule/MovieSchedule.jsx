@@ -10,7 +10,9 @@ export function SchedulePageLoader({ params }) {
 export default function MovieSchedule() {
   const linkParams = useLoaderData();
   const id = linkParams.match(/(\w+)/g)[0];
-  const [schedule, setSchedule] = useState(movieSchedule);
+  const [scheduleData, setScheduleData] = useState(movieSchedule);
+  const schedule = scheduleData.schedule;
+  const title = scheduleData.title;
 
   useEffect(() => {
     // getMovieSchedule(id);
