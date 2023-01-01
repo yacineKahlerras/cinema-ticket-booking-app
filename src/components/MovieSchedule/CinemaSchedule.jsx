@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CinemaSchedule(props) {
-  const { scheduleData, cinemasListData } = props;
+  const { cinemaSchedule, cinemaInfo } = props;
 
   function DatesMap(datesArray) {}
 

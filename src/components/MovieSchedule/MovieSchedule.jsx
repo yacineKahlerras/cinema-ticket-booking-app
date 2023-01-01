@@ -30,7 +30,10 @@ export default function MovieSchedule() {
         options que vous voulez.
       </p>
 
-      <CinemasMap schedule={scheduleData.schedule} />
+      <CinemasMap
+        schedule={scheduleData.schedule}
+        cinemasList={cinemasListData.list}
+      />
     </div>
   );
 }
