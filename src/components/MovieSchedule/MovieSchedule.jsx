@@ -14,6 +14,14 @@ export default function MovieSchedule() {
   const schedule = scheduleData.schedule;
   const title = scheduleData.title;
 
+  for (let cinemaIdx = 0; cinemaIdx < schedule.length; cinemaIdx++) {
+    const cinemaSchedule = schedule[cinemaIdx];
+    for (let dateIdx = 0; dateIdx < cinemaSchedule.dates.length; dateIdx++) {
+      const dateProgram = cinemaSchedule.dates[dateIdx];
+      console.log(new Date(dateProgram.date.seconds * 1000));
+    }
+  }
+
   useEffect(() => {
     // getMovieSchedule(id);
   }, []);
