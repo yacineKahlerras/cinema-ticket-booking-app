@@ -14,6 +14,7 @@ export default function MovieSchedule() {
   const schedule = scheduleData.schedule;
   const title = scheduleData.title;
   const movieDates = new Set();
+  let movieDatesArray = [];
 
   for (let cinemaIdx = 0; cinemaIdx < schedule.length; cinemaIdx++) {
     const cinemaSchedule = schedule[cinemaIdx];
@@ -24,9 +25,7 @@ export default function MovieSchedule() {
     }
   }
 
-  for (const date of movieDates) {
-    console.log(new Date(date));
-  }
+  movieDatesArray = Array.from(movieDates).sort();
 
   useEffect(() => {
     // getMovieSchedule(id);
