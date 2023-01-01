@@ -22,6 +22,15 @@
 
       .cinema-title-container {
         margin-bottom: 1rem;
+        display: grid;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: start;
+        grid-template-columns: 2rem auto;
+
+        .cinema-title {
+          text-transform: capitalize;
+        }
       }
 
       .cinema-dates-map {
