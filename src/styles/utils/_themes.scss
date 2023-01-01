@@ -8,6 +8,7 @@ $white: var(--white);
 $red: var(--red);
 $redLight: var(--red-light);
 $yellow1: var(--yellow-1);
+$green1: var(--green-1);
 
 :root {
   --background: rgb(255, 255, 255);
@@ -20,4 +21,5 @@ $yellow1: var(--yellow-1);
   --red: #f84464;
   --red-light: rgb(249 80 112);
   --yellow-1: #f3993e;
+  --green-1: #4abd5d;
 }
