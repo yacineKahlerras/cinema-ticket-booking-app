@@ -848,3 +848,62 @@ export const movieSchedule = {
   ],
   title: "ticket to paradise",
 };
+
+export const cinemasListObject = {
+  list: [
+    {
+      location: {
+        latitude: 36.7753606,
+        longitude: 3.0601882,
+      },
+      id: "h2Qgg",
+      name: "ahmed bay",
+      wilaya: "constantine",
+    },
+    {
+      id: "ri-rG",
+      location: {
+        latitude: 36.7753606,
+        longitude: 3.0601882,
+      },
+      wilaya: "alger",
+      name: "ibn zeydoun",
+    },
+    {
+      name: "cosmos",
+      location: {
+        latitude: 36.7753606,
+        longitude: 3.0601882,
+      },
+      wilaya: "constantine",
+      id: "Rvmff",
+    },
+    {
+      wilaya: "alger",
+      location: {
+        latitude: 36.7753606,
+        longitude: 3.0601882,
+      },
+      id: "NKy7N",
+      name: "ibn khaldoun",
+    },
+    {
+      wilaya: "alger",
+      id: "Tldge",
+      name: "es sahel",
+      location: {
+        latitude: 36.7753606,
+        longitude: 3.0601882,
+      },
+    },
+    {
+      id: "n4pdv",
+      location: {
+        latitude: 36.7753606,
+        longitude: 3.0601882,
+      },
+      wilaya: "oran",
+      name: "cinegold",
+    },
+  ],
+};

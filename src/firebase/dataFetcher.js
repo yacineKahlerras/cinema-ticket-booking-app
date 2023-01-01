@@ -27,3 +27,16 @@ export async function getMovieSchedule(movieId) {
     console.log(`no document by the name of ${movieId}`);
   }
 }
+
+/**gets the ciname array listfrom the cinemas collection */
+export async function getCinemasList() {
+  const cinemasDocRef = doc(db, "cinemas", "cinemasList");
+  const cinemasListSnapshot = await getDoc(cinemasDocRef);
+
+  if (cinemasListSnapshot.exists()) {
+    console.log(cinemasListSnapshot.data());
+    return cinemasListSnapshot.data();
+  } else {
+    console.log(`no document by that name.`);
+  }
+}
