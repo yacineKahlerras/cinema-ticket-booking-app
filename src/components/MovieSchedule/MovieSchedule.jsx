@@ -31,5 +31,39 @@ export default function MovieSchedule() {
     // getMovieSchedule(id);
   }, []);
 
-  return <div className="schedule-container"></div>;
+  return (
+    <div className="schedule-container">
+      <h1>{title}</h1>
+      <p>
+        choisisez l'heure et la langue dans la liste si dessous. vous pouvez
+        utilisez le filtres de Wilaya, Cinemas et Langue pour filtrer les
+        options que vous voulez.
+      </p>
+      <div className="cinemas-schedule-map">
+        {/* individual cinema schedule */}
+        <div className="cinema-schedule">
+          <div className="cinema-title-container">
+            <span className="cinema-title">Cinema Ahmed Bay (Constantine)</span>
+          </div>
+          <div className="cinema-dates-map">
+            <div className="date-container">
+              <span className="date">25 Jan</span>
+              <span className="hour">19h</span>
+              <span className="language">VOSTFR</span>
+            </div>
+            <div className="date-container">
+              <span className="date">25 Jan</span>
+              <span className="hour">19h</span>
+              <span className="language">VOSTFR</span>
+            </div>
+            <div className="date-container">
+              <span className="date">25 Jan</span>
+              <span className="hour">19h</span>
+              <span className="language">VOSTFR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -1,1 +1,42 @@
 @use "../utils/" as *;
+
+.schedule-container {
+  width: min(90%, 100rem);
+  color: $violet2;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .cinemas-schedule-map {
+    margin-top: 2rem;
+
+    .cinema-schedule {
+      padding: 2rem 2rem;
+      box-shadow: 15px 10px 53px 0px rgba(0, 0, 0, 0.21);
+      -webkit-box-shadow: 15px 10px 53px 0px rgba(0, 0, 0, 0.21);
+      -moz-box-shadow: 15px 10px 53px 0px rgba(0, 0, 0, 0.21);
+      border-radius: 1rem;
+
+      .cinema-title-container {
+        margin-bottom: 1rem;
+      }
+
+      .cinema-dates-map {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        gap: 1rem;
+
+        .date-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
