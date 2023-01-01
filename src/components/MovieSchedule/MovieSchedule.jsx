@@ -13,13 +13,19 @@ export default function MovieSchedule() {
   const [scheduleData, setScheduleData] = useState(movieSchedule);
   const schedule = scheduleData.schedule;
   const title = scheduleData.title;
+  const movieDates = new Set();
 
   for (let cinemaIdx = 0; cinemaIdx < schedule.length; cinemaIdx++) {
     const cinemaSchedule = schedule[cinemaIdx];
     for (let dateIdx = 0; dateIdx < cinemaSchedule.dates.length; dateIdx++) {
       const dateProgram = cinemaSchedule.dates[dateIdx];
-      console.log(new Date(dateProgram.date.seconds * 1000));
+      const seconds = dateProgram.date.seconds;
+      movieDates.add(new Date(seconds * 1000).setHours(0, 0, 0, 0));
     }
+  }
+
+  for (const date of movieDates) {
+    console.log(new Date(date));
   }
 
   useEffect(() => {
