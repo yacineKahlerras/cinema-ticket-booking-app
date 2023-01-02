@@ -6,16 +6,19 @@ export default function CinemasMap(props) {
 
   return (
     <div className="cinemas-schedule-map">
-      {schedule.forEach((cinemaSchedule) => {
-        let cinemaInfo = [];
+      {schedule.map((cinemaSchedule, index) => {
+        let cinemaInfo = null;
         for (let cinemaIdx = 0; cinemaIdx < cinemasList.length; cinemaIdx++) {
           if (cinemaSchedule.cinemaId == cinemasList[cinemaIdx].id)
             cinemaInfo = cinemasList[cinemaIdx];
         }
-        <CinemaSchedule
-          cinemaSchedule={cinemaSchedule}
-          cinemaInfo={cinemaInfo}
-        />;
+        return (
+          <CinemaSchedule
+            key={index}
+            cinemaSchedule={cinemaSchedule}
+            cinemaInfo={cinemaInfo}
+          />
+        );
       })}
     </div>
   );
