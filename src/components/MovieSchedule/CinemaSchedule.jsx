@@ -6,6 +6,7 @@ export default function CinemaSchedule(props) {
   function DatesMapElements() {
     return cinemaSchedule.dates.map((dateInfo, index) => {
       const dateObject = new Date(dateInfo.date.seconds * 1000);
+
       const month = dateObject.toDateString().match(/(\w+)/g)[1];
       const day = dateObject.toDateString().match(/(\w+)/g)[2];
       const hour = dateObject.getHours();
@@ -35,7 +36,9 @@ export default function CinemaSchedule(props) {
         >
           <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
         </svg>
-        <span className="cinema-title">Cinema</span>
+        <span className="cinema-title">
+          Cinema {cinemaInfo.name} ({cinemaInfo.wilaya})
+        </span>
       </div>
       <div className="cinema-dates-map">
         <DatesMapElements />
