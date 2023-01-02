@@ -13,8 +13,8 @@ export default function DatesMapElements(props) {
     const language = dateInfo.language;
 
     return (
-      <Link to={`/`}>
-        <div key={index} className="date-container">
+      <Link key={index} to={`/`}>
+        <div className="date-container">
           <span className="date">
             {day} {month}
           </span>
