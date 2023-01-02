@@ -9,9 +9,7 @@ export default function ProfileSection() {
   const [profileMenuActive, setProfileMenuActive] = useState(false);
 
   const SignInBtn = (
-    <button onClick={SignIn} className="sign-up-btn">
-      S'inscrire
-    </button>
+    <button /**onClick={SignIn}*/ className="sign-up-btn">S'inscrire</button>
   );
 
   function toggleProfileMenu() {

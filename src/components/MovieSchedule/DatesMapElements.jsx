@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function DatesMapElements(props) {
   const { cinemaSchedule } = props;
@@ -12,13 +13,15 @@ export default function DatesMapElements(props) {
     const language = dateInfo.language;
 
     return (
-      <div key={index} className="date-container">
-        <span className="date">
-          {day} {month}
-        </span>
-        <span className="hour">{hour}h</span>
-        <span className="language">{language}</span>
-      </div>
+      <Link to={`/`}>
+        <div key={index} className="date-container">
+          <span className="date">
+            {day} {month}
+          </span>
+          <span className="hour">{hour}h</span>
+          <span className="language">{language}</span>
+        </div>
+      </Link>
     );
   });
 }
