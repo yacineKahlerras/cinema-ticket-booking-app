@@ -1,28 +1,8 @@
 import React from "react";
+import DatesMapElements from "./DatesMapElements";
 
 export default function CinemaSchedule(props) {
   const { cinemaSchedule, cinemaInfo } = props;
-
-  function DatesMapElements() {
-    return cinemaSchedule.dates.map((dateInfo, index) => {
-      const dateObject = new Date(dateInfo.date.seconds * 1000);
-
-      const month = dateObject.toDateString().match(/(\w+)/g)[1];
-      const day = dateObject.toDateString().match(/(\w+)/g)[2];
-      const hour = dateObject.getHours();
-      const language = dateInfo.language;
-
-      return (
-        <div key={index} className="date-container">
-          <span className="date">
-            {day} {month}
-          </span>
-          <span className="hour">{hour}h</span>
-          <span className="language">{language}</span>
-        </div>
-      );
-    });
-  }
 
   return (
     <div className="cinema-schedule">
@@ -41,12 +21,13 @@ export default function CinemaSchedule(props) {
         </span>
       </div>
       <div className="cinema-dates-map">
-        <DatesMapElements />
+        <DatesMapElements cinemaSchedule={cinemaSchedule} />
       </div>
     </div>
   );
 }
 
+/**object info templates */
 const cinInfo = {
   location: {
     latitude: 36.7753606,
