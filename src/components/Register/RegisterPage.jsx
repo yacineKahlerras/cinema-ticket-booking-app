@@ -15,8 +15,7 @@ export default function RegisterPage(props) {
 
   // payment method options
   const paymentOptions = [
-    { value: "paypal", label: "Paypal" },
-    { value: "societeGenerale", label: "Societé Generale" },
+    { value: "cib", label: "CIB" },
     { value: "edahabia", label: "Eddahabia" },
   ];
 
