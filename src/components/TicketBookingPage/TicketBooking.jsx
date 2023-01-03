@@ -12,7 +12,8 @@ export default function TicketBooking() {
 
   // location state vars
   const locationState = useLocation().state;
-  console.log(locationState);
+  const { movieId: newMovieId, dateInfo } = locationState;
+  console.log(newMovieId, dateInfo);
 
   // getting search params
   const [searchParams] = useSearchParams();
@@ -32,13 +33,6 @@ export default function TicketBooking() {
     columns: 10,
     rows: 8,
   };
-  const unavailableSeats = [
-    { row: 0, col: 0 },
-    { row: 2, col: 3 },
-    { row: 2, col: 4 },
-    { row: 5, col: 0 },
-    { row: 5, col: 6 },
-  ];
 
   function GotToPage(pageTitle) {
     setBookingStep(pageTitle);
@@ -71,7 +65,7 @@ export default function TicketBooking() {
         return (
           <SeatPicker
             gridInfo={gridInfo}
-            unavailableSeats={unavailableSeats}
+            unavailableSeats={dateInfo.takenSeats}
             bookedSeats={bookedSeats}
             goNextPage={() => GotToPage("register")}
             setBookedSeats={setBookedSeats}
