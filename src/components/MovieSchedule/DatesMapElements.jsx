@@ -18,7 +18,7 @@ export default function DatesMapElements(props) {
           <span className="date">
             {day} {month}
           </span>
-          <span className="hour">{hour}h</span>
+          <span className="hour">à {hour}h</span>
           <span className="language">{language}</span>
         </div>
       </Link>
