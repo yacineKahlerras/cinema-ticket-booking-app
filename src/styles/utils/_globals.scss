@@ -8,12 +8,6 @@ $maxWidth1: var(--max-width-1);
   --max-width-1: min(85%, 60rem);
 }
 
-@mixin tablet {
-  @media (min-width: 56em) {
-    @content;
-  }
-}
-
 @mixin desktop {
   @media (min-width: 56em) {
     @content;
