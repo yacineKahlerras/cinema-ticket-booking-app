@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MovieIsContext } from "./MovieSchedule";
 
 export default function DatesMapElements(props) {
   const { cinemaSchedule } = props;
+  const movieId = useContext(MovieIsContext);
 
   return cinemaSchedule.dates.map((dateInfo, index) => {
     const dateObject = new Date(dateInfo.date.seconds * 1000);
@@ -13,7 +15,11 @@ export default function DatesMapElements(props) {
     const language = dateInfo.language;
 
     return (
-      <Link key={index} to={`/TicketBooking?roomId=h2Qgg&movieId=0`}>
+      <Link
+        key={index}
+        to={`/TicketBooking?roomId=h2Qgg&movieId=0`}
+        state={{ movieId: movieId, dateInfo: dateInfo }}
+      >
         <div className="date-container">
           <span className="date">
             {day} {month}

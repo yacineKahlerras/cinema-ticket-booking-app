@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
   const [bookingStep, setBookingStep] = useState("seatPicker");
   const [paymentMethod, setPaymentMethod] = useState("");
+
+  // location state vars
+  const locationState = useLocation().state;
+  console.log(locationState);
 
   // getting search params
   const [searchParams] = useSearchParams();
