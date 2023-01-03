@@ -13,7 +13,7 @@ export default function DatesMapElements(props) {
     const language = dateInfo.language;
 
     return (
-      <Link key={index} to={`/`}>
+      <Link key={index} to={`/TicketBooking?roomId=h2Qgg&movieId=0`}>
         <div className="date-container">
           <span className="date">
             {day} {month}

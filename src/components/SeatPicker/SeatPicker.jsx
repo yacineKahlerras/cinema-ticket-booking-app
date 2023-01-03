@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SeatInfoBar from "./SeatInfoBar";
 import { gridInfoGenerator, seatElements } from "./SeatPickerMethods";
 import TicketNumberInfo from "./TicketNumberInfo";
@@ -11,11 +11,20 @@ export default function SeatPicker(props) {
     goNextPage,
     setBookedSeats,
   } = props;
+  const screenRef = useRef();
+
+  useEffect(() => {
+    screenRef.current.scrollIntoView({
+      behavior: "auto",
+      block: "center",
+      inline: "center",
+    });
+  }, []);
 
   return (
     <div className="seat-map-container">
       <div className="screen-container">
-        <h1>ecran</h1>
+        <h1 ref={screenRef}>ecran</h1>
       </div>
 
       {seatElements(
