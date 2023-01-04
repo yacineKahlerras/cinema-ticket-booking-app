@@ -71,7 +71,12 @@ export default function RegisterPage(props) {
         <button className="back-btn" onClick={goPreviousPage}>
           Retour
         </button>
-        <button onClick={ContinueToNextPage}>Continuer</button>
+        <button
+          className={paymentMethod.value ? "active-btn" : ""}
+          onClick={ContinueToNextPage}
+        >
+          Continuer
+        </button>
       </div>
     </div>
   );

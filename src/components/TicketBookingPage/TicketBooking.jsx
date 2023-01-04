@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
-import { useLocation, useSearchParams } from "react-router-dom";
-import { roomsList } from "../../data";
+import { useLocation } from "react-router-dom";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
@@ -13,21 +12,6 @@ export default function TicketBooking() {
   // location state vars
   const locationState = useLocation().state;
   const { movieId: newMovieId, cinemaId, dateInfo } = locationState;
-  console.log(newMovieId, cinemaId, dateInfo);
-
-  // getting search params
-  const [searchParams] = useSearchParams();
-  const roomId = searchParams.get("roomId");
-  const subRoomId = searchParams.get("subRoomId");
-  const movieId = searchParams.get("movieId");
-
-  // getting movie info
-  const room = roomsList.filter((room) => room.id == roomId)[0];
-  const hasSubRoom = subRoomId !== null;
-  const movie = hasSubRoom
-    ? room.subRooms[subRoomId].movies[movieId]
-    : room.movies[parseInt(movieId)];
-  const { poster, title, date, time, price, langue } = movie;
 
   const gridInfo = {
     columns: 10,
@@ -48,7 +32,7 @@ export default function TicketBooking() {
             goPreviousPage={() => GotToPage("seatPicker")}
             paymentMethod={paymentMethod}
             setPaymentMethod={setPaymentMethod}
-            price={price}
+            price={800}
           />
         );
 

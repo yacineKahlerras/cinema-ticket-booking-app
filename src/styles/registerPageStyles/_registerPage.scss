@@ -67,14 +67,19 @@
   button,
   .booking-btn {
     color: $white;
-    background: $red;
+    background: $grayColor3;
     font-weight: 400;
     padding: 0.5em 1.5em;
     border-radius: 0.3em;
     text-align: center;
+    transition: 0.5s;
 
-    &:hover {
-      background: $redLight;
+    &.active-btn {
+      background: $red;
+
+      &:hover {
+        background: $redLight;
+      }
     }
 
     &.back-btn {
