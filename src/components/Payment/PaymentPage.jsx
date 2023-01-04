@@ -4,20 +4,7 @@ import { roomsList } from "../../data";
 
 export default function PaymentPage(props) {
   const { bookedSeats, goPreviousPage, paymentMethod } = props;
-
-  // getting search params
-  const [searchParams] = useSearchParams();
-  const roomId = searchParams.get("roomId");
-  const subRoomId = searchParams.get("subRoomId");
-  const movieId = searchParams.get("movieId");
-
-  // getting movie info
-  const room = roomsList.filter((room) => room.id == roomId)[0];
-  const hasSubRoom = subRoomId !== null;
-  const movie = hasSubRoom
-    ? room.subRooms[subRoomId].movies[movieId]
-    : room.movies[parseInt(movieId)];
-  const { price, title, date, time } = movie;
+  const price = 800;
 
   return (
     <div className="payment-page-container">
@@ -73,15 +60,15 @@ export default function PaymentPage(props) {
           Retour
         </button>
         <Link
-          className="booking-btn"
+          className="booking-btn active-btn"
           to="/PaymentCompleted"
-          state={{
-            title: title,
-            date: date,
-            roomTitle: room.title,
-            eventTime: time,
-            bookedSeats: bookedSeats,
-          }}
+          // state={{
+          //   title: title,
+          //   date: date,
+          //   roomTitle: room.title,
+          //   eventTime: time,
+          //   bookedSeats: bookedSeats,
+          // }}
         >
           Confirmer
         </Link>

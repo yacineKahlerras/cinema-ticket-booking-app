@@ -21,6 +21,10 @@ export default function SeatPicker(props) {
     });
   }, []);
 
+  function continueToNextPage() {
+    if (bookedSeats.length) goNextPage();
+  }
+
   return (
     <div className="seat-map-container">
       <div className="screen-container">
@@ -35,7 +39,10 @@ export default function SeatPicker(props) {
       <SeatInfoBar />
       <TicketNumberInfo bookedSeats={bookedSeats} />
 
-      <button className="continue-btn" onClick={goNextPage}>
+      <button
+        className={`continue-btn  ${bookedSeats.length ? "active-btn" : ""}`}
+        onClick={continueToNextPage}
+      >
         Continuer
       </button>
     </div>
