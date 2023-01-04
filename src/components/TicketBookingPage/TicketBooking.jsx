@@ -12,8 +12,8 @@ export default function TicketBooking() {
 
   // location state vars
   const locationState = useLocation().state;
-  const { movieId: newMovieId, dateInfo } = locationState;
-  console.log(newMovieId, dateInfo);
+  const { movieId: newMovieId, cinemaId, dateInfo } = locationState;
+  console.log(newMovieId, cinemaId, dateInfo);
 
   // getting search params
   const [searchParams] = useSearchParams();

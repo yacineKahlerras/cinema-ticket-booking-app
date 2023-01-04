@@ -18,7 +18,11 @@ export default function DatesMapElements(props) {
       <Link
         key={index}
         to={`/TicketBooking?roomId=h2Qgg&movieId=0`}
-        state={{ movieId: movieId, dateInfo: dateInfo }}
+        state={{
+          movieId: movieId,
+          cinemaId: cinemaSchedule.cinemaId,
+          dateInfo: dateInfo,
+        }}
       >
         <div className="date-container">
           <span className="date">
