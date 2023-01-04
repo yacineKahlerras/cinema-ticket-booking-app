@@ -4,6 +4,9 @@ import { roomsList } from "../../data";
 
 export default function PaymentPage(props) {
   const { bookedSeats, goPreviousPage, paymentMethod } = props;
+  const {
+    movieInfo: { movieId, cinemaId },
+  } = props;
   const price = 800;
 
   return (
