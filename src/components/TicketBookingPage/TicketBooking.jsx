@@ -42,7 +42,11 @@ export default function TicketBooking() {
             bookedSeats={bookedSeats}
             goPreviousPage={() => GotToPage("register")}
             paymentMethod={paymentMethod}
-            movieInfo={{ movieId: newMovieId, cinemaId: cinemaId }}
+            movieInfo={{
+              movieId: newMovieId,
+              cinemaId: cinemaId,
+              dateInfo: dateInfo,
+            }}
           />
         );
 

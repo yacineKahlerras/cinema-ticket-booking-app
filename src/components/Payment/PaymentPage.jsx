@@ -4,9 +4,7 @@ import { roomsList } from "../../data";
 
 export default function PaymentPage(props) {
   const { bookedSeats, goPreviousPage, paymentMethod } = props;
-  const {
-    movieInfo: { movieId, cinemaId },
-  } = props;
+  const { movieInfo } = props;
   const price = 800;
 
   return (
@@ -66,10 +64,7 @@ export default function PaymentPage(props) {
           className="booking-btn active-btn"
           to="/PaymentCompleted"
           state={{
-            movieId: movieId,
-            date: date,
-            cinemaId: cinemaId,
-            eventTime: time,
+            movieInfo: movieInfo,
             bookedSeats: bookedSeats,
           }}
         >
