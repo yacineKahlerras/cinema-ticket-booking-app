@@ -65,13 +65,13 @@ export default function PaymentPage(props) {
         <Link
           className="booking-btn active-btn"
           to="/PaymentCompleted"
-          // state={{
-          //   title: title,
-          //   date: date,
-          //   roomTitle: room.title,
-          //   eventTime: time,
-          //   bookedSeats: bookedSeats,
-          // }}
+          state={{
+            movieId: movieId,
+            date: date,
+            cinemaId: cinemaId,
+            eventTime: time,
+            bookedSeats: bookedSeats,
+          }}
         >
           Confirmer
         </Link>
