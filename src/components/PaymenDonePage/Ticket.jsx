@@ -1,11 +1,11 @@
 import React from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import { DateDecontructor } from "../Home/eventsMap/EventMothods";
 
 export default function Ticket(props) {
-  const { location } = props;
-  const { title, date, roomTitle, eventTime, bookedSeats } = location.state;
-  const tempDate = DateDecontructor(date);
+  const {
+    dateParts: { hour, dayOfWeek, day, month, year },
+  } = props;
+  const { title, roomTitle } = props;
 
   return (
     <div className="ticket-container">
@@ -67,7 +67,7 @@ export default function Ticket(props) {
           </div>
           <h3>Cinema {roomTitle}</h3>
           <p>
-            {tempDate.weekday} le {tempDate.day}-{tempDate.month} a {eventTime}
+            {dayOfWeek} le {day} {month} à {hour}h
           </p>
         </div>
       </div>

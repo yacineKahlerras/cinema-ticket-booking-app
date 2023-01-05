@@ -4,6 +4,7 @@ import Ticket from "./Ticket";
 import html2canvas from "html2canvas";
 import { CinemaDataContext, MoviesListContext } from "../../App";
 import GetListItemById from "./GetListItemById";
+import GetDateParts from "./GetDateParts";
 
 export default function PaymentDonePage() {
   const location = useLocation();
@@ -16,8 +17,10 @@ export default function PaymentDonePage() {
   const cinemaList = useContext(CinemaDataContext).cinemasListData.list;
   const movie = GetListItemById(movieInfo.movieId, movieList);
   const cinema = GetListItemById(movieInfo.cinemaId, cinemaList);
-  const dateData = new Date(movieInfo.dateInfo.date.seconds * 1000);
-  console.log(dateData);
+  const dateObject = new Date(movieInfo.dateInfo.date.seconds * 1000);
+  const dateParts = GetDateParts(dateObject);
+
+  console.log(dateObject.getDay());
 
   function Tickets() {
     return (
@@ -28,16 +31,13 @@ export default function PaymentDonePage() {
       >
         {bookedSeats.map((_, index) => {
           return (
-            // <Ticket
-            //   key={index}
-            //   location={location}
-            //   title={movie.title}
-            //   date={dateData.toDateString()}
-            //   roomTitle={cinema.name}
-            //   eventTime={"eventTime"}
-            //   bookedSeats={bookedSeats}
-            // />
-            ""
+            <Ticket
+              key={index}
+              dateParts={dateParts}
+              title={movie.title}
+              roomTitle={cinema.name}
+              bookedSeats={bookedSeats}
+            />
           );
         })}
       </div>
