@@ -1,4 +1,4 @@
-export default function GetDateParts() {
+export default function GetDateParts(dateObject) {
   const monthsList = [
     "Janvier",
     "Fevrier",
@@ -22,7 +22,6 @@ export default function GetDateParts() {
     "vendredi",
     "samedi",
   ];
-  const dateObject = new Date();
   const hour = dateObject.getHours();
   const month = monthsList[dateObject.getMonth()];
   const year = dateObject.getFullYear();

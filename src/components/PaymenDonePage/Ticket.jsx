@@ -5,7 +5,7 @@ export default function Ticket(props) {
   const {
     dateParts: { hour, dayOfWeek, day, month, year },
   } = props;
-  const { title, roomTitle } = props;
+  const { title, roomTitle, seat } = props;
 
   return (
     <div className="ticket-container">
@@ -76,7 +76,7 @@ export default function Ticket(props) {
       <div className="qr-code-container">
         <div className="qr-code-center">
           <QRCodeCanvas
-            value={title}
+            value={`${title}-${seat.col}-${seat.row}`}
             size={136}
             bgColor={"#ffffff"}
             fgColor={"#000000"}

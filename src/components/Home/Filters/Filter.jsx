@@ -38,6 +38,7 @@ export default function Filter(props) {
     <div className="filter">
       <span className="filter-label">{filterLabel}</span>
       <Select
+        isSearchable={false}
         value={selectValue}
         onChange={changeHandler}
         options={FilterList()}
