@@ -20,7 +20,7 @@ export default function PaymentDonePage() {
   const dateObject = new Date(movieInfo.dateInfo.date.seconds * 1000);
   const dateParts = GetDateParts(dateObject);
 
-  console.log(dateObject.getDay());
+  console.log(movieInfo.dateInfo);
 
   function Tickets() {
     return (
