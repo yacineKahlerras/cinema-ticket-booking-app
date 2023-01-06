@@ -7,9 +7,13 @@ export default function ProfileSection() {
   const { user } = useContext(UserContext);
   const hasUser = user != null && user.displayName != null;
   const [profileMenuActive, setProfileMenuActive] = useState(false);
+  const isSignInLoading = localStorage.getItem("isSignInLoading");
+  console.log(isSignInLoading);
 
   const SignInBtn = (
-    <button /**onClick={SignIn}*/ className="sign-up-btn">S'inscrire</button>
+    <button /**onClick={SignIn}*/ className="sign-up-btn">
+      {isSignInLoading ? "Loading.." : "S'inscrire"}
+    </button>
   );
 
   function toggleProfileMenu() {
