@@ -3,11 +3,11 @@ import Select, { components } from "react-select";
 import { Component } from "react";
 
 export default function FilterGeneric(props) {
-  let { filterLabel, options, changeHandler, paymentMethod } = props;
+  const { filterLabel, options, changeHandler, paymentMethod } = props;
 
-  options = [
-    { value: "England", label: "England", icon: "england.svg" },
-    { value: "Germany", label: "Germany", icon: "germany.svg" },
+  const newOptions = [
+    { value: "England", label: "England", icon: "💀" },
+    { value: "Germany", label: "Germany", icon: "🐢" },
   ];
 
   return (
@@ -15,24 +15,37 @@ export default function FilterGeneric(props) {
       <div className="filter">
         <span className="filter-label">{filterLabel}</span>
         <Select
+          isSearchable={false}
           // value={paymentMethod}
           // onChange={changeHandler}
-          options={options}
+          options={newOptions}
           // defaultValue={paymentMethod}
+          components={{
+            Control: Control,
+            Option: IconOption,
+            SingleValue: SingleValue,
+          }}
+          placeholder="Select Country.."
         />
       </div>
     </div>
   );
 }
 
-const { Option } = components;
 const IconOption = (props) => (
-  <Option {...props}>
-    <img
-      src={require("./" + props.data.icon)}
-      style={{ width: 36 }}
-      alt={props.data.label}
-    />
+  <components.Option {...props}>
     {props.data.label}
-  </Option>
+    {props.data.icon}
+  </components.Option>
+);
+
+const Control = ({ children, ...props }) => (
+  <components.Control {...props}>{children}</components.Control>
+);
+
+const SingleValue = (props) => (
+  <components.SingleValue {...props}>
+    {props.data.label}
+    {props.data.icon}
+  </components.SingleValue>
 );
