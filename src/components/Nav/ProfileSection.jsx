@@ -1,16 +1,14 @@
 import React, { useContext, useRef, useState } from "react";
-import { Oval } from "react-loader-spinner";
-import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
-import { SignIn, LogOut } from "../../firebase/googleAuth";
+import { SignIn } from "../../firebase/googleAuth";
 import LoadingSpinner from "./LoadingSpinner";
+import ProfileDropDown from "./ProfileDropDown";
 
 export default function ProfileSection() {
   const { user } = useContext(UserContext);
   const hasUser = user != null && user.displayName != null;
   const [profileMenuActive, setProfileMenuActive] = useState(false);
-  const isSignInLoading = true; /**localStorage.getItem("isSignInLoading");*/
-  console.log(isSignInLoading);
+  const isSignInLoading = localStorage.getItem("isSignInLoading");
 
   const SignInBtn = (
     <button onClick={SignIn} className="sign-up-btn">
@@ -22,30 +20,16 @@ export default function ProfileSection() {
     setProfileMenuActive(!profileMenuActive);
   }
 
-  const profileMenuDropdown = (
-    <ul className={`profile-menu ${profileMenuActive ? "show-menu" : ""}`}>
-      <li className="profile-menu-links" onClick={toggleProfileMenu}>
-        <Link to="/Dashboard">Mes Tickets</Link>
-      </li>
-      <li
-        className="profile-menu-links"
-        onClick={() => {
-          toggleProfileMenu();
-          LogOut();
-        }}
-      >
-        Log Out
-      </li>
-    </ul>
-  );
-
   const profileElement =
     hasUser == true ? (
       <button onClick={toggleProfileMenu} className="profile-element-container">
         <img src={user.photoURL} alt={user.displayName} />
 
         {/* profile dropdown options */}
-        {profileMenuDropdown}
+        <ProfileDropDown
+          profileMenuActive={profileMenuActive}
+          toggleProfileMenu={toggleProfileMenu}
+        />
       </button>
     ) : (
       ""
