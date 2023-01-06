@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
+import { Oval } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 import { SignIn, LogOut } from "../../firebase/googleAuth";
@@ -9,11 +10,27 @@ export default function ProfileSection() {
   const [profileMenuActive, setProfileMenuActive] = useState(false);
   const isSignInLoading = localStorage.getItem("isSignInLoading");
   console.log(isSignInLoading);
+  const spinnerSize = 30;
 
   const SignInBtn = (
-    <button /**onClick={SignIn}*/ className="sign-up-btn">
+    <button onClick={SignIn} className="sign-up-btn">
       {isSignInLoading ? "Loading.." : "S'inscrire"}
     </button>
+  );
+
+  const loadingSpinner = (
+    <Oval
+      height={spinnerSize}
+      width={spinnerSize}
+      color="#4fa94d"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+      ariaLabel="oval-loading"
+      secondaryColor="#4fa94d"
+      strokeWidth={5}
+      strokeWidthSecondary={5}
+    />
   );
 
   function toggleProfileMenu() {
@@ -49,5 +66,9 @@ export default function ProfileSection() {
       ""
     );
 
-  return hasUser ? profileElement : SignInBtn;
+  return hasUser
+    ? profileElement
+    : isSignInLoading
+    ? loadingSpinner
+    : SignInBtn;
 }
