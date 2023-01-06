@@ -1,0 +1,31 @@
+@use "../utils/" as *;
+
+.payment-form-container {
+  //   payment info
+  .payment-info {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+
+      .payment-info-label {
+        color: $grayColor2;
+        text-transform: capitalize;
+      }
+      .payment-info-value {
+        color: $violet2;
+        text-transform: capitalize;
+        font-weight: 600;
+      }
+
+      &:last-of-type {
+        border-top: 0.2rem dashed $grayColor3;
+        padding-top: 1.5rem;
+      }
+    }
+  }
+}

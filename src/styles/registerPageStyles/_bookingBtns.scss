@@ -1,0 +1,37 @@
+@use "../utils/" as *;
+
+//   steps navigation buttons button
+.booking-navigation-buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 2rem;
+
+  button,
+  .booking-btn {
+    color: $white;
+    background: $grayColor3;
+    font-weight: 400;
+    padding: 0.5em 1.5em;
+    border-radius: 0.3em;
+    text-align: center;
+    transition: 0.5s;
+
+    &.active-btn {
+      background: $red;
+
+      &:hover {
+        background: $redLight;
+      }
+    }
+
+    &.back-btn {
+      background: $violet2;
+
+      &:hover {
+        background: $violet1;
+      }
+    }
+  }
+}

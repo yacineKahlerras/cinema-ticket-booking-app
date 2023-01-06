@@ -5,6 +5,7 @@ import FilterGeneric from "../Home/Filters/FilterGeneric";
 import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
 import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
 import PaymentInfo from "./PaymentInfo";
+import GoogleButton from "react-google-button";
 
 export default function RegisterPage(props) {
   const {
@@ -41,6 +42,17 @@ export default function RegisterPage(props) {
     <div className="payment-form-container">
       {/* payment info */}
       <PaymentInfo paymentInfoList={paymentInfoList} />
+
+      {/* google register */}
+      <div className="payment-method-container">
+        <h1>Se Connecter</h1>
+        <GoogleButton
+          className="google-btn"
+          onClick={() => {
+            console.log("Google button clicked");
+          }}
+        />
+      </div>
 
       {/* payment method */}
       <div className="payment-method-container">

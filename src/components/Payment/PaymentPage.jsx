@@ -28,6 +28,7 @@ export default function PaymentPage(props) {
         <div>
           <label>numero de carte</label>
           <input
+            autoComplete="off"
             type="password"
             placeholder="ex : 4870 1012 6523 948"
             defaultValue="4870 1012 6523 948"
@@ -37,6 +38,7 @@ export default function PaymentPage(props) {
         <div>
           <label>date d'expiration</label>
           <input
+            autoComplete="off"
             type="password"
             maxLength={5}
             placeholder="ex : 08-23"
@@ -46,6 +48,7 @@ export default function PaymentPage(props) {
         <div>
           <label>ccv/cvv</label>
           <input
+            autoComplete="off"
             type="password"
             maxLength={3}
             max="3"
