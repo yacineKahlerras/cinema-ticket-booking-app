@@ -4,9 +4,7 @@ import "./styles/style.scss";
 import { createContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
-import { getMoviesList } from "./firebase/dataFetcher";
 import { moviesListObject } from "./data";
-import { CreateMovieDoc } from "./firebase/databaseSetup";
 import { cinemasListObject } from "./data";
 
 export const UserContext = createContext();
