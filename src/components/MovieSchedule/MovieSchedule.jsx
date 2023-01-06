@@ -16,6 +16,7 @@ export default function MovieSchedule() {
   const movieId = linkParams.match(/(\w+)/g)[0];
   const [scheduleData, setScheduleData] = useState(movieSchedule);
   const cinemasData = useContext(CinemaDataContext);
+  if (!cinemasData) return;
   const cinemasListData = cinemasData.cinemasListData;
   const setCinemasListData = cinemasData.setCinemasListData;
   const title = scheduleData.title;
