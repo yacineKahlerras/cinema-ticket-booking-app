@@ -22,7 +22,6 @@ export default function Home() {
   return (
     <FilterParamsContext.Provider value={filterParams}>
       <div className="home-container">
-        <FilterSection />
         <EventsMap />
       </div>
     </FilterParamsContext.Provider>
