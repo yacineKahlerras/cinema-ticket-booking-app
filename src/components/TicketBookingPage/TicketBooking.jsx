@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
-  const [bookingStep, setBookingStep] = useState("register");
+  const [bookingStep, setBookingStep] = useState("seatPicker");
   const [paymentMethod, setPaymentMethod] = useState("");
 
   // location state vars
