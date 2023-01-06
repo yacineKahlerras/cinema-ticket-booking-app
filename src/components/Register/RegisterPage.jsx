@@ -4,6 +4,7 @@ import { roomsList } from "../../data";
 import FilterGeneric from "../Home/Filters/FilterGeneric";
 import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
 import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
+import PaymentInfo from "./PaymentInfo";
 
 export default function RegisterPage(props) {
   const {
@@ -27,35 +28,19 @@ export default function RegisterPage(props) {
     goNextPage();
   }
 
+  // payment info element
+  const paymentInfoList = [
+    { label: "prix unitaire", value: `${price}Da` },
+    { label: "nombres de billets", value: `${bookedSeats.length}` },
+    { label: "sous-total", value: `${bookedSeats.length * price}Da` },
+    { label: "frais supplémentaires", value: `0Da` },
+    { label: "Totale", value: `${bookedSeats.length * price}Da` },
+  ];
+
   return (
     <div className="payment-form-container">
       {/* payment info */}
-      <div className="payment-info">
-        <div>
-          <span className="payment-info-label">prix unitaire</span>
-          <span className="payment-info-value">{price}Da</span>
-        </div>
-        <div>
-          <span className="payment-info-label">nombres de billets</span>
-          <span className="payment-info-value">{bookedSeats.length}</span>
-        </div>
-        <div>
-          <span className="payment-info-label">sous-total</span>
-          <span className="payment-info-value">
-            {bookedSeats.length * price}Da
-          </span>
-        </div>
-        <div>
-          <span className="payment-info-label">frais supplémentaires</span>
-          <span className="payment-info-value">0Da</span>
-        </div>
-        <div>
-          <span className="payment-info-label">Totale</span>
-          <span className="payment-info-value">
-            {bookedSeats.length * price}Da
-          </span>
-        </div>
-      </div>
+      <PaymentInfo paymentInfoList={paymentInfoList} />
 
       {/* payment method */}
       <div className="payment-method-container">
