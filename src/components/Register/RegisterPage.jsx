@@ -44,10 +44,11 @@ export default function RegisterPage(props) {
       <PaymentInfo paymentInfoList={paymentInfoList} />
 
       {/* google register */}
-      <div className="payment-method-container">
+      <div className="payment-method-container google-register-container">
         <h1>Se Connecter</h1>
         <GoogleButton
           className="google-btn"
+          label="Se Connecter"
           onClick={() => {
             console.log("Google button clicked");
           }}
