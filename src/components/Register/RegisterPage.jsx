@@ -2,6 +2,8 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { roomsList } from "../../data";
 import FilterGeneric from "../Home/Filters/FilterGeneric";
+import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
+import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
 
 export default function RegisterPage(props) {
   const {
@@ -15,8 +17,8 @@ export default function RegisterPage(props) {
 
   // payment method options
   const paymentOptions = [
-    { value: "cib", label: "CIB" },
-    { value: "edahabia", label: "Eddahabia" },
+    { value: "cib", label: "CIB", icon: cibLogo },
+    { value: "edahabia", label: "Eddahabia", icon: edahabiaLogo },
   ];
 
   // go to next page
