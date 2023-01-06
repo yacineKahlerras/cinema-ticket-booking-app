@@ -22,13 +22,7 @@ export default function RegisterPage(props) {
     { value: "edahabia", label: "Eddahabia", icon: edahabiaLogo },
   ];
 
-  // go to next page
-  function ContinueToNextPage() {
-    if (paymentMethod.value === undefined) return;
-    goNextPage();
-  }
-
-  // payment info element
+  // payment info list
   const paymentInfoList = [
     { label: "prix unitaire", value: `${price}Da` },
     { label: "nombres de billets", value: `${bookedSeats.length}` },
@@ -36,6 +30,12 @@ export default function RegisterPage(props) {
     { label: "frais supplémentaires", value: `0Da` },
     { label: "Totale", value: `${bookedSeats.length * price}Da` },
   ];
+
+  // go to next page
+  function ContinueToNextPage() {
+    if (paymentMethod.value === undefined) return;
+    goNextPage();
+  }
 
   return (
     <div className="payment-form-container">
