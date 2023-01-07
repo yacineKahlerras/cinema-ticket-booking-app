@@ -19,6 +19,7 @@ export default function RegisterPage(props) {
     price,
   } = props;
   const { user } = useContext(UserContext);
+  const hasUser = user != null && user.email != null;
 
   // payment method options
   const paymentOptions = [
@@ -37,7 +38,7 @@ export default function RegisterPage(props) {
 
   // go to next page
   function ContinueToNextPage() {
-    if (paymentMethod.value === undefined) return;
+    if (paymentMethod.value === undefined && hasUser) return;
     goNextPage();
   }
 
@@ -49,7 +50,7 @@ export default function RegisterPage(props) {
       {/* google register */}
       <div className="payment-method-container google-register-container">
         <h1>Se Connecter</h1>
-        <GoogleBtnElements user={user} />
+        <GoogleBtnElements user={user} hasUser={hasUser} />
       </div>
 
       {/* payment method */}
@@ -69,7 +70,7 @@ export default function RegisterPage(props) {
           Retour
         </button>
         <button
-          className={paymentMethod.value ? "active-btn" : ""}
+          className={paymentMethod.value && hasUser ? "active-btn" : ""}
           onClick={ContinueToNextPage}
         >
           Continuer
