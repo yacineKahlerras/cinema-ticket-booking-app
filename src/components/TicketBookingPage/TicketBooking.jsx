@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
 import { useLocation, useSearchParams } from "react-router-dom";
+import { CinemaDataContext, CurrenMovieScheduleContext } from "../../App";
+import { getMovieSchedule } from "../../firebase/dataFetcher";
+import { movieSchedule } from "../../data";
+import { useContext } from "react";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
@@ -13,6 +17,15 @@ export default function TicketBooking() {
   const movieId = searchParams.get("movieId");
   const cinemaId = searchParams.get("cinemaId");
   const language = searchParams.get("language");
+
+  const _currenMovieScheduleContext = useContext(CurrenMovieScheduleContext);
+  console.log(_currenMovieScheduleContext.currenMovieSchedule);
+  useEffect(() => {
+    if (!_currenMovieScheduleContext.currenMovieSchedule) {
+      // getMovieSchedule(movieId, _currenMovieScheduleContext.setCurrenMovieSchedule);
+      _currenMovieScheduleContext.setCurrenMovieSchedule(movieSchedule);
+    }
+  }, []);
 
   // location state vars
   const locationState = useLocation().state;

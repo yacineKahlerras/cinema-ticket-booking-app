@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import CinemasMap from "./CinemasMap";
-import { CinemaDataContext } from "../../App";
+import { CinemaDataContext, CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";
 
 export const MovieIsContext = createContext();
@@ -14,8 +14,10 @@ export default function MovieSchedule() {
   const linkParams = useLoaderData();
   const movieId = linkParams.match(/(\w+)/g)[0];
   const [scheduleData, setScheduleData] = useState(movieSchedule);
+  const _currenMovieScheduleContext = useContext(CurrenMovieScheduleContext);
+
+  // cinema data
   const cinemasData = useContext(CinemaDataContext);
-  if (!cinemasData) return;
   const cinemasListData = cinemasData.cinemasListData;
   const setCinemasListData = cinemasData.setCinemasListData;
   const title = scheduleData.title;
@@ -23,6 +25,8 @@ export default function MovieSchedule() {
   useEffect(() => {
     // getMovieSchedule(movieId);
     // getCinemasList();
+
+    _currenMovieScheduleContext.setCurrenMovieSchedule(scheduleData);
   }, []);
 
   return (
