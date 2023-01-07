@@ -7,14 +7,24 @@ import { auth } from "./firebase/googleAuth";
 import { moviesListObject } from "./data";
 import { cinemasListObject } from "./data";
 
+/**create a state that has the current movie schedule
+ * create a context for that and pass it on to the child components
+ * grab the context in ticket booking and display the info
+ *
+ * if the context data doesnt match with search params id then re-fetch
+ * the movie schedule from the database
+ */
+
 export const UserContext = createContext();
 export const MoviesListContext = createContext();
 export const CinemaDataContext = createContext();
+export const CurrenMovieScheduleContext = createContext();
 
 export default function App() {
   const [user, setUser] = useState({});
   const [moviesList, setMoviesList] = useState(moviesListObject);
   const [cinemasListData, setCinemasListData] = useState(cinemasListObject);
+  const [currenMovieSchedule, setCurrenMovieSchedule] = useState();
 
   // gets movies list from document database and updates the moviesList state
   useEffect(() => {
@@ -41,10 +51,17 @@ export default function App() {
             setCinemasListData: setCinemasListData,
           }}
         >
-          <main>
-            <Nav />
-            <Outlet />
-          </main>
+          <CurrenMovieScheduleContext.Provider
+            value={{
+              currenMovieSchedule: currenMovieSchedule,
+              setCurrenMovieSchedule: setCurrenMovieSchedule,
+            }}
+          >
+            <main>
+              <Nav />
+              <Outlet />
+            </main>
+          </CurrenMovieScheduleContext.Provider>
         </CinemaDataContext.Provider>
       </MoviesListContext.Provider>
     </UserContext.Provider>

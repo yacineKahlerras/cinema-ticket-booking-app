@@ -15,14 +15,14 @@ export async function getMoviesList(setMoviesList) {
 }
 
 /**gets movie schedule doc from the subcollection */
-export async function getMovieSchedule(movieId) {
+export async function getMovieSchedule(movieId, setCurrenMovieSchedule) {
   const collectionPath = "movies/moviesList/moviesSchedule";
   const movieScheduleDocRef = doc(db, collectionPath, movieId);
   const movieScheduleSnapshot = await getDoc(movieScheduleDocRef);
 
   if (movieScheduleSnapshot.exists()) {
     console.log(movieScheduleSnapshot.data());
-    return movieScheduleSnapshot.data();
+    setCurrenMovieSchedule(movieScheduleSnapshot.data());
   } else {
     console.log(`no document by the name of ${movieId}`);
   }

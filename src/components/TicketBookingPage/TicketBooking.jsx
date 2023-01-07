@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
   const [bookingStep, setBookingStep] = useState("register");
   const [paymentMethod, setPaymentMethod] = useState("");
+  let [searchParams, setSearchParams] = useSearchParams();
+
+  const movieId = searchParams.get("movieId");
+  const cinemaId = searchParams.get("cinemaId");
+  const language = searchParams.get("language");
 
   // location state vars
   const locationState = useLocation().state;
-  const { movieId: newMovieId, cinemaId, dateInfo } = locationState;
-
-  console.log(dateInfo);
+  const { dateInfo } = locationState;
 
   const gridInfo = {
     columns: 10,
@@ -45,7 +48,7 @@ export default function TicketBooking() {
             goPreviousPage={() => GotToPage("register")}
             paymentMethod={paymentMethod}
             movieInfo={{
-              movieId: newMovieId,
+              movieId: movieId,
               cinemaId: cinemaId,
               dateInfo: dateInfo,
             }}
