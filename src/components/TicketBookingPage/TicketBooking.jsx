@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import { CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";
 import { useContext } from "react";
+import GetDateData from "./GetDateData";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);
@@ -23,19 +24,7 @@ export default function TicketBooking() {
     if (!_currenMovieScheduleContext.currenMovieSchedule) {
       // getMovieSchedule(movieId, _currenMovieScheduleContext.setCurrenMovieSchedule);
       _currenMovieScheduleContext.setCurrenMovieSchedule(movieSchedule);
-      for (
-        let cinemaIdx = 0;
-        cinemaIdx < movieSchedule.schedule.length;
-        cinemaIdx++
-      ) {
-        const cinemaData = movieSchedule.schedule[cinemaIdx];
-        if (cinemaData.cinemaId == cinemaId) {
-          for (let dateIdx = 0; dateIdx < cinemaData.dates.length; dateIdx++) {
-            const dateData = cinemaData.dates[dateIdx];
-            if (dateData.language == language) dateInfo = dateData;
-          }
-        }
-      }
+      dateInfo = GetDateData(movieSchedule, cinemaId, language);
     }
   }, []);
 
