@@ -17,7 +17,7 @@ export default function DatesMapElements(props) {
     return (
       <Link
         key={index}
-        to={`/TicketBooking`}
+        to={`/TicketBooking?movieId=${movieId}&cinemaId=${cinemaSchedule.cinemaId}&language=${language}`}
         state={{
           movieId: movieId,
           cinemaId: cinemaSchedule.cinemaId,

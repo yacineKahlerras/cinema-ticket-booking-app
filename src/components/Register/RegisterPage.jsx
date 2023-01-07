@@ -4,6 +4,7 @@ import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
 import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
 import PaymentInfo from "./PaymentInfo";
 import GoogleButton from "react-google-button";
+import { SignIn } from "../../firebase/googleAuth";
 
 export default function RegisterPage(props) {
   const {
@@ -47,9 +48,7 @@ export default function RegisterPage(props) {
         <GoogleButton
           className="google-btn"
           label="Se Connecter"
-          onClick={() => {
-            signin;
-          }}
+          onClick={SignIn}
         />
       </div>
 

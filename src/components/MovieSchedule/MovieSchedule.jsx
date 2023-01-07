@@ -1,9 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { cinemasListObject, movieSchedule } from "../../data";
-import { getSortedDates } from "./getSortedDates";
 import CinemasMap from "./CinemasMap";
 import { CinemaDataContext } from "../../App";
+import { movieSchedule } from "../../data";
 
 export const MovieIsContext = createContext();
 

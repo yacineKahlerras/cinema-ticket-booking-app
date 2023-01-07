@@ -13,6 +13,8 @@ export default function TicketBooking() {
   const locationState = useLocation().state;
   const { movieId: newMovieId, cinemaId, dateInfo } = locationState;
 
+  console.log(dateInfo);
+
   const gridInfo = {
     columns: 10,
     rows: 8,
