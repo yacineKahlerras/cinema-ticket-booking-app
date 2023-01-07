@@ -21,7 +21,7 @@ export default function TicketBooking() {
 
   const _currenMovieScheduleContext = useContext(CurrenMovieScheduleContext);
   useEffect(() => {
-    if (!_currenMovieScheduleContext.currenMovieSchedule) {
+    if (!_currenMovieScheduleContext) {
       // getMovieSchedule(movieId, _currenMovieScheduleContext.setCurrenMovieSchedule);
       _currenMovieScheduleContext.setCurrenMovieSchedule(movieSchedule);
       dateInfo = GetDateData(movieSchedule, cinemaId, language);

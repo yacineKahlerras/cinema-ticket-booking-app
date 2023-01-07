@@ -12,7 +12,7 @@ export default function ProfileSection() {
 
   const SignInBtn = (
     <button onClick={SignIn} className="sign-up-btn">
-      {isSignInLoading ? "Loading.." : "S'inscrire"}
+      S'inscrire
     </button>
   );
 

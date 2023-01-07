@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import FilterGeneric from "../Home/Filters/FilterGeneric";
 import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
 import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
 import PaymentInfo from "./PaymentInfo";
 import GoogleButton from "react-google-button";
 import { SignIn } from "../../firebase/googleAuth";
+import { UserContext } from "../../App";
+import LoadingSpinner from "../Nav/LoadingSpinner";
 
 export default function RegisterPage(props) {
   const {
@@ -45,11 +47,7 @@ export default function RegisterPage(props) {
       {/* google register */}
       <div className="payment-method-container google-register-container">
         <h1>Se Connecter</h1>
-        <GoogleButton
-          className="google-btn"
-          label="Se Connecter"
-          onClick={SignIn}
-        />
+        <GoogleBtnElements />
       </div>
 
       {/* payment method */}
@@ -76,5 +74,31 @@ export default function RegisterPage(props) {
         </button>
       </div>
     </div>
+  );
+}
+
+function GoogleBtnElements() {
+  const { user } = useContext(UserContext);
+  const hasUser = user != null && user.displayName != null;
+  const isSignInLoading = localStorage.getItem("isSignInLoading");
+
+  console.log(user);
+
+  const googleBtn = (
+    <GoogleButton
+      className="google-btn"
+      label="Se Connecter"
+      onClick={SignIn}
+    />
+  );
+
+  const userInfoElement = <h3>{user.email}</h3>;
+
+  return hasUser ? (
+    userInfoElement
+  ) : isSignInLoading ? (
+    <LoadingSpinner />
+  ) : (
+    googleBtn
   );
 }
