@@ -10,5 +10,18 @@
       border-top-right-radius: 0.5rem !important;
       border-bottom-right-radius: 0.5rem !important;
     }
+
+    .user-info {
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: $violet1;
+
+      svg {
+        fill: $green1;
+      }
+    }
   }
 }
