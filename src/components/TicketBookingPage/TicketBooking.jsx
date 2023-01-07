@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import PaymentPage from "../Payment/PaymentPage";
 import RegisterPage from "../Register/RegisterPage";
 import SeatPicker from "../SeatPicker/SeatPicker";
-import { useLocation, useSearchParams } from "react-router-dom";
-import { CinemaDataContext, CurrenMovieScheduleContext } from "../../App";
-import { getMovieSchedule } from "../../firebase/dataFetcher";
+import { useSearchParams } from "react-router-dom";
+import { CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";
 import { useContext } from "react";
 
@@ -17,19 +16,28 @@ export default function TicketBooking() {
   const movieId = searchParams.get("movieId");
   const cinemaId = searchParams.get("cinemaId");
   const language = searchParams.get("language");
+  let dateInfo = null;
 
   const _currenMovieScheduleContext = useContext(CurrenMovieScheduleContext);
-  console.log(_currenMovieScheduleContext.currenMovieSchedule);
   useEffect(() => {
     if (!_currenMovieScheduleContext.currenMovieSchedule) {
       // getMovieSchedule(movieId, _currenMovieScheduleContext.setCurrenMovieSchedule);
       _currenMovieScheduleContext.setCurrenMovieSchedule(movieSchedule);
+      for (
+        let cinemaIdx = 0;
+        cinemaIdx < movieSchedule.schedule.length;
+        cinemaIdx++
+      ) {
+        const cinemaData = movieSchedule.schedule[cinemaIdx];
+        if (cinemaData.cinemaId == cinemaId) {
+          for (let dateIdx = 0; dateIdx < cinemaData.dates.length; dateIdx++) {
+            const dateData = cinemaData.dates[dateIdx];
+            if (dateData.language == language) dateInfo = dateData;
+          }
+        }
+      }
     }
   }, []);
-
-  // location state vars
-  const locationState = useLocation().state;
-  const { dateInfo } = locationState;
 
   const gridInfo = {
     columns: 10,
