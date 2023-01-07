@@ -3,10 +3,7 @@ import FilterGeneric from "../Home/Filters/FilterGeneric";
 import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
 import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
 import PaymentInfo from "./PaymentInfo";
-import GoogleButton from "react-google-button";
-import { SignIn } from "../../firebase/googleAuth";
 import { UserContext } from "../../App";
-import LoadingSpinner from "../Nav/LoadingSpinner";
 import GoogleBtnElements from "./GoogleBtnElements";
 
 export default function RegisterPage(props) {
