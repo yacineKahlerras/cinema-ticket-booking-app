@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import GoogleButton from "react-google-button";
 import { SignIn } from "../../firebase/googleAuth";
 import LoadingSpinner from "../Nav/LoadingSpinner";
