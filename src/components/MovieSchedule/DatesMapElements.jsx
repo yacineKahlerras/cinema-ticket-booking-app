@@ -18,11 +18,6 @@ export default function DatesMapElements(props) {
       <Link
         key={index}
         to={`/TicketBooking?movieId=${movieId}&cinemaId=${cinemaSchedule.cinemaId}&language=${language}`}
-        state={{
-          movieId: movieId,
-          cinemaId: cinemaSchedule.cinemaId,
-          dateInfo: dateInfo,
-        }}
       >
         <div className="date-container">
           <span className="date">
