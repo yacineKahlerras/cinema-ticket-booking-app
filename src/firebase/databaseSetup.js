@@ -154,3 +154,5 @@ function cinemasIds() {
     return r.id;
   });
 }
+
+export function SaveUserTickets(userId) {}
