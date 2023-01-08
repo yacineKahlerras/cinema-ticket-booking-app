@@ -78,16 +78,18 @@ export default function ReservedTickets(props) {
     ticketRef.current.style.display = "none";
   }
 
-  if (!tmdbData) return;
   return (
     <>
       <div className="reserved-ticket">
         <div className="reserved-ticket-center">
           <div className="poster-container">
-            <img src={`${posterLink}/${tmdbData.poster_path}`} alt={title} />
+            <img
+              src={tmdbData ? `${posterLink}/${tmdbData.poster_path}` : ""}
+              alt={title}
+            />
           </div>
           <div className="reserved-ticket-text-info">
-            <h2 className="ticket-title">{tmdbData.title}</h2>
+            <h2 className="ticket-title">{tmdbData ? tmdbData.title : ""}</h2>
             <h3 className="ticket-cinema">Cinema {cinemaName}</h3>
             <p className="ticket-date">
               le {day} {month} à {hour}h
