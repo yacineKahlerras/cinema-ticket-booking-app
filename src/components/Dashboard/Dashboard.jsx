@@ -7,27 +7,31 @@ import { nanoid } from "nanoid";
 export default function Dashboard() {
   const { user } = useContext(UserContext);
   const [userTicketsList, setUserTicketsList] = useState(userTicketsListObject);
-  const ticketElement = useRef([]);
+  const [ticketElement, setTicketElement] = useState([]);
 
   useEffect(() => {
     // setUserTicketsList(GetUserTickets(user.uid));
 
-    for (const movieKey in userTicketsList) {
-      const movieData = userTicketsList[movieKey];
-      ticketElement.current.push(
-        <ReservedTickets
-          key={movieKey}
-          movieData={movieData}
-          movieId={movieKey}
-        />
-      );
-    }
+    if (ticketElement.length < 1)
+      for (const movieKey in userTicketsList) {
+        const movieData = userTicketsList[movieKey];
+        setTicketElement((oldValue) => {
+          oldValue.push(
+            <ReservedTickets
+              key={movieKey}
+              movieData={movieData}
+              movieId={movieKey}
+            />
+          );
+          return [...oldValue];
+        });
+      }
   }, []);
 
   return (
     <div className="dashboard-container">
       <h1>Mes Tickets</h1>
-      <div className="reserved-tickets-map">{ticketElement.current}</div>
+      <div className="reserved-tickets-map">{ticketElement}</div>
     </div>
   );
 }
