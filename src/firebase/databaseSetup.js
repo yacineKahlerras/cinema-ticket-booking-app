@@ -186,6 +186,8 @@ export function SaveUserTickets(
   console.log(docData);
 }
 
-const userTickets = {
-  userId1: [{ ticket1: [], ticket2: [] }],
+const userTicketsCollection = {
+  userId1Doc: {
+    movieIdList: [{ ticket1: [], ticket2: [] }],
+  },
 };
