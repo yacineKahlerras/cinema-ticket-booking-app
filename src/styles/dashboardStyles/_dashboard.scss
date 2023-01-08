@@ -6,6 +6,7 @@
   h1 {
     color: $violet2;
     margin-bottom: 3rem;
+    text-transform: capitalize;
   }
 
   .reserved-tickets-map {
@@ -60,7 +61,8 @@
           .ticket-title {
             font-size: 1.6rem;
             color: $violet2;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: capitalize;
 
             @include tablet {
               font-size: 2rem;
@@ -70,6 +72,7 @@
 
           .ticket-cinema {
             font-size: 1.5rem;
+            text-transform: capitalize;
 
             @include tablet {
               font-size: 1.8rem;

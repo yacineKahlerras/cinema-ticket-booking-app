@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import posterImg from "../../assets/posters/dd5yGBLbqB507gHJSosNY0IYHRQ.jpg";
 import Ticket from "../PaymenDonePage/Ticket";
 import html2canvas from "html2canvas";
 import { posterLink, api_key } from "../../data";
