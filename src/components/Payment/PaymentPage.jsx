@@ -1,8 +1,5 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import { roomsList } from "../../data";
-import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
-import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
+import { Link } from "react-router-dom";
 
 export default function PaymentPage(props) {
   const { bookedSeats, goPreviousPage, paymentMethod } = props;
