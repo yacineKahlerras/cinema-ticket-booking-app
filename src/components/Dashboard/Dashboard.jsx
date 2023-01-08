@@ -1,34 +1,29 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../../App";
 import { GetUserTickets } from "../../firebase/dataFetcher";
-import ReservedTicket from "./ReservedTicket";
+import ReservedTickets from "./ReservedTicket";
 import { nanoid } from "nanoid";
 
 export default function Dashboard() {
   const { user } = useContext(UserContext);
   const [userTicketsList, setUserTicketsList] = useState(userTicketsListObject);
-  const ticketElement = [];
+  const ticketElement = useRef([]);
 
   useEffect(() => {
     // setUserTicketsList(GetUserTickets(user.uid));
-  }, []);
 
-  useEffect(() => {
     for (const movieKey in userTicketsList) {
       const movieData = userTicketsList[movieKey];
-      for (const ticketKey in movieData) {
-        const ticketData = movieData[ticketKey];
-        ticketElement.push(
-          <ReservedTicket Key={nanoid()} ticketData={ticketData} />
-        );
-      }
+      ticketElement.current.push(
+        <ReservedTickets key={movieKey} movieData={movieData} />
+      );
     }
-  }, [userTicketsList]);
+  }, []);
 
   return (
     <div className="dashboard-container">
       <h1>Mes Tickets</h1>
-      <div className="reserved-tickets-map">{ticketElement}</div>
+      <div className="reserved-tickets-map">{ticketElement.current}</div>
     </div>
   );
 }
