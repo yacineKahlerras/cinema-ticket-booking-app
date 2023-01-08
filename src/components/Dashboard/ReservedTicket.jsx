@@ -1,7 +1,10 @@
 import React from "react";
 import posterImg from "../../assets/posters/dd5yGBLbqB507gHJSosNY0IYHRQ.jpg";
 
-export default function ReservedTicket() {
+export default function ReservedTicket(props) {
+  const {} = props.ticketData;
+  console.log(props.ticketData);
+
   return (
     <div className="reserved-ticket">
       <div className="reserved-ticket-center">
