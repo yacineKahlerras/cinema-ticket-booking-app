@@ -40,3 +40,18 @@ export async function getCinemasList() {
     console.log(`no document by that name.`);
   }
 }
+
+/**gets the boughts tickets from database
+ * using the doc with the name of user.uid
+ */
+export async function GetUserTickets(userId) {
+  const userDocRef = doc(db, "userTickets", userId);
+  const userTicketsSnapshot = await getDoc(userDocRef);
+
+  if (userTicketsSnapshot) {
+    console.log(userTicketsSnapshot.data());
+    return userTicketsSnapshot.data();
+  } else {
+    console.log(`error while fetching doc with name ${userId}.`);
+  }
+}

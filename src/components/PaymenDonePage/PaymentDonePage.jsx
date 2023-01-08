@@ -23,7 +23,7 @@ export default function PaymentDonePage() {
   const dateParts = GetDateParts(dateObject);
 
   useEffect(() => {
-    SaveUserTickets(user, bookedSeats, dateParts, movie, cinema.name);
+    // SaveUserTickets(user, bookedSeats, dateParts, movie, cinema.name);
   }, []);
 
   function Tickets() {

@@ -158,20 +158,20 @@ function cinemasIds() {
 /**gets the movie and seats info and adds them to the database
  * as a user document that has a user id
  */
-export function SaveUserTickets(
-  userId,
+export async function SaveUserTickets(
+  user,
   bookedSeats,
   dateParts,
   movie,
   cinemaName
 ) {
-  const ticketsInfo = [];
+  const movieTicketsInfoList = [];
   const movieId = movie.id;
 
   for (let seatIdx = 0; seatIdx < bookedSeats.length; seatIdx++) {
     const seat = bookedSeats[seatIdx];
 
-    ticketsInfo.push({
+    movieTicketsInfoList.push({
       dateParts: dateParts,
       movieInfo: movie,
       cinemaName: cinemaName,
@@ -180,14 +180,9 @@ export function SaveUserTickets(
   }
 
   const docData = {
-    [movieId]: ticketsInfo,
+    [movieId]: movieTicketsInfoList,
   };
 
+  // await setDoc(doc(db, "userTickets", user.uid), docData, { merge: true });
   console.log(docData);
 }
-
-const userTicketsCollection = {
-  userId1Doc: {
-    movieIdList: [{ ticket1: [], ticket2: [] }],
-  },
-};
