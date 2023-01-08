@@ -15,7 +15,11 @@ export default function Dashboard() {
     for (const movieKey in userTicketsList) {
       const movieData = userTicketsList[movieKey];
       ticketElement.current.push(
-        <ReservedTickets key={movieKey} movieData={movieData} />
+        <ReservedTickets
+          key={movieKey}
+          movieData={movieData}
+          movieId={movieKey}
+        />
       );
     }
   }, []);

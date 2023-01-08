@@ -1,18 +1,33 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import posterImg from "../../assets/posters/dd5yGBLbqB507gHJSosNY0IYHRQ.jpg";
 import Ticket from "../PaymenDonePage/Ticket";
 import html2canvas from "html2canvas";
+import { posterLink, api_key } from "../../data";
+import axios from "axios";
 
 export default function ReservedTickets(props) {
-  const { movieData } = props;
+  const { movieData, movieId } = props;
   const { cinemaName, dateParts, movieInfo } = movieData[0];
   const { title, price } = movieInfo;
   const { day, month, dayOfWeek, hour, year } = dateParts;
   const numberOfTickets = movieData.length;
   const totalPrice = price * numberOfTickets;
+  const [tmdbData, setTmdbData] = useState();
 
   const ticketRef = useRef();
   const downloadBtn = useRef();
+
+  // gets movie detail from TMDB and updates the state
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&language=fr`
+      )
+      .then((res) => {
+        const data = res.data;
+        setTmdbData(data);
+      });
+  }, []);
 
   function TicketsGroup() {
     const ticketElements = [];
@@ -64,15 +79,16 @@ export default function ReservedTickets(props) {
     ticketRef.current.style.display = "none";
   }
 
+  if (!tmdbData) return;
   return (
     <>
       <div className="reserved-ticket">
         <div className="reserved-ticket-center">
           <div className="poster-container">
-            <img src={posterImg} alt="ticket movie title" />
+            <img src={`${posterLink}/${tmdbData.poster_path}`} alt={title} />
           </div>
           <div className="reserved-ticket-text-info">
-            <h2 className="ticket-title">{title}</h2>
+            <h2 className="ticket-title">{tmdbData.title}</h2>
             <h3 className="ticket-cinema">Cinema {cinemaName}</h3>
             <p className="ticket-date">
               le {day} {month} à {hour}h
