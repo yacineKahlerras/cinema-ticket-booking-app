@@ -12,7 +12,7 @@ export default function Dashboard() {
   useEffect(() => {
     // setUserTicketsList(GetUserTickets(user.uid));
 
-    if (ticketElement.length < 1)
+    if (!ticketElement.length)
       for (const movieKey in userTicketsList) {
         const movieData = userTicketsList[movieKey];
         setTicketElement((oldValue) => {
