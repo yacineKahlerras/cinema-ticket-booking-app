@@ -1,14 +1,16 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Ticket from "./Ticket";
 import html2canvas from "html2canvas";
-import { CinemaDataContext, MoviesListContext } from "../../App";
+import { CinemaDataContext, MoviesListContext, UserContext } from "../../App";
 import GetListItemById from "./GetListItemById";
 import GetDateParts from "./GetDateParts";
+import { SaveUserTickets } from "../../firebase/databaseSetup";
 
 export default function PaymentDonePage() {
   const location = useLocation();
   const { movieInfo, bookedSeats } = location.state;
+  const { user } = useContext(UserContext);
 
   const ticketRef = useRef();
   const downloadBtn = useRef();
@@ -19,6 +21,10 @@ export default function PaymentDonePage() {
   const cinema = GetListItemById(movieInfo.cinemaId, cinemaList);
   const dateObject = new Date(movieInfo.dateInfo.date.seconds * 1000);
   const dateParts = GetDateParts(dateObject);
+
+  useEffect(() => {
+    SaveUserTickets(user, bookedSeats, dateParts, movie, cinema.name);
+  }, []);
 
   function Tickets() {
     return (

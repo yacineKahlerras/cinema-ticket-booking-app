@@ -155,4 +155,37 @@ function cinemasIds() {
   });
 }
 
-export function SaveUserTickets(userId) {}
+/**gets the movie and seats info and adds them to the database
+ * as a user document that has a user id
+ */
+export function SaveUserTickets(
+  userId,
+  bookedSeats,
+  dateParts,
+  movie,
+  cinemaName
+) {
+  const ticketsInfo = [];
+  const movieId = movie.id;
+
+  for (let seatIdx = 0; seatIdx < bookedSeats.length; seatIdx++) {
+    const seat = bookedSeats[seatIdx];
+
+    ticketsInfo.push({
+      dateParts: dateParts,
+      movieInfo: movie,
+      cinemaName: cinemaName,
+      seat: seat,
+    });
+  }
+
+  const docData = {
+    [movieId]: ticketsInfo,
+  };
+
+  console.log(docData);
+}
+
+const userTickets = {
+  userId1: [{ ticket1: [], ticket2: [] }],
+};
