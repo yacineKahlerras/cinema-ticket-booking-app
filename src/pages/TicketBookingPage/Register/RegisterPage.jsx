@@ -18,6 +18,8 @@ export default function RegisterPage(props) {
   const { user } = useContext(UserContext);
   const hasUser = user != null && user.email != null;
 
+  console.log(hasUser);
+
   // payment method options
   const paymentOptions = [
     { value: "cib", label: "CIB", icon: cibLogo },
@@ -35,7 +37,7 @@ export default function RegisterPage(props) {
 
   // go to next page
   function ContinueToNextPage() {
-    if (paymentMethod.value === undefined && hasUser) return;
+    if (paymentMethod.value == undefined || !hasUser) return;
     goNextPage();
   }
 
