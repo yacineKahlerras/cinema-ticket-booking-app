@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import FilterGeneric from "../Home/Filters/FilterGeneric";
-import cibLogo from "../../assets/pay-cards-logos/cib-logo.svg";
-import edahabiaLogo from "../../assets/pay-cards-logos/edahabia-logo.png";
+import FilterGeneric from "@/components/Filters/FilterGeneric";
+import cibLogo from "@/assets/pay-cards-logos/cib-logo.svg";
+import edahabiaLogo from "@/assets/pay-cards-logos/edahabia-logo.png";
 import PaymentInfo from "./PaymentInfo";
-import { UserContext } from "../../App";
+import { UserContext } from "@/App";
 import GoogleBtnElements from "./GoogleBtnElements";
 
 export default function RegisterPage(props) {

@@ -1,5 +1,5 @@
 import React from "react";
-import emptyStreet from "../../../assets/empty-street.svg";
+import emptyStreet from "@/assets/empty-street.svg";
 
 export default function NoEventError() {
   return (

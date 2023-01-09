@@ -2,17 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import Home from "./components/Home/Home";
-import EventPage, { EventPageLoader } from "./components/Events/EventPage";
-import TicketBooking from "./components/TicketBookingPage/TicketBooking";
-import PaymentDonePage from "./components/PaymenDonePage/PaymentDonePage";
-import Rooms from "./components/Rooms/Rooms";
-import Room, { RoomLoader } from "./components/Rooms/Room";
-import AboutUs from "./components/AboutUs/AboutUs";
-import Dashboard from "./components/Dashboard/Dashboard";
+
+import Home from "./pages/Home/Home";
+import EventPage, { EventPageLoader } from "./pages/EventPage/EventPage";
+import TicketBooking from "./pages/TicketBookingPage/TicketBooking";
+import PaymentDonePage from "./pages/PaymenDonePage/PaymentDonePage";
+import Rooms from "./pages/Rooms/Rooms";
+import Room, { RoomLoader } from "./pages/Rooms/Room";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import MovieSchedule, {
   SchedulePageLoader,
-} from "./components/MovieSchedule/MovieSchedule";
+} from "./pages/MovieSchedule/MovieSchedule";
 
 const router = createHashRouter([
   {

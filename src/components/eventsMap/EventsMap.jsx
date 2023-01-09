@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { MoviesListContext } from "../../../App";
+import { MoviesListContext } from "@/App";
 import EventElement from "./EventElement";
 
 export default function EventsMap() {

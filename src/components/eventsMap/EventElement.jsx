@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { api_key, posterLink } from "../../../data";
+import { api_key, posterLink } from "@/data.js";
 
 export default function EventElement(props) {
   const {

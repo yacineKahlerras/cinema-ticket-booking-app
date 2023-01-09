@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleButton from "react-google-button";
-import { SignIn } from "../../firebase/googleAuth";
-import LoadingSpinner from "../Nav/LoadingSpinner";
+import { SignIn } from "../../../firebase/googleAuth";
+import LoadingSpinner from "@/components/Nav/LoadingSpinner";
 
 export default function GoogleBtnElements(props) {
   const { user, hasUser } = props;

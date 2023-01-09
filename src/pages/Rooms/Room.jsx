@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
-import LeafeletMap from "../Events/LeafeletMap";
+import LeafeletMap from "../EventPage/LeafeletMap";
 import RoomEventsMap from "./RoomEventsMap";
 
 export function RoomLoader({ params }) {

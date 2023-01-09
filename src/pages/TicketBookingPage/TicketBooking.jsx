@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import PaymentPage from "../Payment/PaymentPage";
-import RegisterPage from "../Register/RegisterPage";
-import SeatPicker from "../SeatPicker/SeatPicker";
+import PaymentPage from "@/pages/TicketBookingPage/Payment/PaymentPage.jsx";
+import RegisterPage from "@/pages/TicketBookingPage/Register/RegisterPage";
+import SeatPicker from "@/pages/TicketBookingPage/SeatPicker/SeatPicker";
 import { useSearchParams } from "react-router-dom";
 import { CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";

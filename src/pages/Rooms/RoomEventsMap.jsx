@@ -1,7 +1,7 @@
 import React from "react";
 import { roomsList } from "../../data";
-import EventElement from "../Home/eventsMap/EventElement";
-import NoEventError from "../Home/eventsMap/NoEventsError";
+import EventElement from "../../components/eventsMap/EventElement";
+import NoEventError from "../../components/eventsMap/NoEventsError";
 
 export default function RoomEventsMap(props) {
   const { filterParams } = props;
