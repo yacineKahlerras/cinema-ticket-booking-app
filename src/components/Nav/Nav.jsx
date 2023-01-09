@@ -4,6 +4,7 @@ import Sidemenu from "./Sidemenu";
 import logo from "../../assets/logo300.png";
 import { SignIn } from "../../firebase/googleAuth";
 import ProfileSection from "./ProfileSection";
+import "./style/_index.scss";
 
 export default function Nav() {
   const [sidemenuActive, setSidemenuActive] = useState(false);

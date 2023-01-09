@@ -7,14 +7,6 @@ import { auth } from "./firebase/googleAuth";
 import { moviesListObject } from "./data";
 import { cinemasListObject } from "./data";
 
-/**create a state that has the current movie schedule
- * create a context for that and pass it on to the child components
- * grab the context in ticket booking and display the info
- *
- * if the context data doesnt match with search params id then re-fetch
- * the movie schedule from the database
- */
-
 export const UserContext = createContext();
 export const MoviesListContext = createContext();
 export const CinemaDataContext = createContext();
