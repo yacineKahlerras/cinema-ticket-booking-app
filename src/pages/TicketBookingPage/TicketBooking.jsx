@@ -7,6 +7,7 @@ import { CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";
 import { useContext } from "react";
 import GetDateData from "./GetDateData";
+import "./style/index.scss";
 
 export default function TicketBooking() {
   const [bookedSeats, setBookedSeats] = useState([]);

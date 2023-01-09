@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import CinemasMap from "./CinemasMap";
 import { CinemaDataContext, CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";
+import "./style/_index.scss";
 
 export const MovieIsContext = createContext();
 

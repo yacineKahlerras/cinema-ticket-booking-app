@@ -3,6 +3,7 @@ import { UserContext } from "../../App";
 import { GetUserTickets } from "../../firebase/dataFetcher";
 import ReservedTickets from "./ReservedTicket";
 import { nanoid } from "nanoid";
+import "./style/_index.scss";
 
 export default function Dashboard() {
   const { user } = useContext(UserContext);

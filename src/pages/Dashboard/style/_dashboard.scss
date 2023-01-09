@@ -1,0 +1,114 @@
+@use "@/utils/style/" as *;
+
+.dashboard-container {
+  width: min(90%, 90rem);
+
+  h1 {
+    color: $violet2;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+  }
+
+  .reserved-tickets-map {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    // ticket
+    .reserved-ticket {
+      width: min(100%, 40.9rem);
+
+      @include tablet {
+        width: 100%;
+      }
+
+      .reserved-ticket-center {
+        display: grid;
+        grid-template-columns: 7.1rem auto;
+        gap: 1rem;
+        box-shadow: 3px 4px 19px -1px rgba(0, 0, 0, 0.2);
+        padding: 3rem 2rem;
+        border-radius: 1rem;
+        --img-size: 7.1rem;
+
+        @include tablet {
+          grid-template-columns: var(--img-size) 1fr 13rem;
+          gap: 3rem;
+          align-items: center;
+          padding: 3rem 4rem;
+          --img-size: 10rem;
+        }
+
+        .poster-container {
+          width: var(--img-size);
+          height: var(--img-size);
+          overflow: hidden;
+          border-radius: 50%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+          }
+        }
+
+        .reserved-ticket-text-info {
+          color: $violet1;
+
+          .ticket-title {
+            font-size: 1.6rem;
+            color: $violet2;
+            margin-bottom: 0.5rem;
+            text-transform: capitalize;
+
+            @include tablet {
+              font-size: 2rem;
+              margin-bottom: 0rem;
+            }
+          }
+
+          .ticket-cinema {
+            font-size: 1.5rem;
+            text-transform: capitalize;
+
+            @include tablet {
+              font-size: 1.8rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          p {
+            font-size: 1.4rem;
+            font-weight: 500;
+
+            @include tablet {
+              font-size: 1.6rem;
+            }
+          }
+        }
+
+        .download-btn {
+          grid-column: 2;
+          background: $red;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          color: $white;
+          font-weight: 500;
+          max-width: 15rem;
+          font-size: 1.6rem;
+
+          @include tablet {
+            grid-column: auto;
+          }
+
+          &:hover {
+            background: $redLight;
+          }
+        }
+      }
+    }
+  }
+}

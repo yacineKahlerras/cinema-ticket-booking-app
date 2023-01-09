@@ -6,6 +6,7 @@ import { CinemaDataContext, MoviesListContext, UserContext } from "../../App";
 import GetListItemById from "./GetListItemById";
 import GetDateParts from "./GetDateParts";
 import { SaveUserTickets } from "../../firebase/databaseSetup";
+import "./style/_index.scss";
 
 export default function PaymentDonePage() {
   const location = useLocation();

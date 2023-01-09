@@ -1,0 +1,23 @@
+@use "@/utils/style/" as *;
+
+.room-container {
+  width: min(80%, 100rem);
+  z-index: 1;
+
+  header {
+    margin-bottom: 3rem;
+
+    h1 {
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      color: $violet2;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    color: $violet2;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}

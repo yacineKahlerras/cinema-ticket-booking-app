@@ -1,0 +1,8 @@
+@use "@/utils/style/" as *;
+
+.payment-form-container {
+  width: min(80%, 40rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

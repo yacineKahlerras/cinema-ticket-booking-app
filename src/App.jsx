@@ -1,6 +1,5 @@
 import Nav from "./components/Nav/Nav";
 import { Outlet } from "react-router-dom";
-import "./styles/style.scss";
 import { createContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";

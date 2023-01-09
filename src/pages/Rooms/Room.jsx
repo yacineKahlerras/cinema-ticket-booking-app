@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { roomsList, posterLink } from "../../data";
 import LeafeletMap from "../EventPage/LeafeletMap";
 import RoomEventsMap from "./RoomEventsMap";
+import "./style/_index.scss";
 
 export function RoomLoader({ params }) {
   return params.roomId;

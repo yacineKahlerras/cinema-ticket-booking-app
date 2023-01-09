@@ -4,6 +4,7 @@ import { posterLink } from "../../data";
 import RatingStars from "./RatingStars";
 import Genres from "./Genres";
 import Casts from "./Casts";
+import "./style/_index.scss";
 
 export function EventPageLoader({ params }) {
   return params.eventTitle;

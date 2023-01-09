@@ -1,0 +1,22 @@
+@use "@/utils/style/" as *;
+
+.rating-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: $red;
+  margin-bottom: 1.5rem;
+
+  .rating {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .stars-container {
+    display: flex;
+
+    .star {
+      max-width: 4rem;
+    }
+  }
+}

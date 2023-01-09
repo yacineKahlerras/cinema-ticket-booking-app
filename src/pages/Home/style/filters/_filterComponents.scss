@@ -1,0 +1,13 @@
+@use "@/utils/style/" as *;
+
+.single-value-component,
+.option-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .single-value-logo,
+  .option-logo {
+    max-width: 2.3rem;
+  }
+}

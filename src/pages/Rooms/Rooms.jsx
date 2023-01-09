@@ -2,6 +2,7 @@ import React from "react";
 import { roomsList } from "../../data";
 import geoLogo from "../../assets/geo-alt-fill.svg";
 import { Link } from "react-router-dom";
+import "./style/_index.scss";
 
 export default function Rooms() {
   const roomElements = roomsList.map((room, index) => {

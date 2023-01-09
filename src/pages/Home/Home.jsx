@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import EventsMap from "@/components/eventsMap/EventsMap.jsx";
+import "./style/_index.scss";
 
 export const FilterParamsContext = createContext();
 
