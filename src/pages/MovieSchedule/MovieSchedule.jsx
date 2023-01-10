@@ -4,6 +4,8 @@ import CinemasMap from "./CinemasMap";
 import { CinemaDataContext, CurrenMovieScheduleContext } from "../../App";
 import { movieSchedule } from "../../data";
 import "./style/_index.scss";
+import getFilteredSchedule from "./getFilteredSchedule";
+import FilterGeneric from "@/components/Filters/FilterGeneric";
 
 export const MovieIsContext = createContext();
 
@@ -16,12 +18,27 @@ export default function MovieSchedule() {
   const movieId = linkParams.match(/(\w+)/g)[0];
   const [scheduleData, setScheduleData] = useState(movieSchedule);
   const _currenMovieScheduleContext = useContext(CurrenMovieScheduleContext);
+  const [wilayaFilter, setWilayaFilter] = useState({
+    value: "tous",
+    label: "Tous",
+  });
 
   // cinema data
   const cinemasData = useContext(CinemaDataContext);
-  const cinemasListData = cinemasData.cinemasListData;
-  const setCinemasListData = cinemasData.setCinemasListData;
+  const cinemasListData = cinemasData.cinemasListData.list;
   const title = scheduleData.title;
+
+  const schedule =
+    wilayaFilter.value == "tous"
+      ? scheduleData.schedule
+      : getFilteredSchedule(scheduleData, cinemasListData, wilayaFilter);
+
+  const options = [
+    { value: "tous", label: "Tous" },
+    { value: "alger", label: "Alger" },
+    { value: "constantine", label: "Constantine" },
+    { value: "oran", label: "Oran" },
+  ];
 
   useEffect(() => {
     // getMovieSchedule(movieId);
@@ -40,10 +57,16 @@ export default function MovieSchedule() {
           options que vous voulez.
         </p>
 
-        <CinemasMap
-          schedule={scheduleData.schedule}
-          cinemasList={cinemasListData.list}
+        <FilterGeneric
+          filterLabel="Wilaya"
+          options={options}
+          changeHandler={setWilayaFilter}
+          defaultValue={wilayaFilter}
+          placeholder="Tous Les Wilaya"
+          hasIcons={false}
         />
+
+        <CinemasMap schedule={schedule} cinemasList={cinemasListData} />
       </div>
     </MovieIsContext.Provider>
   );

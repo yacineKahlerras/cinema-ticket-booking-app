@@ -4,7 +4,14 @@ import { Component } from "react";
 import { Control, IconOption, SingleValue } from "./ReactSelectComponents";
 
 export default function FilterGeneric(props) {
-  const { filterLabel, options, changeHandler, paymentMethod } = props;
+  const {
+    filterLabel,
+    options,
+    changeHandler,
+    defaultValue,
+    placeholder,
+    hasIcons,
+  } = props;
 
   return (
     <div className="filter-container">
@@ -14,13 +21,17 @@ export default function FilterGeneric(props) {
           isSearchable={false}
           onChange={changeHandler}
           options={options}
-          defaultValue={paymentMethod}
-          components={{
-            Control: Control,
-            Option: IconOption,
-            SingleValue: SingleValue,
-          }}
-          placeholder="Selectioner une Carte.."
+          defaultValue={defaultValue}
+          components={
+            hasIcons
+              ? {
+                  Control: Control,
+                  Option: IconOption,
+                  SingleValue: SingleValue,
+                }
+              : {}
+          }
+          placeholder={placeholder}
         />
       </div>
     </div>

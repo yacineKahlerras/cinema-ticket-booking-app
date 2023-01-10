@@ -18,8 +18,6 @@ export default function RegisterPage(props) {
   const { user } = useContext(UserContext);
   const hasUser = user != null && user.email != null;
 
-  console.log(hasUser);
-
   // payment method options
   const paymentOptions = [
     { value: "cib", label: "CIB", icon: cibLogo },
@@ -45,13 +43,11 @@ export default function RegisterPage(props) {
     <div className="payment-form-container">
       {/* payment info */}
       <PaymentInfo paymentInfoList={paymentInfoList} />
-
       {/* google register */}
       <div className="payment-method-container google-register-container">
         <h1>Se Connecter</h1>
         <GoogleBtnElements user={user} hasUser={hasUser} />
       </div>
-
       {/* payment method */}
       <div className="payment-method-container">
         <h1>Methode de Payment</h1>
@@ -59,7 +55,9 @@ export default function RegisterPage(props) {
           filterLabel=""
           options={paymentOptions}
           changeHandler={setPaymentMethod}
-          paymentMethod={paymentMethod}
+          defaultValue={paymentMethod}
+          placeholder="Choisissez Votre Carte.."
+          hasIcons={true}
         />
       </div>
 
