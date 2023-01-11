@@ -13,8 +13,9 @@ export function EventPageLoader({ params }) {
 export default function EventPage(props) {
   // link search params
   let location = useLocation();
-  let movieData = location.state;
+  let { movieData, roomId } = location.state;
   const params = useLoaderData();
+  const movieScheduleParams = roomId ? `roomId=${roomId}` : "";
 
   // scrolls to top of page on start
   useEffect(() => {
@@ -40,7 +41,10 @@ export default function EventPage(props) {
         </div>
 
         {/* book ticket button */}
-        <Link className="book-ticket-btn" to={`/MovieSchedule/${params}`}>
+        <Link
+          className="book-ticket-btn"
+          to={`/MovieSchedule/${params}?${movieScheduleParams}`}
+        >
           reserver ticket
         </Link>
 

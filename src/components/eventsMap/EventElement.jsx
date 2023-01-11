@@ -29,7 +29,7 @@ export default function EventElement(props) {
     <Link
       className="event-element-link"
       to={`/EventPage/${eventPageTitle}`}
-      state={movieData}
+      state={{ movieData: movieData, roomId: roomId }}
     >
       <div className="event-element-container">
         <div className="poster-container">
