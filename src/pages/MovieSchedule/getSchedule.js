@@ -10,10 +10,8 @@ export default function getSchedule(
   if (roomId) {
     return scheduleData.schedule.filter((cinema) => cinema.cinemaId == roomId);
   }
-  const schedule =
-    wilayaFilter.value == "tous"
-      ? scheduleData.schedule
-      : getFilteredSchedule(scheduleData, cinemasListData, wilayaFilter);
 
-  return schedule;
+  return wilayaFilter.value == "tous"
+    ? scheduleData.schedule
+    : getFilteredSchedule(scheduleData, cinemasListData, wilayaFilter);
 }
