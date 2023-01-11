@@ -1,5 +1,6 @@
 import getFilteredSchedule from "./getFilteredSchedule";
 
+/**gets the schedule filtered by wilaya and cinema id params */
 export default function getSchedule(
   scheduleData,
   cinemasListData,
@@ -7,10 +8,7 @@ export default function getSchedule(
   roomId
 ) {
   if (roomId) {
-    const schedule = scheduleData.schedule.filter(
-      (cinema) => cinema.cinemaId == roomId
-    );
-    return schedule;
+    return scheduleData.schedule.filter((cinema) => cinema.cinemaId == roomId);
   }
   const schedule =
     wilayaFilter.value == "tous"
