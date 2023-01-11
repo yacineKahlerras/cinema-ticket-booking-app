@@ -8,7 +8,7 @@ import EventPage, { EventPageLoader } from "./pages/EventPage/EventPage";
 import TicketBooking from "./pages/TicketBookingPage/TicketBooking";
 import PaymentDonePage from "./pages/PaymenDonePage/PaymentDonePage";
 import Rooms from "./pages/Rooms/Rooms";
-import Room, { RoomLoader } from "./pages/Rooms/Room";
+import Room, { RoomLoader } from "./pages/Room/Room";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import MovieSchedule, {

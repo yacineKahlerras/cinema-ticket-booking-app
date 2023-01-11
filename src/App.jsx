@@ -24,13 +24,13 @@ export default function App() {
 
   // listens to authentification state change and updates the user state
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      localStorage.removeItem("isSignInLoading");
-      setUser(currentUser);
-    });
-    return () => {
-      unsubscribe();
-    };
+    // const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    //   localStorage.removeItem("isSignInLoading");
+    //   setUser(currentUser);
+    // });
+    // return () => {
+    //   unsubscribe();
+    // };
   }, []);
 
   return (

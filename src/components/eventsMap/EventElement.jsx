@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api_key, posterLink } from "@/data.js";
+import { RoomIdContext } from "@/pages/Room/Room";
 
 export default function EventElement(props) {
   const {
     movie: { id, title },
   } = props;
+  const roomId = useContext(RoomIdContext);
   const [movieData, setMovieData] = useState();
   const eventPageTitle = `${id}-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
@@ -20,7 +22,7 @@ export default function EventElement(props) {
         const data = res.data;
         setMovieData(data);
       });
-  });
+  }, []);
 
   // the whole movie element that links to a single event page
   const linkElement = movieData ? (
