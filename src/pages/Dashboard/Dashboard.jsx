@@ -10,24 +10,27 @@ export default function Dashboard() {
   const [userTicketsList, setUserTicketsList] = useState(userTicketsListObject);
   const [ticketElement, setTicketElement] = useState([]);
 
-  useEffect(() => {
-    // setUserTicketsList(GetUserTickets(user.uid));
+  console.log("dashboard");
 
-    if (!ticketElement.length)
-      for (const movieKey in userTicketsList) {
-        const movieData = userTicketsList[movieKey];
-        setTicketElement((oldValue) => {
-          oldValue.push(
-            <ReservedTickets
-              key={movieKey}
-              movieData={movieData}
-              movieId={movieKey}
-            />
-          );
-          return [...oldValue];
-        });
-      }
+  useEffect(() => {
+    setUserTicketsList(GetUserTickets(user.uid));
   }, []);
+
+  if (!ticketElement.length) {
+    for (const movieKey in userTicketsList) {
+      const movieData = userTicketsList[movieKey];
+      setTicketElement((oldValue) => {
+        oldValue.push(
+          <ReservedTickets
+            key={movieKey}
+            movieData={movieData}
+            movieId={movieKey}
+          />
+        );
+        return [...oldValue];
+      });
+    }
+  }
 
   return (
     <div className="dashboard-container">

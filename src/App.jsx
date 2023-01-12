@@ -5,6 +5,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
 import { moviesListObject } from "./data";
 import { cinemasListObject } from "./data";
+import { getMoviesList } from "@/firebase/dataFetcher";
 
 export const UserContext = createContext();
 export const MoviesListContext = createContext();
@@ -19,8 +20,8 @@ export default function App() {
 
   // gets movies list from document database and updates the moviesList state
   useEffect(() => {
-    // getMoviesList(setMoviesList);
-  });
+    getMoviesList(setMoviesList);
+  }, []);
 
   // listens to authentification state change and updates the user state
   useEffect(() => {

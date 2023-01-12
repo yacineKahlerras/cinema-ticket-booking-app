@@ -6,6 +6,7 @@ import { movieSchedule } from "../../data";
 import "./style/_index.scss";
 import FilterGeneric from "@/components/Filters/FilterGeneric";
 import getSchedule from "./getSchedule";
+import { getMovieSchedule, getCinemasList } from "@/firebase/dataFetcher";
 
 export const MovieIsContext = createContext();
 
@@ -22,6 +23,8 @@ export default function MovieSchedule() {
     value: "tous",
     label: "Tous",
   });
+
+  console.log("movie schedule");
 
   // search params
   const [searchParams] = useSearchParams();
@@ -48,10 +51,12 @@ export default function MovieSchedule() {
   ];
 
   useEffect(() => {
-    // getMovieSchedule(movieId);
-    // getCinemasList();
-
-    _currenMovieScheduleContext.setCurrenMovieSchedule(scheduleData);
+    getMovieSchedule(
+      movieId,
+      _currenMovieScheduleContext.setCurrenMovieSchedule
+    );
+    getCinemasList(cinemasData.setCinemasListData);
+    // _currenMovieScheduleContext.setCurrenMovieSchedule(scheduleData);
   }, []);
 
   return (

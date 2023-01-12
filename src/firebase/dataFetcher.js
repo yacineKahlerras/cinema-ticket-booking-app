@@ -21,7 +21,7 @@ export async function getMovieSchedule(movieId, setCurrenMovieSchedule) {
   const movieScheduleSnapshot = await getDoc(movieScheduleDocRef);
 
   if (movieScheduleSnapshot.exists()) {
-    console.log(movieScheduleSnapshot.data());
+    console.log("movieScheduleSnapshot:", movieScheduleSnapshot.data());
     setCurrenMovieSchedule(movieScheduleSnapshot.data());
   } else {
     console.log(`no document by the name of ${movieId}`);
@@ -29,13 +29,13 @@ export async function getMovieSchedule(movieId, setCurrenMovieSchedule) {
 }
 
 /**gets the ciname array listfrom the cinemas collection */
-export async function getCinemasList() {
+export async function getCinemasList(setCinemasListData) {
   const cinemasDocRef = doc(db, "cinemas", "cinemasList");
   const cinemasListSnapshot = await getDoc(cinemasDocRef);
 
   if (cinemasListSnapshot.exists()) {
-    console.log(cinemasListSnapshot.data());
-    return cinemasListSnapshot.data();
+    console.log("cinemasListSnapshot :", cinemasListSnapshot.data());
+    setCinemasListData(cinemasListSnapshot.data());
   } else {
     console.log(`no document by that name.`);
   }

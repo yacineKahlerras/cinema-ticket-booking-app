@@ -183,6 +183,6 @@ export async function SaveUserTickets(
     [movieId]: movieTicketsInfoList,
   };
 
-  // await setDoc(doc(db, "userTickets", user.uid), docData, { merge: true });
-  console.log(docData);
+  await setDoc(doc(db, "userTickets", user.uid), docData, { merge: true });
+  console.log("userTickets saved : ", docData);
 }
