@@ -20,7 +20,7 @@ export default function App() {
 
   // gets movies list from document database and updates the moviesList state
   useEffect(() => {
-    // getMoviesList(setMoviesList);
+    getMoviesList(setMoviesList);
   }, []);
 
   // listens to authentification state change and updates the user state
