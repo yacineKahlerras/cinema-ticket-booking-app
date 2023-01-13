@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { roomsList } from "../../data";
 import geoLogo from "../../assets/geo-alt-fill.svg";
 import { Link } from "react-router-dom";
