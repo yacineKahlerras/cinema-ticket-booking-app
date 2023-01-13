@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../../App";
 import { GetUserTickets } from "../../firebase/dataFetcher";
 import ReservedTickets from "./ReservedTicket";
-import { nanoid } from "nanoid";
 import "./style/_index.scss";
 
 export default function Dashboard() {
@@ -10,10 +9,8 @@ export default function Dashboard() {
   const [userTicketsList, setUserTicketsList] = useState(userTicketsListObject);
   const [ticketElement, setTicketElement] = useState([]);
 
-  console.log("dashboard");
-
   useEffect(() => {
-    setUserTicketsList(GetUserTickets(user.uid));
+    GetUserTickets(user.uid, setUserTicketsList);
   }, []);
 
   if (!ticketElement.length) {

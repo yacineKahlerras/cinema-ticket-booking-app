@@ -7,7 +7,7 @@ export async function getMoviesList(setMoviesList) {
   const moviesDocSnapshot = await getDoc(moviesDocRef);
 
   if (moviesDocSnapshot.exists()) {
-    console.log("sucess : ", moviesDocSnapshot.data());
+    console.log("moviesDocSnapshot : ", moviesDocSnapshot.data());
     setMoviesList(moviesDocSnapshot.data());
   } else {
     console.log("no document by the name of movies list");
@@ -44,13 +44,13 @@ export async function getCinemasList(setCinemasListData) {
 /**gets the boughts tickets from database
  * using the doc with the name of user.uid
  */
-export async function GetUserTickets(userId) {
+export async function GetUserTickets(userId, setUserTicketsList) {
   const userDocRef = doc(db, "userTickets", userId);
   const userTicketsSnapshot = await getDoc(userDocRef);
 
   if (userTicketsSnapshot) {
-    console.log(userTicketsSnapshot.data());
-    return userTicketsSnapshot.data();
+    console.log("userTicketsSnapshot : ", userTicketsSnapshot.data());
+    setUserTicketsList(userTicketsSnapshot.data());
   } else {
     console.log(`error while fetching doc with name ${userId}.`);
   }
