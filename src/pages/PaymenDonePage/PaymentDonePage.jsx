@@ -27,8 +27,6 @@ export default function PaymentDonePage() {
     SaveUserTickets(user, bookedSeats, dateParts, movie, cinema.name);
   }, []);
 
-  console.log("payment done page");
-
   function Tickets() {
     return (
       <div

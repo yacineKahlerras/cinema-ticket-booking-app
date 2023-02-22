@@ -24,8 +24,6 @@ export default function MovieSchedule() {
     label: "Tous",
   });
 
-  console.log("movie schedule");
-
   // search params
   const [searchParams] = useSearchParams();
   const roomId = searchParams.get("roomId");

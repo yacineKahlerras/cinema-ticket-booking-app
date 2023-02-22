@@ -184,5 +184,4 @@ export async function SaveUserTickets(
   };
 
   await setDoc(doc(db, "userTickets", user.uid), docData, { merge: true });
-  console.log("userTickets saved : ", docData);
 }
