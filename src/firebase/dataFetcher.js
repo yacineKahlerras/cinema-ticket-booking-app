@@ -7,7 +7,6 @@ export async function getMoviesList(setMoviesList) {
   const moviesDocSnapshot = await getDoc(moviesDocRef);
 
   if (moviesDocSnapshot.exists()) {
-    console.log("moviesDocSnapshot : ", moviesDocSnapshot.data());
     setMoviesList(moviesDocSnapshot.data());
   } else {
     console.log("no document by the name of movies list");

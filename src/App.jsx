@@ -1,7 +1,7 @@
 import Nav from "./components/Nav/Nav";
 import { Outlet } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { getRedirectResult, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/googleAuth";
 import { moviesListObject } from "./data";
 import { cinemasListObject } from "./data";
@@ -14,6 +14,7 @@ export const CurrenMovieScheduleContext = createContext();
 
 export default function App() {
   const [user, setUser] = useState({});
+  const [isLoadingUser, setIsLoadingUser] = useState(false);
   const [moviesList, setMoviesList] = useState(moviesListObject);
   const [cinemasListData, setCinemasListData] = useState(cinemasListObject);
   const [currenMovieSchedule, setCurrenMovieSchedule] = useState();
@@ -34,8 +35,16 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    setIsLoadingUser(true);
+    getRedirectResult(auth).then((result) => {
+      if (result) setUser(result.user);
+      setIsLoadingUser(false);
+    });
+  }, []);
+
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, isLoadingUser }}>
       <MoviesListContext.Provider value={moviesList}>
         <CinemaDataContext.Provider
           value={{
