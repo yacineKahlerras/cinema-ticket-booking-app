@@ -1,4 +1,4 @@
-![](./desktop-preview.jpg)
+![](./desktop-preview.png)
 
 ## Table of contents
 
