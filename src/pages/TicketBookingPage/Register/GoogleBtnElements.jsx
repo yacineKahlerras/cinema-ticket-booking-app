@@ -4,8 +4,7 @@ import { SignIn } from "../../../firebase/googleAuth";
 import LoadingSpinner from "@/components/Nav/LoadingSpinner";
 
 export default function GoogleBtnElements(props) {
-  const { user, hasUser } = props;
-  const isSignInLoading = localStorage.getItem("isSignInLoading");
+  const { user, hasUser, isLoadingUser } = props;
 
   const googleBtn = (
     <GoogleButton
@@ -34,7 +33,7 @@ export default function GoogleBtnElements(props) {
 
   return hasUser ? (
     userInfoElement
-  ) : isSignInLoading ? (
+  ) : isLoadingUser ? (
     <LoadingSpinner />
   ) : (
     googleBtn

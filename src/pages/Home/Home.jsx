@@ -22,6 +22,12 @@ export default function Home() {
   return (
     <FilterParamsContext.Provider value={filterParams}>
       <div className="home-container">
+        <div className="home-header">
+          <h1>Bienvenue a Cinecom Ticketing</h1>
+          <p>
+            Choisissez le film que vous souhaitez regarder et réservez un billet{" "}
+          </p>
+        </div>
         <EventsMap />
       </div>
     </FilterParamsContext.Provider>

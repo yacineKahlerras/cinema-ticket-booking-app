@@ -15,7 +15,7 @@ export default function RegisterPage(props) {
     paymentMethod,
     price,
   } = props;
-  const { user } = useContext(UserContext);
+  const { user, isLoadingUser } = useContext(UserContext);
   const hasUser = user != null && user.email != null;
 
   // payment method options
@@ -46,7 +46,11 @@ export default function RegisterPage(props) {
       {/* google register */}
       <div className="payment-method-container google-register-container">
         <h1>Se Connecter</h1>
-        <GoogleBtnElements user={user} hasUser={hasUser} />
+        <GoogleBtnElements
+          user={user}
+          hasUser={hasUser}
+          isLoadingUser={isLoadingUser}
+        />
       </div>
       {/* payment method */}
       <div className="payment-method-container">
