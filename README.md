@@ -10,7 +10,7 @@
 ## Overview
 
 this is a cinema ticket booking prototype that i made for a client, he wanted to test out a few ideas and
-see how they look as an interactable app, the app gets the available movies lists from the [firestore database](https://firebase.google.com/docs/firestore) and then displays them as items links that takes you to a movie info page that uses [TMDB API](https://developers.themoviedb.org/3) to get the movie info, you then get can reserve the seatings and register then "pay" for the ticket, you can download the ticket(s) that contain the address and the movie QR code
+see how they look as an interactable app, the app gets the available movies lists from the [firestore database](https://firebase.google.com/docs/firestore) and then displays them as items links, each link takes you to a movie info page that uses [TMDB API](https://developers.themoviedb.org/3) to get the movie infos, you can then reserve the seatings and register and "pay" for the ticket, and finally download the tickets which contain the address and the movie QR code
 
 ### Links
 
