@@ -28,12 +28,8 @@ see how they look as an interactable app, the app gets the available movies list
 
 ### What I Learned
 
-- different ways to enhance performance with memoization and finding solutions to reduce
-  renders as much as possible, also used lazy loading to make the app a little less heavy
-  and doesnt' download all the images at once
-- familiarizing myself more with tailwind themes and configurations
-- using infinite scroller to load small shunks of the big list for performance instead of doing
-  pagination
-- experimenting and reading more documentation about react router dom
-- familiarizing myself more with firebase with its authetications and database, it is a lot easier
-  to use now
+- first time using firebase and it was a very good experience and am definitely using it for my future projects
+- using qr codes and html to img converters to create an image from components
+- using google authentications to save user data
+- experimenting with different forms and designs
+- familiarzing myself more with reads and writes to the database and how to minimize those to not get past my limits
