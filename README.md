@@ -16,7 +16,7 @@ to get additional information on it like location and its neighbouring countries
 
 ### Links
 
-- [Live Site URL](https://yacinekahlerras.github.io/rest-countries-app/)
+- [Live Site URL](https://yacinekahlerras.github.io/cinema-ticket-booking-app/)
 
 ### Built with
 
